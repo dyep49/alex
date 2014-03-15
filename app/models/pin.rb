@@ -1,5 +1,6 @@
 class Pin < ActiveRecord::Base
     belongs_to :user
     belongs_to :source
-    has_and_belongs_to_many :tags, through: :pin_tags
+    has_many :pin_tags
+    has_many :tags, through: :pin_tags
 end
