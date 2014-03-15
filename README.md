@@ -1,29 +1,10 @@
 # todo:
 
-##relations
+## models
     users
+        usernames
+        devise
         admin?
-        devise stuff
-        username
-
-    tags
-        title
-
-    source
-        site
-        side picture or logo maybe?
-
-    pin
-        url
-        creater
-        views
-        share count
-        image (and the whole content vs web pin thing needs clarification) 
-        description
-
-    joins
-        a share has two users and a pin
-        a like has a user and a pin
         
 
 
