@@ -1,4 +1,4 @@
-# todo:
+# stuffs
 
 ## models
     users
@@ -6,13 +6,27 @@
         devise
         admin?
 
+    source
+        url
+        embedly status
+
     pin
         user_id
         view count
         save count
         source_id
+
+    tag
+        name
+
+    pin_tag
+        pin/tag joiner
+
+    save
+        user id
+        pin id
         
-        
+
 
 
 
