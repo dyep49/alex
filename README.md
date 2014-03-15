@@ -5,6 +5,13 @@
         usernames
         devise
         admin?
+
+    pin
+        user_id
+        view count
+        save count
+        source_id
+        
         
 
 

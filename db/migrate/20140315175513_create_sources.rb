@@ -4,7 +4,7 @@ class CreateSources < ActiveRecord::Migration
         t.string :url
 
         t.boolean :feed_embedly
-        t.boolean :solo_embedly
+        t.boolean :solo_embedly_full
 
         t.timestamps
     end

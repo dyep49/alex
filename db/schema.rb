@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20140315181039) do
   create_table "sources", force: true do |t|
     t.string   "url"
     t.boolean  "feed_embedly"
-    t.boolean  "solo_embedly"
+    t.boolean  "solo_embedly_full"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
