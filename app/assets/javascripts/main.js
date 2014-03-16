@@ -4,24 +4,24 @@ main.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'splash.html',
+                templateUrl: 'template/splash.html',
                 controller: 'splash'
             }).
             when('/tag/:tag_name', {
-                templateUrl: 'tag.html',
+                templateUrl: 'template/tag.html',
                 controller: 'tag'
             }).
             when('/site/:source_name', {
-                templateUrl: 'site.html',
+                templateUrl: 'template/site.html',
                 controller: 'site'
             }).
             when('/pin/:pin_id', {
-                templateUrl: 'pin.html',
+                templateUrl: 'template/pin.html',
                 controller: 'pin'
             }).
             otherwise({
                 redirectTo: '/'
-            });
-    }
+            }); // add submit pin, and look at saved pins
+    } 
 ]);
 
