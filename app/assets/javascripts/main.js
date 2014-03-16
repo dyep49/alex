@@ -3,7 +3,7 @@ var main = angular.module('main', ['ngRoute'])
 main.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-            when('/test', {
+            when('/', {
                 templateUrl: 'test.html',
                 controller: 'test'
             }).
