@@ -37,4 +37,5 @@
 
     can pins be commented on?
 
+    how are we handling who is admin and all?
 
