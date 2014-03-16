@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='main'>
 <head>
-  <title>Alex</title>
+  <title>Trolly</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <script src="http://code.angularjs.org/1.2.9/angular-route.min.js"></script>
 </head>
 <body>
 
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+   <%= yield %>
 
 </body>
 </html>
