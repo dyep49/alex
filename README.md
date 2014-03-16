@@ -1,5 +1,8 @@
 # stuffs
 
+## todo
+    force tag and source names to be unique
+
 ## models
     users
         usernames
