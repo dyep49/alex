@@ -4,19 +4,19 @@ main.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'template/splash.html',
+                templateUrl: 'templates/splash.html',
                 controller: 'splash'
             }).
             when('/tag/:tag_name', {
-                templateUrl: 'template/tag.html',
+                templateUrl: 'templates/tag.html',
                 controller: 'tag'
             }).
             when('/site/:source_name', {
-                templateUrl: 'template/site.html',
+                templateUrl: 'templates/site.html',
                 controller: 'site'
             }).
             when('/pin/:pin_id', {
-                templateUrl: 'template/pin.html',
+                templateUrl: 'templates/pin.html',
                 controller: 'pin'
             }).
             otherwise({
