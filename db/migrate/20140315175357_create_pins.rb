@@ -4,6 +4,8 @@ class CreatePins < ActiveRecord::Migration
         t.integer :user_id
         t.integer :source_id
 
+        t.string :title
+
         t.integer :view_count
         t.integer :save_count
 

@@ -3,7 +3,7 @@ main.factory('Pin', ['$resource', function($resource){
 		this.service = $resource('/pins/:pinId', {pinId: '@id'})
 	};
 
-	Pin.prototype.show = function(id){
+	Pin.prototype.create = function(id){
 		return this.service.query({pinId: id});
 	}
 
