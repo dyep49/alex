@@ -2,6 +2,7 @@
 {{array}}
 <ul>
     <li ng-repeat='i in array'>
-        {{i | uppercase}}
+        {{i.url | uppercase}}
+        <img src={{i.img_url}} alt="">
     </li>
 </ul>

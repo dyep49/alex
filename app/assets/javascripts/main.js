@@ -13,9 +13,9 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/tag.html',
                 controller: 'tag'
             }).
-            when('/site/:source_name', {
-                templateUrl: 'templates/site.html',
-                controller: 'site'
+            when('/source/:source_name', {
+                templateUrl: 'templates/source.html',
+                controller: 'SourceController'
             }).
             when('/pin/:pin_id', {
                 templateUrl: 'templates/pin.html',

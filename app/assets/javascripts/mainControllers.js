@@ -5,6 +5,11 @@ main.controller('SplashController', ['$scope', 'Splash', function($scope, Splash
     $scope.array = Splash.all()
 }]);
 
+main.controller('SourceController', ['$scope', '$routeParams', 'Source', function($scope, $routeParams, Source){
+	console.log($routeParams.source_name);
+	$scope.sources = Source.show($routeParams.source_name)
+}])
+
 // mainControllers.controller('site', function($scope) {
 //     $scope.array = [] //ajax to get all pins for a site
 // });
