@@ -12,6 +12,7 @@ class PinsController < ApplicationController
     end
 
     def show
+        render json: [Pin.find(params[:id])]
     end
 
     def destroy

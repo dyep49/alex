@@ -1,5 +1,3 @@
-console.log('main')
-
 var main = angular.module("main", ['ngResource', 'ngRoute']);
 
 
@@ -19,7 +17,7 @@ main.config(function($routeProvider) {
             }).
             when('/pin/:pin_id', {
                 templateUrl: 'templates/pin.html',
-                controller: 'pin'
+                controller: 'PinController'
             }).
             otherwise({
                 redirectTo: '/'
