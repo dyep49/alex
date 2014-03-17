@@ -1,5 +1,6 @@
 var main = angular.module("main", ['ngResource', 'ngRoute']);
 
+main.config([   "$httpProvider", function(provider) {  return provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');   } ]);
 
 main.config(function($routeProvider) {
         $routeProvider.
@@ -18,6 +19,10 @@ main.config(function($routeProvider) {
             when('/pin/:pin_id', {
                 templateUrl: 'templates/pin.html',
                 controller: 'PinController'
+            }).
+            when('/pins/new', {
+                templateUrl: 'templates/new_pin.html',
+                controller: 'NewPinController'
             }).
             otherwise({
                 redirectTo: '/'

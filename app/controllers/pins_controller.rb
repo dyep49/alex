@@ -6,6 +6,7 @@ class PinsController < ApplicationController
     end
 
     def create
+        Pin.make_pin(params)
     end
 
     def update
