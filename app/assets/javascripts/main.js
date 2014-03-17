@@ -1,11 +1,13 @@
-var main = angular.module('main', ['ngRoute', 'mainControllers'])
+console.log('main')
 
-main.config(['$routeProvider',
-    function($routeProvider) {
+var main = angular.module("main", ['ngResource', 'ngRoute']);
+
+
+main.config(function($routeProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: 'templates/splash.html',
-                controller: 'splash'
+                controller: 'SplashController'
             }).
             when('/tag/:tag_name', {
                 templateUrl: 'templates/tag.html',
@@ -23,5 +25,5 @@ main.config(['$routeProvider',
                 redirectTo: '/'
             }); // add submit pin, and look at saved pins
     } 
-]);
+);
 

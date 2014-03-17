@@ -45,3 +45,10 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'angularjs-rails'
+
+group :development do
+	gem 'pry'
+	gem 'pry-nav'
+end
