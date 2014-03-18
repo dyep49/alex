@@ -1,27 +1,36 @@
-var main = angular.module('main', ['ngRoute', 'mainControllers'])
+var main = angular.module("main", ['ngResource', 'ngRoute']);
 
-main.config(['$routeProvider',
-    function($routeProvider) {
+main.config([   "$httpProvider", function(provider) {  return provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');   } ]);
+
+main.config(function($routeProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: 'templates/splash.html',
-                controller: 'splash'
+                controller: 'SplashController'
             }).
             when('/tag/:tag_name', {
                 templateUrl: 'templates/tag.html',
                 controller: 'tag'
             }).
-            when('/site/:source_name', {
-                templateUrl: 'templates/site.html',
-                controller: 'site'
+            when('/source/:source_name', {
+                templateUrl: 'templates/source.html',
+                controller: 'SourceController'
             }).
             when('/pin/:pin_id', {
                 templateUrl: 'templates/pin.html',
-                controller: 'pin'
+                controller: 'PinController'
+            }).
+            when('/pins/new', {
+                templateUrl: 'templates/new_pin.html',
+                controller: 'NewPinController'
+            }).
+            when('/sources/new', {
+                templateUrl: 'templates/new_source.html',
+                controller: 'NewSourceController'
             }).
             otherwise({
                 redirectTo: '/'
             }); // add submit pin, and look at saved pins
     } 
-]);
+);
 

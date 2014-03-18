@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require_tree ../../../vendor/assets/javascripts/
 //= require angular
-//= require bootstrap.min
+//= require angular-resource
+//= require angular-route
+//= require main.js
+//= require_tree ./angular
 //= require_tree .

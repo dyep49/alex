@@ -8,6 +8,8 @@ Alex::Application.routes.draw do
   resources :pins
   post 'pins/fetch' => 'pins#fetch'
 
+  resources :sources
+
 
 
 
