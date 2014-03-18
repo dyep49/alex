@@ -8,8 +8,13 @@
   
   <input ng-model="formData.url" type="text" placeholder="Link">
   
+  <select ng-model="formData.source_id">
+    <option  ng-repeat='source in sources' value={{source.id}}>
+      {{source.name}}
+    </option>
+  </select>
+
   <input ng-model="formData.tags" type="text" placeholder="Tags">
   
   <button ng-click="createPin()">Create</button>
 </form>
-
