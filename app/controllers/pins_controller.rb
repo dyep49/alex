@@ -20,5 +20,9 @@ class PinsController < ApplicationController
     def destroy
     end
 
+    def save
+        binding.pry
+    end
+
 
 end
