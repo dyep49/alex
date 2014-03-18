@@ -6,7 +6,8 @@ class PinsController < ApplicationController
     end
 
     def create
-        Pin.make_pin(params)
+        pin = Pin.make_pin(params, (current_user ? current_user.id : nil))
+        render json: {id: pin.id}
     end
 
     def update
@@ -18,5 +19,6 @@ class PinsController < ApplicationController
 
     def destroy
     end
+
 
 end
