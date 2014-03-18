@@ -57,5 +57,4 @@ group :development do
 end
 
 
-
-# obj.first.images.first["url"]
+gem 'embedly'
