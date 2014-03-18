@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140315185924) do
   create_table "sources", force: true do |t|
     t.string   "url"
     t.string   "img_url"
+    t.string   "name"
     t.boolean  "feed_embedly"
     t.boolean  "solo_embedly_full"
     t.datetime "created_at"

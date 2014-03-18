@@ -10,10 +10,10 @@ class Pin < ActiveRecord::Base
       description: params[:description],
       image_url: params[:image_url],
       url: params[:url],
-      user_id: user_id
+      user_id: user_id,
+      source_id: params[:source_id]
     )
     pin.make_tags(pin, params[:tags])
-    pin.add_source(pin, params[:url])
     return pin
   end
 
@@ -24,9 +24,4 @@ class Pin < ActiveRecord::Base
     end
   end
 
-  def add_source(pin, url)
-    host = URI.parse(url).host || URI.parse("http://#{url}").host
-    source = Source.find_by_url(host) || Source.create(url: host)
-    pin.update(source_id: source.id)
-  end
 end
