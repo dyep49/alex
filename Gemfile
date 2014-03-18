@@ -56,5 +56,6 @@ group :development do
 	gem 'pry-nav'
 end
 
+gem 'embedly'
 
 # obj.first.images.first["url"]
