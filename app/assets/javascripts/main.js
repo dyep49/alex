@@ -24,6 +24,10 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/new_pin.html',
                 controller: 'NewPinController'
             }).
+            when('/sources/new', {
+                templateUrl: 'templates/new_source.html',
+                controller: 'NewSourceController'
+            }).
             otherwise({
                 redirectTo: '/'
             }); // add submit pin, and look at saved pins
