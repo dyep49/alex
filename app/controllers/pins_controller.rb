@@ -20,8 +20,13 @@ class PinsController < ApplicationController
     def destroy
     end
 
-    def save
+    def favorite
+        fav = Favorite.new
+        fav.user = current_user
+        fav.pin  = Pin.find(params[:id])
+        fav.save!
         
+        render json: {}
     end
 
 

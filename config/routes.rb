@@ -7,7 +7,7 @@ Alex::Application.routes.draw do
 
   resources :pins
   post 'pins/fetch' => 'pins#fetch'
-  post 'pin_save' => 'pins#save'
+  post 'pin_fav' => 'pins#favorite'
 
   resources :sources
 
