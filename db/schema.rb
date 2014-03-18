@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315185924) do
+ActiveRecord::Schema.define(version: 20140318232355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "pin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pin_tags", force: true do |t|
     t.integer  "pin_id"
@@ -32,13 +39,6 @@ ActiveRecord::Schema.define(version: 20140315185924) do
     t.string   "url"
     t.string   "description"
     t.string   "image_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "saves", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "pin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

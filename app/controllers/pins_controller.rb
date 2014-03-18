@@ -21,7 +21,7 @@ class PinsController < ApplicationController
     end
 
     def save
-        binding.pry
+        
     end
 
 
