@@ -8,7 +8,6 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', function($scop
     };
 
     $scope.sources = Source.show()
-    // $scope.sources 
 
     $scope.createPin = function(){
       $http.post('/pins', $scope.formData)

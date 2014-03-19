@@ -1,10 +1,13 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
+
+
 <a class="embedly-card" href="{{pin[0].url}}"></a>
 
 
 <script>
     (function(a){
         var b = "embedly-platform"
-        var c = "script";
+        var c = "script"
         if(!a.getElementById(b)){
             var d=a.createElement(c)
             d.id=b
@@ -13,19 +16,23 @@
             var e=document.getElementsByTagName(c)[0]
             e.parentNode.insertBefore(d,e)
         }
-    })(document);
+    })(document)
 </script>
 
 
 
-<div ng-click='savePin()' id='save'>
-    Save
-</div>
+<div id='footer'>
 
-<style type="text/css">
-    #save {
-        background-color: lightgreen;
-        height:3em;
-    }
-    
-</style>
+    <div ng-click='savePin()' id='save' class='foot-button'>
+        Save
+    </div>
+
+    <div id='share' class='foot-button'>
+        <input type='text'ng-model="formData.sendTo" id='share-input'placeholder='Share with...'>
+        </input>
+        <button class='btn' ng-click='sharePin()'>
+            Share
+        </button>
+    </div>
+
+</div>
