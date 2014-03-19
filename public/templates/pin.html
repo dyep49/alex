@@ -1,8 +1,31 @@
 <a class="embedly-card" href="{{pin[0].url}}"></a>
-<script>(function(a){var b="embedly-platform",c="script";if(!a.getElementById(b)){var d=a.createElement(c);d.id=b;d.async=true;d.src=("https:"===document.location.protocol?"https":"http")+"://cdn.embedly.com/widgets/platform.js";var e=document.getElementsByTagName(c)[0];e.parentNode.insertBefore(d,e)}})(document);</script>
+
+
+<script>
+    (function(a){
+        var b = "embedly-platform"
+        var c = "script";
+        if(!a.getElementById(b)){
+            var d=a.createElement(c)
+            d.id=b
+            d.async=true
+            d.src=document.location.protocol+"//cdn.embedly.com/widgets/platform.js"
+            var e=document.getElementsByTagName(c)[0]
+            e.parentNode.insertBefore(d,e)
+        }
+    })(document);
+</script>
 
 
 
-<div ng-click='savePin()' style='background-color:lightgreen;height:3em;'>
+<div ng-click='savePin()' id='save'>
     Save
 </div>
+
+<style type="text/css">
+    #save {
+        background-color: lightgreen;
+        height:3em;
+    }
+    
+</style>
