@@ -56,3 +56,4 @@ group :development do
 	gem 'pry-nav'
 end
 
+gem 'kaminari'
