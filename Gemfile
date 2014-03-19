@@ -48,7 +48,7 @@ gem 'devise'
 gem 'angularjs-rails'
 
 
-
+gem 'rails_12factor', group: :production
 
 
 group :development do
