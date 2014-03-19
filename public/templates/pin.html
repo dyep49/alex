@@ -28,8 +28,11 @@
     </div>
 
     <div id='share' class='foot-button'>
-        <input type='text' id='share-input'placeholder='Share with...'></input>
-        <button class='btn' ng-click='sharePin()'>Share</button>
+        <input type='text'ng-model="formData.sendTo" id='share-input'placeholder='Share with...'>
+        </input>
+        <button class='btn' ng-click='sharePin()'>
+            Share
+        </button>
     </div>
 
 </div>
