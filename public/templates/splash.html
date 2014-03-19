@@ -1,8 +1,6 @@
 <h1>Splash</h1>
 <ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 360, slideMargin: 10}">
   <li ng-repeat = 'i in array'>
-  	<img src={{i.img_url}}/>
+  	<img ng-src={{i['img_url']}}/>
   </li>
 </ul>
-
-{{array}}
