@@ -4,7 +4,7 @@
 <script>
     (function(a){
         var b = "embedly-platform"
-        var c = "script";
+        var c = "script"
         if(!a.getElementById(b)){
             var d=a.createElement(c)
             d.id=b
@@ -13,19 +13,52 @@
             var e=document.getElementsByTagName(c)[0]
             e.parentNode.insertBefore(d,e)
         }
-    })(document);
+    })(document)
 </script>
 
 
 
-<div ng-click='savePin()' id='save'>
-    Save
+<div id='footer'>
+
+    <div ng-click='savePin()' id='save' class='foot-button'>
+        Save
+    </div>
+
+    <div id='share' class='foot-button'>
+        <input type='text' id='share-input'placeholder='Share with...'></input>
+        <button class='btn' ng-click='sharePin()'>Share</button>
+    </div>
+
 </div>
 
+
 <style type="text/css">
+
+    .foot-button {
+        float: left;
+        display: inline-block;
+        height:100%;
+        width: 50%;
+        margin:0;
+        padding:0;
+        height: 3em;
+    }
     #save {
         background-color: lightgreen;
-        height:3em;
     }
-    
+
+    #share {
+        background-color: lightblue;
+    }
+
+    #footer {
+        display: inline;
+        width: 100px;
+    }
+
+    #share-input {
+        border: none;
+        background-color: lightblue;
+        height: 100%;
+    }
 </style>
