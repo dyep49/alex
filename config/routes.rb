@@ -5,12 +5,14 @@ Alex::Application.routes.draw do
   get 'users/faved'    => 'users#faved'
   get 'users/pinned'   => 'users#pinned'
   post 'pin_share'     => 'users#share'
-  get 'logout'       => 'users#logout' 
+  get 'logout'         => 'users#logout' 
+  get 'my_pins'        => 'users#my_pins'
 
 
   resources :pins
   post 'pins/fetch'   => 'pins#fetch'
   post 'pin_fav'      => 'pins#favorite'
+  post 'pin_search'   => 'pins#search'
 
   resources :sources
 

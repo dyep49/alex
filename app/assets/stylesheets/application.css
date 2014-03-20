@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require bootstrap.min
+ *= require nav
  *= require_tree ../../../vendor/assets/stylesheets/
  *= require_tree .
  */

@@ -21,4 +21,8 @@ class UsersController < ApplicationController
         sign_out_and_redirect('/users/sign_in')
     end
 
+    def my_pins
+        render json: Pin.where(user_id: current_user.id)
+    end
+
 end
