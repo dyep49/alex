@@ -17,4 +17,8 @@ class UsersController < ApplicationController
         render json: {status: 200}
     end
 
+    def logout
+        sign_out_and_redirect('/users/sign_in')
+    end
+
 end

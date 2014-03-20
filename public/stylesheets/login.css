@@ -1,0 +1,22 @@
+input {
+    border: none;
+}
+a {
+    color: lightblue;
+}
+#parent {
+    width: 100%;
+    display: block;
+    float: right;
+}
+#left {
+    width: 30%;
+    margin: 1px;
+    float: left;
+}
+
+#right {
+    width: 30%;
+    margin: 0;
+    float: right;
+}
