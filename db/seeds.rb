@@ -4,11 +4,9 @@ Source.create(url: 'www.youtube.com', img_url: 'http://baconmockup.com/200/200',
 Source.create(url: 'www.vimeo.com', img_url: 'http://www.placekitten.com/200/200', name: 'Vimeo')
 Source.create(url: 'www.espn.com', img_url: ' http://nicenicejpg.com/200/200', name: 'ESPN')
 
-techcrunch_pin = Pin.create(title: "Cool techcrunch thing", url: "http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/", description: "Cool techcrunch article", image_url: 'http://www.placekitten.com/200/200' )
-Pin.create(title: "Cool soundcloud thing", url: "https://soundcloud.com/lmpradio/dj-negro-lmp-reggaeton-mix", description: "Cool soundcloud thing", image_url: 'http://www.placecage.com/200/200')
-
-techcrunch.pins << techcrunch_pin
-
-
-
-
+30.times do 
+	height = rand(200..600).to_s
+	width = rand(200..600).to_s
+	pin = Pin.create(title: "Cool techcrunch thing", url: "http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/", description: "Cool techcrunch article", image_url: 'http://www.placekitten.com/' + height + '/' + width) 
+	techcrunch.pins << pin
+end
