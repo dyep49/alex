@@ -1,19 +1,8 @@
-<!-- <ul class="wookmark" id="tiles">
-	<li ng-repeat="source in sources">
-		<div>
-			<div class="title">
-				<p><a href={{source.url}}>{{source.description}}</a></p>
-			</div>
-			<div>
-  			<img ng-src={{source.image_url}}/>
-  		</div>
-  	</div>
-	</li>
-</ul>
- -->
-
-<div infinite-scroll='loadMore()'>
-	<div id="test" ng-repeat="source in sources">
+<div id="source-container'" infinite-scroll='loadMore()'>
+	<div id="source-div" ng-repeat="source in sources">
+		<div class="title">
+			<p>{{source.title}}</p>
+		</div>
 		<img ng-src={{source.image_url}}/>
 	</div>
 </div>

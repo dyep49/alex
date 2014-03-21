@@ -3,11 +3,26 @@ img {
 	width: 300px;
 }
 
-#test {
+#source-div {
 	display: inline-block;
 	margin: 5px;
+	text-align: center;
 }
 
-div {
-	text-align: center
+#source-container {
+
+	text-align: center;
+}
+
+.ng-scope {
+	text-align: center;
+}
+
+.title {
+	background: white
+}
+
+.title p{
+	margin: 0;
+	font-size: 25px;
 }
