@@ -1,10 +1,18 @@
 main.controller('SourceController', ['$scope', '$routeParams', 'Source', function($scope, $routeParams, Source){
-	$scope.sources = Source.show($routeParams.source_name)
+
+	var page = 1
+	
+	function init(){
+		Source.show($routeParams.source_name, page);
+		page ++;
+	}
+
+	$scope.sources = Source.getSources()
+
+	init();
 
 	$scope.loadMore = function(){
-		var nextImages = [1,2,3,4]
-		nextImages.forEach(function(image){
-			$scope.sources.push({image_url: 'www.notathdfasf.com'})
-		})
+		Source.show($routeParams.source_name, page)
+		page ++
 	}
 }])
