@@ -2,6 +2,9 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', function($
 
 	$scope.pin = Pin.show($route.current.params.pin_id)
 
+    $scope.toggle = Pin.saved($route.current.params.pin_id)
+    $scope.toggle = $scope.toggle
+
     $scope.savePin = function(){
         $http.post('/pin_fav', {'id': $route.current.params.pin_id})
     }

@@ -4,11 +4,15 @@ main.factory('Pin', ['$resource', function($resource){
 	};
 
 	Pin.prototype.create = function(id){
-		return this.service.query({pinId: id});
+		return this.service.query({pinId: id})
 	}
 
     Pin.prototype.show = function(id) {
-        return this.service.query({pinId: id});
+        return this.service.query({pinId: id})
+    }
+
+    Pin.prototype.saved = function(id) {
+        return this.service.query({pinId: id})
     }
 
 	return new Pin

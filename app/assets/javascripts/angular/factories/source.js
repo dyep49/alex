@@ -19,11 +19,11 @@ main.service('Source', ['$http', function($http){
 				method: 'GET',
 				params: {page_number: page}
 			})
-				.success(function(data){
-					data.forEach(function(source){
-						sources.push(source);
-					})
+			.success(function(data){
+				data.forEach(function(source){
+					sources.push(source);
 				})
+			})
 		}
 
 		this.getSources = function(){
@@ -31,3 +31,5 @@ main.service('Source', ['$http', function($http){
 		}
 }])
 
+
+// tabs are stupid

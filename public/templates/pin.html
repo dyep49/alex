@@ -2,7 +2,7 @@
 
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
 
-
+<div id='saver' saved={{pin[0].saved}}></div>
 
 <script>
     $(document).ready(function(){
@@ -20,14 +20,22 @@
                 }
             })(document)
         }, 200)
-    })
+    }) 
 </script>
 
-
-
+{{toggle[0]}}
 <div id='footer'>
 
-    <div ng-click='savePin()' id='save' class='foot-button {{pin[0].saved}}'>
+    <div ng-click='savePin(); toggle=true' 
+         id='save' 
+         ng-hide="toggle"
+         class='foot-button'>
+        Unsave
+    </div>
+    <div ng-click='savePin(); toggle=false' 
+         id='save' 
+         ng-show="toggle"
+         class='foot-button'>
         Save
     </div>
 
@@ -40,16 +48,3 @@
     </div>
 
 </div>
-
-
-
-
-<script>
-
-    setTimeout(function(argument) {
-        var div = $('.true')
-        div.text('already saved')
-        div.attr('style', div.attr('style') + ';background-color: green;')
-    }, 100)
-
-</script>
