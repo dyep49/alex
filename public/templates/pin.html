@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
-
-<a class="embedly-card" id='test' href="{{pin[0].url}}"></a>
+<a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
 
 
 
@@ -28,7 +27,7 @@
 
 <div id='footer'>
 
-    <div ng-click='savePin()' id='save' class='foot-button'>
+    <div ng-click='savePin()' id='save' class='foot-button {{pin[0].saved}}'>
         Save
     </div>
 
@@ -46,25 +45,11 @@
 
 
 <script>
-    // var key = 'e6c29a859c5c4544a19f3f8beeaccad6'
 
-// // we dont need to do this, but this is how it do:
-
-    // var deferred = $.embedly.extract(
-    //     ['http://embed.ly', "http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/"], 
-    //     {key: key}
-    // )
-    // .done(function(results){
-    //   console.log(results)
-    // });
-
-
-//  // this what we really do if we dont do it like the above
-
-    // setTimeout(function(){
-    //     $('#test').embedly({
-    //         key: key
-    //     })
-    // }, 80)
+    setTimeout(function(argument) {
+        var div = $('.true')
+        div.text('already saved')
+        div.attr('style', div.attr('style') + ';background-color: green;')
+    }, 100)
 
 </script>
