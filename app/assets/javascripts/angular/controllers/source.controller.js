@@ -1,17 +1,10 @@
 main.controller('SourceController', ['$scope', '$routeParams', 'Source', function($scope, $routeParams, Source){
 	$scope.sources = Source.show($routeParams.source_name)
 
-	function init(){
-		setTimeout(function(){
-			$('#tiles li').wookmark({
-			autoResize: true,
-			container: $('#tiles'),
-			offset: 2, 
-			itemWidth: 210,
-			flexibleWidth: '20%'
-			})
-		},5000)
+	$scope.loadMore = function(){
+		var nextImages = [1,2,3,4]
+		nextImages.forEach(function(image){
+			$scope.sources.push({image_url: 'www.notathdfasf.com'})
+		})
 	}
-
-	init();
 }])

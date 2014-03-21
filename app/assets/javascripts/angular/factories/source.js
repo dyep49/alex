@@ -4,7 +4,7 @@ main.factory('Source', ['$resource', function($resource){
 	};
 
 	Source.prototype.show = function(id){
-		return this.service.query({sourceId: id});
+		return this.service.query({sourceId: id, page_number: 1});
 	}
 
 	return new Source;

@@ -1,8 +1,8 @@
-<ul class="wookmark" id="tiles">
+<!-- <ul class="wookmark" id="tiles">
 	<li ng-repeat="source in sources">
 		<div>
-			<div>
-				<p>{{source.description}}</p>
+			<div class="title">
+				<p><a href={{source.url}}>{{source.description}}</a></p>
 			</div>
 			<div>
   			<img ng-src={{source.image_url}}/>
@@ -10,3 +10,10 @@
   	</div>
 	</li>
 </ul>
+ -->
+<div infinite-scroll='loadMore()'>
+	<div ng-repeat="source in sources">
+		<img ng-src={{source.image_url}}/>
+	</div>
+</div>
+
