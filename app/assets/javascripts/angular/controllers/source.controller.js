@@ -1,17 +1,18 @@
 main.controller('SourceController', ['$scope', '$routeParams', 'Source', function($scope, $routeParams, Source){
-	$scope.sources = Source.show($routeParams.source_name)
 
+	var page = 1
+	
 	function init(){
-		setTimeout(function(){
-			$('#tiles li').wookmark({
-			autoResize: true,
-			container: $('#tiles'),
-			offset: 2, 
-			itemWidth: 210,
-			flexibleWidth: '20%'
-			})
-		},5000)
+		Source.show($routeParams.source_name, page);
+		page ++;
 	}
 
+	$scope.sources = Source.getSources()
+
 	init();
+
+	$scope.loadMore = function(){
+		Source.show($routeParams.source_name, page)
+		page ++
+	}
 }])

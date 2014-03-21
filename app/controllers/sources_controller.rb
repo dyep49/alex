@@ -5,7 +5,7 @@ class SourcesController < ApplicationController
 	end
 
 	def show
-		render json: Pin.where(source_id: params[:id])
+		render json: Pin.where(source_id: params[:id]).page(params[:page_number]).per(10)
 	end
 
 	def create 
