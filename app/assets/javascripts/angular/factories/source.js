@@ -26,6 +26,18 @@ main.service('Source', ['$http', function($http){
 			})
 		}
 
+		this.all = function(){
+			$http({
+				url: '/sources/',
+				method: 'GET', 
+			})
+				.success(function(data){
+					data.forEach(function(source){
+						sources.push(source);
+					})
+				})
+		}
+
 		this.getSources = function(){
 			return sources
 		}
