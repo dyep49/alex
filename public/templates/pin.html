@@ -1,22 +1,25 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
 
-<a class="embedly-card" href="{{pin[0].url}}"></a>
+<a class="embedly-card" id='test' href="{{pin[0].url}}"></a>
+
+<a class="embedly-card"  href="http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/"></a>
+
 
 
 <script>
-    (function(a){
-        var b = "embedly-platform"
-        var c = "script"
-        if(!a.getElementById(b)){
-            var d=a.createElement(c)
-            d.id=b
-            d.async=true
-            d.src=document.location.protocol+"//cdn.embedly.com/widgets/platform.js"
-            var e=document.getElementsByTagName(c)[0]
-            e.parentNode.insertBefore(d,e)
-        }
-    })(document)
+    // (function(a){
+    //     var b = "embedly-platform"
+    //     var c = "script"
+    //     if(!a.getElementById(b)){
+    //         var d=a.createElement(c)
+    //         d.id=b
+    //         d.async=true
+    //         d.src=document.location.protocol+"//cdn.embedly.com/widgets/platform.js"
+    //         var e=document.getElementsByTagName(c)[0]
+    //         e.parentNode.insertBefore(d,e)
+    //     }
+    // })(document)
 </script>
 
 
@@ -36,3 +39,24 @@
     </div>
 
 </div>
+
+
+
+
+<script>
+    var key = 'e6c29a859c5c4544a19f3f8beeaccad6'
+
+    // var deferred = $.embedly.extract(
+    //     ['http://embed.ly', "http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/"], 
+    //     {key: key}
+    // )
+    // .done(function(results){
+    //   console.log(results)
+    // });
+    setTimeout(function(){
+        $('#test').embedly({
+            key: key
+        })
+    }, 80)
+
+</script>
