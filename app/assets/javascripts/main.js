@@ -28,6 +28,10 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/new_source.html',
                 controller: 'NewSourceController'
             }).
+            when('/search', {
+                templateUrl: 'templates/search.html',
+                controller: 'SearchController'
+            }).
             otherwise({
                 redirectTo: '/'
             }); // add submit pin, and look at saved pins
