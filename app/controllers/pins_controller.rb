@@ -29,5 +29,14 @@ class PinsController < ApplicationController
         render json: {}
     end
 
+    def search
+        title = Pin.find_by_fuzzy_title(params[:search], :limit => 20)
+        url = Pin.find_by_fuzzy_url(params[:search], :limit => 20)
+        desc = Pin.find_by_fuzzy_description(params[:search], :limit => 20)
+
+        render json: {title: title, url: url, description: desc}
+    end
+
+
 
 end
