@@ -1,11 +1,11 @@
 main.service('searchService', function(){
-    var array = []
+    array = []
 
-    function addResult(input){
+    this.addResult = function(input){
         array.push(input);
     }
 
-    function getResult() {
+    this.getResult = function() {
         return array;
     }
 })
