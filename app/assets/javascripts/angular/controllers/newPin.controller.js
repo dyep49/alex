@@ -1,4 +1,9 @@
-main.controller('NewPinController', ['$scope', 'Source', '$http', function($scope, Source, $http) {
+main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', function($scope, Source, $http, $location) {
+
+    function init(){
+      Source.all();
+    }
+
     $scope.formData = {
       image_url: '',
       title: '',
@@ -7,9 +12,12 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', function($scop
       tags: ''
     };
 
-    $scope.sources = Source.show()
+    $scope.sources = Source.getSources();
 
     $scope.createPin = function(){
       $http.post('/pins', $scope.formData)
+        .success(function(response){
+          $location.path('/pin/' + response.id)
+        })
     }
 }]);
