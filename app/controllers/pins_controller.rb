@@ -14,18 +14,33 @@ class PinsController < ApplicationController
     end
 
     def show
-        render json: [Pin.find(params[:id])]
+        pin = Pin.find(params[:id])
+        render json: [{
+            pin: pin,
+            saved: Favorite.where([
+                "user_id = ? and pin_id = ?",
+                pin.id,
+                current_user.id
+            ]).any?
+        }]
     end
 
     def destroy
     end
 
     def favorite
-        fav = Favorite.new
-        fav.user = current_user
-        fav.pin  = Pin.find(params[:id])
-        fav.save!
-        
+        pin = Pin.find(params[:id])
+        fav = Favorite.where(["user_id = ? and pin_id = ?",
+                pin.id,
+                current_user.id])
+        if fav.any?
+            fav.each(&:delete)
+        else
+            fav = Favorite.new
+            fav.user = current_user
+            fav.pin  = pin
+            fav.save!
+        end
         render json: {}
     end
 
