@@ -6,20 +6,22 @@
 
 
 <script>
-    setTimeout(function(){
-        (function(a){
-            var b = "embedly-platform"
-            var c = "script"
-            if(!a.getElementById(b)){
-                var d=a.createElement(c)
-                d.id=b
-                d.async=true
-                d.src=document.location.protocol+"//cdn.embedly.com/widgets/platform.js"
-                var e=document.getElementsByTagName(c)[0]
-                e.parentNode.insertBefore(d,e)
-            }
-        })(document)
-    }, 80)
+    $(document).ready(function(){
+        setTimeout(function(){
+            (function(a){
+                var b = "embedly-platform"
+                var c = "script"
+                if(!a.getElementById(b)){
+                    var d=a.createElement(c)
+                    d.id=b
+                    d.async=true
+                    d.src=document.location.protocol+"//cdn.embedly.com/widgets/platform.js"
+                    var e=document.getElementsByTagName(c)[0]
+                    e.parentNode.insertBefore(d,e)
+                }
+            })(document)
+        }, 100)
+    })
 </script>
 
 
