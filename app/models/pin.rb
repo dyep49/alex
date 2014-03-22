@@ -3,6 +3,7 @@ class Pin < ActiveRecord::Base
   belongs_to :source
   has_many :pin_tags
   has_many :favorites
+  has_many :histories
   has_many :tags, through: :pin_tags
 
   fuzzily_searchable :title, :url, :description 

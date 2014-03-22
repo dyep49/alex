@@ -35,13 +35,14 @@
          id='save' 
          ng-hide="toggle"
          class='foot-button'>
-        Unsave
+        Save
     </div>
     <div ng-click='savePin(); toggle=false' 
-         id='save' 
+         id='unsave' 
          ng-show="toggle"
-         class='foot-button'>
-        Save
+         class='foot-button unsave'
+         style='background-color: #3f6;'>
+        Unsave
     </div>
 
     <div id='share' class='foot-button'>

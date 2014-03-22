@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
     has_many :favorites
     has_many :pins
-
+    has_many :histories
 end

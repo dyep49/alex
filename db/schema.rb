@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320221824) do
+ActiveRecord::Schema.define(version: 20140322014818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "pin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "histories", force: true do |t|
     t.integer  "user_id"
     t.integer  "pin_id"
     t.datetime "created_at"
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140320221824) do
   create_table "shares", force: true do |t|
     t.integer  "from_user_id"
     t.integer  "to_user_id"
+    t.boolean  "seen",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -34,7 +34,7 @@ main.config(function($routeProvider) {
             }).
             otherwise({
                 redirectTo: '/'
-            }); // add submit pin, and look at saved pins
+            });
     } 
 );
 
