@@ -7,7 +7,7 @@ Alex::Application.routes.draw do
   post 'pin_share'     => 'users#share'
   get 'logout'         => 'users#logout' 
   get 'my_pins'        => 'users#my_pins'
-  get 'get_inbox'      => 'users#inbox'
+  get 'get_inbox'      => 'users#get_inbox'
 
 
   resources :pins
