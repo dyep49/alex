@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     end
 
     def share
+        binding.pry
         share = Share.new
         share.from_user_id = current_user.id
-        share.to_user_id = User.find_by_username(params[:sendTo])
+        share.to_user_id = User.find_by_username(params[:sendTo]).id
         share.save
 
         render json: {status: 200}

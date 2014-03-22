@@ -1,4 +1,4 @@
-main.controller('nav', ['$scope', '$http', '$location', 'searchService',function($scope, $http, $location, searchService){
+main.controller('nav', ['$scope', '$http', '$location', 'searchService', 'Inbox',function($scope, $http, $location, searchService, Inbox){
 
     $scope.formData = {search: ''}
 
@@ -9,6 +9,8 @@ main.controller('nav', ['$scope', '$http', '$location', 'searchService',function
             $location.path('/search')
         })
     }
+
+    $scope.inboxCount = Inbox.getCount()
     
 
 }])
