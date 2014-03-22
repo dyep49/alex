@@ -17,14 +17,19 @@ class PinsController < ApplicationController
 
     def show
         pin = Pin.find(params[:id])
+        history = History.new
+        history.user_id = current_user.id
+        history.pin_id = pin.id
+        history.save
+
         render json: [{
             pin: pin,
             saved: Favorite.where([
-                    "user_id = ? and pin_id = ?",
-                    pin.id,
-                    current_user.id
-                ]).any?
-            }]  
+                "user_id = ? and pin_id = ?",
+                pin.id,
+                current_user.id
+            ]).any?
+        }]  
     end
 
     def destroy
