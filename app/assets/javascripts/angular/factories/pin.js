@@ -7,7 +7,7 @@ main.factory('Pin', ['$resource', '$http', function($resource, $http){
 		return this.service.query({pinId: id})
 	}
 
-    Pin.prototype.show = function(id) {
+   	Pin.prototype.show = function(id) {
         return this.service.query({pinId: id})
     }
 

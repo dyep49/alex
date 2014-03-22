@@ -7,7 +7,10 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', function($
         $http.post('/pin_fav', {'id': $route.current.params.pin_id})
     }
 
-    $scope.formData = {sendTo: ''}
+    $scope.formData = {
+    	sendTo: '',
+    	pin_id: $route.current.params.pin_id
+    }
 
     $scope.sharePin = function(){
         $http.post('/pin_share', $scope.formData)
