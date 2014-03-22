@@ -8,12 +8,15 @@
   
   <input ng-model="formData.url" type="text" placeholder="Link">
   
-  <select>
+<!--   <select>
   <option disabled>Select Source</option>
     <option ng-model="formData.source_id" ng-repeat='source in sources' value={{source.id}}>
       {{source.name}}
     </option>
-  </select>
+  </select> -->
+
+  <select ng-options="source.name for source in sources" ng-model="formData.source_id">
+
   
 
   <input ng-model="formData.tags" type="text" placeholder="Tags">

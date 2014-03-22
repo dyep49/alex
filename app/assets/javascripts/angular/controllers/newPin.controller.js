@@ -9,7 +9,8 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
       title: '',
       description: '',
       url: '',
-      tags: ''
+      tags: '',
+      source_id: ''
     };
 
     $scope.sources = Source.getSources();
@@ -20,4 +21,6 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
           $location.path('/pin/' + response.id)
         })
     }
+
+    init();
 }]);
