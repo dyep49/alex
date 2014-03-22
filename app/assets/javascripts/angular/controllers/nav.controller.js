@@ -1,5 +1,9 @@
 main.controller('nav', ['$scope', '$http', '$location', 'searchService', 'Inbox',function($scope, $http, $location, searchService, Inbox){
 
+		function init(){
+			Inbox.fetchCount()	
+		}
+
     $scope.formData = {search: ''}
 
     $scope.searchPins = function(){
@@ -11,7 +15,9 @@ main.controller('nav', ['$scope', '$http', '$location', 'searchService', 'Inbox'
     }
 
     $scope.inboxCount = Inbox.getCount()
-    
+
+    init();
+
 
 }])
 

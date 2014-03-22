@@ -1,22 +1,23 @@
 main.service('Inbox', ['$http', function($http){
 
-	var count = 0
+	var unseen_shares = []
 
-	this.fetchCount = $http({
+	this.fetchCount = function(){
+		$http({
 		url: 'get_inbox',
 		method: 'GET', 
 	})
 		.success(function(data){
 	    for (var i = 0; i < data.length; i++){
 	        if (data[i].seen === false){
-	            count ++
+	            unseen_shares.push(data[i])
 	        } 
 	    }
-
 		})
+	}
 
 	this.getCount = function(){
-		return count
+		return unseen_shares
 	}
 
 
