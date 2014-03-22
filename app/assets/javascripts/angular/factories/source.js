@@ -44,4 +44,3 @@ main.service('Source', ['$http', function($http){
 }])
 
 
-// tabs are stupid

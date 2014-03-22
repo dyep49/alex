@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
@@ -23,7 +24,11 @@
     }) 
 </script>
 
-{{toggle[0]}}
+
+<p hidden>
+    {{(toggle == null) && (toggle = pin[0].saved)}}
+</p>
+
 <div id='footer'>
 
     <div ng-click='savePin(); toggle=true' 

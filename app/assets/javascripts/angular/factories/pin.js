@@ -1,4 +1,4 @@
-main.factory('Pin', ['$resource', function($resource){
+main.factory('Pin', ['$resource', '$http', function($resource, $http){
 	function Pin(){
 		this.service = $resource('/pins/:pinId', {pinId: '@id'})
 	};
@@ -8,10 +8,6 @@ main.factory('Pin', ['$resource', function($resource){
 	}
 
     Pin.prototype.show = function(id) {
-        return this.service.query({pinId: id})
-    }
-
-    Pin.prototype.saved = function(id) {
         return this.service.query({pinId: id})
     }
 
