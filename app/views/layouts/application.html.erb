@@ -47,3 +47,12 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  $.ajax({
+    url: 'get_inbox',
+    method: 'get'
+  }).success(function(data){
+    alert(data)
+  })
+</script>

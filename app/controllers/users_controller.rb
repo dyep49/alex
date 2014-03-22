@@ -25,4 +25,8 @@ class UsersController < ApplicationController
         render json: Pin.where(user_id: current_user.id)
     end
 
+    def get_inbox
+        render json: Share.where(to_user_id: current_user.id)
+    end
+
 end
