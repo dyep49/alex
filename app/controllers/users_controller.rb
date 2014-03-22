@@ -31,4 +31,8 @@ class UsersController < ApplicationController
         render json: Share.where(to_user_id: current_user.id)
     end
 
+    def find_user
+        render json: User.find(params[:user_id])
+    end
+
 end

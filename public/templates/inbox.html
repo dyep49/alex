@@ -1,6 +1,13 @@
-<div ng-repeat="pin in pins" ng-repeat="share in shares">
-		<img ng-src={{pin[0].pin.image_url}}>
-		<p>{{pin[0].pin.url}}</p>
+<div class="inbox_container">
+	<div ng-repeat="pin in pins" ng-repeat="share in shares">
+			<img ng-src={{pin[0].pin.image_url}}>
+			<p>{{pin[0].pin.url}}</p>
+	</div>
+	<div ng-repeat="user in share_users">
+			<p>Shared by {{user.username}}</p>
+	</div>
 </div>
 
-{{shares}}
+
+
+

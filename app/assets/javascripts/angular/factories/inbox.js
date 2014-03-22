@@ -2,6 +2,8 @@ main.service('Inbox', ['$http', function($http){
 
 	var unseen_shares = []
 
+	var users = []
+
 	this.fetchCount = function(){
 		$http({
 		url: 'get_inbox',
@@ -19,4 +21,22 @@ main.service('Inbox', ['$http', function($http){
 	this.getCount = function(){
 		return unseen_shares
 	}
+
+	this.fetchUser = function(id){
+			$http({
+				url: '/find_user',
+				method: 'GET',
+				params: {user_id: id}
+			})
+				.success(function(response){
+					debugger;
+					users.push(response);
+				})		
+	}
+
+	this.getUsers = function(){
+		return users
+	}
+
+
 }])
