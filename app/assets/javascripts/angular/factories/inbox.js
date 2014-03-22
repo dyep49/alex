@@ -19,9 +19,4 @@ main.service('Inbox', ['$http', function($http){
 	this.getCount = function(){
 		return unseen_shares
 	}
-
-
-
-
-
 }])

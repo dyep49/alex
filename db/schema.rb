@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140322014818) do
   create_table "shares", force: true do |t|
     t.integer  "from_user_id"
     t.integer  "to_user_id"
+    t.integer  "pin_id"
     t.boolean  "seen",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"

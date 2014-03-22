@@ -32,6 +32,10 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/search.html',
                 controller: 'SearchController'
             }).
+            when('/inbox', {
+                templateUrl: 'templates/inbox.html',
+                controller: 'InboxController'
+            }).            
             otherwise({
                 redirectTo: '/'
             });
