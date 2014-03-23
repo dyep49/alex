@@ -2,14 +2,14 @@ Alex::Application.routes.draw do
   root 'main#index'
 
   devise_for :users
-  get 'users/faved'    => 'users#faved'
-  get 'users/pinned'   => 'users#pinned'
   post 'pin_share'     => 'users#share'
-  get 'logout'         => 'users#logout' 
+  get 'users/pinned'   => 'users#my_pins'
   get 'my_pins'        => 'users#my_pins'
+  get 'logout'         => 'users#logout' 
   get 'get_inbox'      => 'users#get_inbox'
   get 'find_user'      => 'users#find_user'
-  get 'users/favorites'=> 'users#favorites'
+  get 'users/faved'    => 'users#faved'
+  get 'users/favorites'=> 'users#faved'
 
 
   resources :pins

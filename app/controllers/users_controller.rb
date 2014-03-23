@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
 
-    def faved
-        render json: current_user.favorites
-    end
-
-    def pinned
-        render json: Pin.where({user_id: current_user.id})
-    end
-
     def share
         share = Share.new
         share.from_user_id = current_user.id
@@ -35,9 +27,12 @@ class UsersController < ApplicationController
         render json: User.find(params[:user_id])
     end
 
-    def favorites
-        render json: Favorite.where(user_id: current_user.id)
+    def histories
+        render json: current_user.histories
     end
 
+    def faved
+        render json: current_user.favorites
+    end
 
 end
