@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         render json: User.find(params[:user_id])
     end
 
-    def histories
+    def history
         render json: current_user.histories
     end
 
