@@ -39,7 +39,11 @@ main.config(function($routeProvider) {
             when('/favorites', {
                 templateUrl: 'templates/favorites.html',
                 controller: 'FavoritesController'
-            }).            
+            }).
+            when('/dash', {
+                templateUrl: 'templates/dash.html',
+                controller: 'DashController'
+            }).           
             otherwise({
                 redirectTo: '/'
             });

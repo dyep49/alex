@@ -24,9 +24,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav" style='padding-left: 1.3em;'>
             <li>
-                <a href="#">Dash</a>
+                <a href="/#/dash">Dash</a>
             </li>
-            <li id="inbox"><a id='inboxA' href="/#/inbox">Inbox ({{inboxCount.length}})</a></li>
+            <li id="inbox">
+              <a id='inboxA' href="/#/inbox">
+                Inbox ({{inboxCount.length}})
+              </a>
+            </li>
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
           </ul>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
