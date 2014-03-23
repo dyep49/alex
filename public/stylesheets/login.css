@@ -2,7 +2,7 @@ input {
     border: none;
 }
 a {
-    color: lightblue;
+    color: blue;
 }
 #parent {
     width: 100%;
@@ -19,4 +19,8 @@ a {
     width: 30%;
     margin: 0;
     float: right;
+}
+
+.button {
+    background-color: blue;
 }
