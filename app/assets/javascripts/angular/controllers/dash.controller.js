@@ -1,7 +1,11 @@
 main.controller('DashController', ['$scope', 'Dash', function($scope, Dash){
 
-    $scope.savedArray = Dash.savedArray()
+    function init(){
+        Dash.init()
+    }
+    init()
 
+    $scope.savedArray = Dash.savedArray()
     $scope.historyArray = Dash.historyArray()
 
 }])

@@ -1,13 +1,21 @@
-main.factory('Dash', ['$http', function($http){
-    function Dash(){};
+main.service('Dash', ['$http', function($http){
+    function Dash(){}
+
+    var historyArray = []
+    var savedArray = []
+
+    Dash.prototype.init = function(){
+        savedArray.push($http({method: 'GET', url: 'users/faved'}))
+        historyArray.push($http({method: 'GET', url: 'users/history'}))
+    }
 
     Dash.prototype.savedArray = function(){
-        return $http({method: 'GET', url: 'users/faved'})
+        return historyArray
     }
 
     Dash.prototype.historyArray = function(){
-        return $http({method: 'GET', url: 'users/history'})
+        return savedArray
     }
 
-    return new Dash;
+    return new Dash
 }])
