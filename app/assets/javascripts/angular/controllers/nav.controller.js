@@ -1,8 +1,8 @@
 main.controller('nav', ['$scope', '$http', '$location', 'searchService', 'Inbox',function($scope, $http, $location, searchService, Inbox){
 
-		function init(){
-			Inbox.fetchCount()	
-		}
+	function init(){
+		Inbox.fetchCount()
+	}
 
     $scope.formData = {search: ''}
 
