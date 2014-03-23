@@ -16,6 +16,10 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/source.html',
                 controller: 'SourceController'
             }).
+            when('/source/:source_name/:sort_by', {
+                templateUrl: 'templates/source.html',
+                controller: 'SourceController'
+            }).
             when('/pin/:pin_id', {
                 templateUrl: 'templates/pin.html',
                 controller: 'PinController'
