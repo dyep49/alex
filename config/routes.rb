@@ -16,6 +16,8 @@ Alex::Application.routes.draw do
   post 'pins/fetch'   => 'pins#fetch'
   post 'pin_fav'      => 'pins#favorite'
   post 'pin_search'   => 'pins#search'
+  get  'next_pin'    => 'pins#next'
+
 
   resources :sources
 

@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
+
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
 
 <div id='saver' saved={{pin[0].saved}}></div>
@@ -54,3 +55,7 @@
     </div>
 
 </div>
+
+<button ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id)'>Next</button>
+
+

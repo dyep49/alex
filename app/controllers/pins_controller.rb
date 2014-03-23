@@ -60,6 +60,13 @@ class PinsController < ApplicationController
         render json: {title: title, url: url, description: desc}
     end
 
+    def next
+        source = Source.find(params[:source_id])
+        pins = source.pins.order(id: :asc)
+        current_index = pins.index(pins.find(params[:pin_id]))
+        render json: pins[current_index + 1]
+    end
+
 
 
 end

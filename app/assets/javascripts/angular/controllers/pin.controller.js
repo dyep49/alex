@@ -1,4 +1,4 @@
-main.controller('PinController', ['$scope', '$route', '$http', 'Pin', function($scope, $route, $http, Pin){
+main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', function($scope, $route, $http, Pin, $location){
 
 	$scope.pin = Pin.show($route.current.params.pin_id)
 
@@ -14,6 +14,17 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', function($
 
     $scope.sharePin = function(){
         $http.post('/pin_share', $scope.formData)
+    }
+
+    $scope.nextPin = function(source_id, pin_id){
+        $http({
+            url: '/next_pin',
+            method: 'GET',
+            params: {source_id: source_id, pin_id: pin_id}
+        })
+            .success(function(response){
+                $location.path('/pin/' + response.id)             
+            })
     }
     
 }])
