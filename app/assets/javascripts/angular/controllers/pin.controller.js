@@ -16,11 +16,11 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         $http.post('/pin_share', $scope.formData)
     }
 
-    $scope.nextPin = function(source_id, pin_id){
+    $scope.nextPin = function(source_id, pin_id, direction){
         $http({
             url: '/next_pin',
             method: 'GET',
-            params: {source_id: source_id, pin_id: pin_id}
+            params: {source_id: source_id, pin_id: pin_id, direction: direction}
         })
             .success(function(response){
                 $location.path('/pin/' + response.id)             
