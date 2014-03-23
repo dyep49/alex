@@ -3,6 +3,10 @@
 	<option value="views">Most Views</option>
 </select> -->
 
+Sort By:
+<button class='btn'>Most Recent</button>
+<button class='btn'>Most Viewed</button>
+
 <div id="source-container'" infinite-scroll='loadMore()'>
 	<div id="source-div" ng-repeat="source in sources">
 		<div class="title">
@@ -11,5 +15,4 @@
 		<img ng-src={{source.image_url}}/>
 	</div>
 </div>
-
 
