@@ -8,6 +8,7 @@ Alex::Application.routes.draw do
   get 'logout'         => 'users#logout' 
   get 'get_inbox'      => 'users#get_inbox'
   get 'find_user'      => 'users#find_user'
+  get 'users/history'  => 'users#history'
   get 'users/faved'    => 'users#faved'
   get 'users/favorites'=> 'users#faved'
 

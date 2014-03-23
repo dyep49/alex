@@ -1,12 +1,12 @@
-main.factory('Dash', ['$resource', function($resource){
+main.factory('Dash', ['$http', function($http){
     function Dash(){};
 
     Dash.prototype.savedArray = function(){
-        return null
+        return $http({method: 'GET', url: 'users/faved'})
     }
 
     Dash.prototype.historyArray = function(){
-        return null
+        return $http({method: 'GET', url: 'users/history'})
     }
 
     return new Dash;
