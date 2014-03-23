@@ -6,7 +6,6 @@ class PinsController < ApplicationController
     end
 
     def create
-        binding.pry
         pin = Pin.make_pin(params, (current_user ? current_user.id : nil))
         Source.find(params["source_id"]["id"]).pins << pin
         render json: {id: pin.id}
