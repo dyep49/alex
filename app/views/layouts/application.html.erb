@@ -31,14 +31,16 @@
                 Inbox ({{inboxCount.length}})
               </a>
             </li>
-            <% if current_user.admin %>
+            <% if current_user && current_user.admin %>
               <li>  
                   <a href="/#/pins/new">New Pin</a>
               </li>
             <% end %>
-            <li>
-                <a href="/logout">Logout</a>
-            </li>
+            <% if current_user %>
+              <li>
+                  <a href="/logout">Logout</a>
+              </li>
+            <% end %>
           </ul>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
