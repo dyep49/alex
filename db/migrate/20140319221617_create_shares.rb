@@ -5,6 +5,7 @@ class CreateShares < ActiveRecord::Migration
         t.integer :to_user_id
         t.integer :pin_id
         t.boolean :seen, default: false
+      	t.string :from_user_name
         t.timestamps
     end
   end

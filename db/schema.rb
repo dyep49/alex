@@ -54,7 +54,8 @@ ActiveRecord::Schema.define(version: 20140322014818) do
     t.integer  "from_user_id"
     t.integer  "to_user_id"
     t.integer  "pin_id"
-    t.boolean  "seen",         default: false
+    t.boolean  "seen",           default: false
+    t.string   "from_user_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

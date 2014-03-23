@@ -2,8 +2,12 @@ main.controller('InboxController', ['$scope', 'Inbox', 'Pin', function($scope, I
 	
 	function init(){
 		$scope.shares.forEach(function(share){
-			$scope.pins.push(Pin.show(share.pin_id));
-			Inbox.fetchUser(share.from_user_id);
+			var username = share.from_user_name
+			var object = {}
+			object["username"] = username
+			object["pin"] = Pin.show(share.pin_id)
+			$scope.pins.push(object);
+			// Inbox.fetchUser(share.from_user_id);
 		})
 	}
 
@@ -15,4 +19,6 @@ main.controller('InboxController', ['$scope', 'Inbox', 'Pin', function($scope, I
 
 	init();
 }])
+
+
 

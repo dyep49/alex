@@ -29,7 +29,6 @@ main.service('Inbox', ['$http', function($http){
 				params: {user_id: id}
 			})
 				.success(function(response){
-					debugger;
 					users.push(response);
 				})		
 	}
