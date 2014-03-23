@@ -17,6 +17,8 @@ class PinsController < ApplicationController
 
     def show
         pin = Pin.find(params[:id])
+        pin.view_count += 1
+        pin.save!
         history = History.new
         history.user_id = current_user.id
         history.pin_id = pin.id
@@ -71,14 +73,14 @@ class PinsController < ApplicationController
         end
     end
 
-    def add_view
-        history = History.new
-        history.pin_id = params[:id]
-        history.user_id = current_user.id
-        history.save!
+    # def add_view
+    #     history = History.new
+    #     history.pin_id = params[:id]
+    #     history.user_id = current_user.id
+    #     history.save!
 
-        render json: {}
-    end
+    #     render json: {}
+    # end
 
 
 

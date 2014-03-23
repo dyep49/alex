@@ -10,7 +10,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
       description: '',
       url: '',
       tags: '',
-      source_id: ''
+      source_id: '',
     };
 
     $scope.sources = Source.getSources();

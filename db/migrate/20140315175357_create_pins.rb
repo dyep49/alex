@@ -6,7 +6,7 @@ class CreatePins < ActiveRecord::Migration
 
         t.string :title
 
-        t.integer :view_count
+        t.integer :view_count, default: 0
         t.integer :save_count
 
         t.string :url

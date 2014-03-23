@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140322014818) do
     t.integer  "user_id"
     t.integer  "source_id"
     t.string   "title"
-    t.integer  "view_count"
+    t.integer  "view_count",  default: 0
     t.integer  "save_count"
     t.string   "url"
     t.string   "description"
