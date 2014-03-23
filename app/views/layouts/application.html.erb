@@ -31,6 +31,11 @@
                 Inbox ({{inboxCount.length}})
               </a>
             </li>
+            <% if current_user.admin %>
+              <li>  
+                  <a href="/#/pins/new">New Pin</a>
+              </li>
+            <% end %>
             <li>
                 <a href="/logout">Logout</a>
             </li>
@@ -58,5 +63,5 @@
 </html>
 
 <script type="text/javascript">
- $(".devise").fadeOut(4000);
+  $(".devise").fadeOut(4000);
 </script>
