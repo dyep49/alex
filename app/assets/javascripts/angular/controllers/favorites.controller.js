@@ -14,6 +14,10 @@ main.controller('FavoritesController', ['$scope', '$http', 'Pin', function($scop
 
 	$scope.favorites = []
 
+	$scope.unsavePin = function(id, index){
+		$scope.favorites.splice(index, 1);
+        $http.post('/pin_fav', {'id': id});
+    }
 
 	init();
 
