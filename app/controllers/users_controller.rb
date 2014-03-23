@@ -28,11 +28,17 @@ class UsersController < ApplicationController
     end
 
     def history
-        render json: current_user.histories
+        output = current_user.histories.map do |hist|
+            Pin.find(hist.pin_id)
+        end
+        render json: output
     end
 
     def faved
-        render json: current_user.favorites
+        output = current_user.favorites.map do |hist|
+            Pin.find(hist.pin_id)
+        end
+        render json: output
     end
 
 end
