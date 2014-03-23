@@ -1,0 +1,9 @@
+<h1>Favorites</h1>
+
+<div class="favorites_container">
+	<div ng-repeat="favorite in favorites">
+			<img ng-src={{favorite[0].pin.image_url}}>
+			<p><a href='/#/pin/{{favorite[0].pin.id}}'>{{favorite[0].pin.title}}</a></p>
+	</div>
+	</div>
+</div>

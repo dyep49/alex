@@ -36,6 +36,10 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/inbox.html',
                 controller: 'InboxController'
             }).            
+            when('/favorites', {
+                templateUrl: 'templates/favorites.html',
+                controller: 'FavoritesController'
+            }).            
             otherwise({
                 redirectTo: '/'
             });

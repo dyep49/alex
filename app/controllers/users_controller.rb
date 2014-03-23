@@ -35,4 +35,9 @@ class UsersController < ApplicationController
         render json: User.find(params[:user_id])
     end
 
+    def favorites
+        render json: Favorite.where(user_id: current_user.id)
+    end
+
+
 end

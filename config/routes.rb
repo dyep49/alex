@@ -8,7 +8,8 @@ Alex::Application.routes.draw do
   get 'logout'         => 'users#logout' 
   get 'my_pins'        => 'users#my_pins'
   get 'get_inbox'      => 'users#get_inbox'
-  get 'find_user'     => 'users#find_user'
+  get 'find_user'      => 'users#find_user'
+  get 'users/favorites'=> 'users#favorites'
 
 
   resources :pins
