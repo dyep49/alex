@@ -47,10 +47,16 @@
       </div>
     </nav>
 
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+  <div style='height: 2.2em;'>    
+    <p class="notice devise"><%= notice %></p>
+    <p class="alert devise"><%= alert %></p>
+  </div>
 
-   <%= yield %>
+  <%= yield %>
 
 </body>
 </html>
+
+<script type="text/javascript">
+ $(".devise").fadeOut(4000);
+</script>
