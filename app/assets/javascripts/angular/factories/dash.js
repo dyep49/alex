@@ -1,21 +1,32 @@
 main.service('Dash', ['$http', function($http){
-    function Dash(){}
 
     var historyArray = []
     var savedArray = []
 
-    Dash.prototype.init = function(){
-        savedArray.push($http({method: 'GET', url: 'users/faved'}))
-        historyArray.push($http({method: 'GET', url: 'users/history'}))
+    this.getSavedArray = function(){
+        $http({method: 'GET', url: 'users/faved'})
+            .success(function(response){
+                response.forEach(function(data){
+                    savedArray.push(data)
+                })
+            })
     }
 
-    Dash.prototype.savedArray = function(){
+    this.getHistoryArray = function(){
+        $http({method: 'GET', url: 'users/history'})
+            .success(function(response){
+                response.forEach(function(data){
+                    historyArray.push(data)
+                })
+            })
+    }
+
+    this.savedArray = function(){
         return historyArray
     }
 
-    Dash.prototype.historyArray = function(){
+    this.historyArray = function(){
         return savedArray
     }
 
-    return new Dash
 }])
