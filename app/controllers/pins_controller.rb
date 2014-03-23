@@ -71,6 +71,15 @@ class PinsController < ApplicationController
         end
     end
 
+    def add_view
+        history = History.new
+        history.pin_id = params[:id]
+        history.user_id = current_user.id
+        history.save!
+
+        render json: {}
+    end
+
 
 
 end
