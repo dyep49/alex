@@ -4,8 +4,8 @@
 </select> -->
 
 Sort By:
-<button class='btn'>Most Recent</button>
-<button class='btn'>Most Viewed</button>
+<button ng-click="mostRecent()" class='btn'>Most Recent</button>
+<button class='btn' ng-click="mostViewed()">Most Viewed</button>
 
 <div id="source-container'" infinite-scroll='loadMore()'>
 	<div id="source-div" ng-repeat="source in sources">
