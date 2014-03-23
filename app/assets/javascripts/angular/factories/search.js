@@ -1,11 +1,26 @@
 main.service('searchService', function(){
-    array = []
+    titleArray = []
+    urlArray = []
+    descriptionArray = []
 
-    this.addResult = function(input){
-        array.push(input);
+    this.addTitleResult = function(input){
+        titleArray.push(input);
+    }
+    this.addUrlResult = function(input){
+        urlArray.push(input);
+    }
+    this.addDescriptionResult = function(input){
+        descriptionArray.push(input);
     }
 
-    this.getResult = function() {
-        return array;
+
+    this.getTitleResult = function() {
+        return titleArray;
+    }
+    this.getUrlResult = function(){
+    	return urlArray
+    }
+    this.getDescriptionResult = function(){
+    	return descriptionArray
     }
 })

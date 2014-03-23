@@ -1,3 +1,31 @@
-this is the search
+<h1>Search Results</h1>
 
-{{result}}
+<h2>By Title</h2>
+
+<div class="title-results-container">
+	<div ng-repeat="title in titleResults[0]">
+			<img ng-src={{title.image_url}}>
+			<p><a href='/#/pin/{{title.id}}'>{{title.title}}</a></p>
+	</div>
+</div>
+
+<h2>By URL</h2>
+
+<div class="url-results-container">
+	<div ng-repeat="url in urlResults[0]">
+			<img ng-src={{url.image_url}}>
+			<p><a href='/#/pin/{{url.id}}'>{{url.title}}</a></p>
+	</div>
+</div>
+
+
+
+<h2>By Description</h2>
+<div class="description-results-container">
+	<div ng-repeat="description in descriptionResults[0]">
+			<img ng-src={{description.image_url}}>
+			<p><a href='/#/pin/{{description.id}}'>{{description.title}}</a></p>
+	</div>
+</div>
+
+
