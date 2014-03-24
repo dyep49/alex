@@ -11,5 +11,9 @@ main.factory('Pin', ['$resource', '$http', function($resource, $http){
         return this.service.query({pinId: id})
     }
 
+    Pin.prototype.delete = function(id) {
+    	return this.service.remove({pinId: id})
+    }
+
 	return new Pin
 }])

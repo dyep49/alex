@@ -41,4 +41,8 @@ class UsersController < ApplicationController
         render json: output
     end
 
+    def current
+        render json: current_user.admin?
+    end
+
 end

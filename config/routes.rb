@@ -11,6 +11,7 @@ Alex::Application.routes.draw do
   get 'users/history'  => 'users#history'
   get 'users/faved'    => 'users#faved'
   get 'users/favorites'=> 'users#faved'
+  get 'users/current_user' => 'users#current'
 
 
   resources :pins

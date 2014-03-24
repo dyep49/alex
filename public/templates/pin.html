@@ -7,7 +7,6 @@
 <script>
     $(document).ready(function(){
         $('#embedly-platform').remove();
-        console.log('running');
         setTimeout(function(){
             (function(a){
                 var b = "embedly-platform"
@@ -62,6 +61,8 @@
 
 <button class="btn" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>Next</button>
 
+</br>
 
 
+<button ng-show="adminStatus[0]" class="btn btn-danger" ng-click='deletePin()'>Delete</button>
 
