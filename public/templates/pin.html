@@ -4,9 +4,11 @@
 
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
 
+<div id='saver' saved={{pin[0].saved}}></div>
+
 <script>
     $(document).ready(function(){
-        $('#embedly-platform').remove();
+        console.log('running');
         setTimeout(function(){
             (function(a){
                 var b = "embedly-platform"
@@ -20,7 +22,7 @@
                     e.parentNode.insertBefore(d,e)
                 }
             })(document)
-        }, 300)
+        }, 200)
     }) 
 </script>
 
@@ -28,7 +30,6 @@
 <p hidden>
     {{(toggle == null) && (toggle = pin[0].saved)}}
 </p>
-
 
 <div id='footer'>
 
@@ -61,10 +62,6 @@
 
 <button class="btn" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>Next</button>
 
-</br>
 
 
-<button ng-show="adminStatus[0]" class="btn btn-danger" ng-click='deletePin()'>Delete</button>
 
-
-{{pin}}
