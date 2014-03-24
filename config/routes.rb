@@ -12,6 +12,7 @@ Alex::Application.routes.draw do
   get 'users/faved'    => 'users#faved'
   get 'users/favorites'=> 'users#faved'
   get 'users/current_user' => 'users#current'
+  post 'users/delete_share' => 'users#delete_share'
 
 
   resources :pins

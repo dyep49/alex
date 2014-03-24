@@ -45,4 +45,9 @@ class UsersController < ApplicationController
         render json: current_user.admin?
     end
 
+    def delete_share
+        Share.find(params[:id]).destroy!
+        render json: {}
+    end
+
 end

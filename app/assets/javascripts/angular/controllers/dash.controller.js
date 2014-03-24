@@ -1,4 +1,4 @@
-main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', function($scope, Dash, Inbox, Pin){
+main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', function($scope, Dash, Inbox, Pin, $http){
 
     function init(){
         Dash.getSavedArray()
@@ -10,6 +10,7 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', function($s
 					var object = {}
 					object["username"] = username
 					object["pin"] = Pin.show(share.pin_id)
+					object["share_id"] = share.id
 					$scope.pins.push(object);
 					// Inbox.fetchUser(share.from_user_id);
 				})
@@ -27,6 +28,10 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', function($s
 	$scope.shares = Inbox.getCount();
 	$scope.share_users = Inbox.getUsers();
 	$scope.pins = []
+
+	$scope.deleteShare = function(id){
+		$http.post('/users/delete_share', {id: id})
+	}
 
 
 
