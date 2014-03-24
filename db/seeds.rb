@@ -10,3 +10,13 @@ Source.create(url: 'www.espn.com', img_url: ' http://nicenicejpg.com/200/200', n
 	pin = Pin.create(title: "Cool techcrunch thing", url: "http://techcrunch.com/2010/08/25/groupme-born-at-techcrunch-disrupt-secures-funding-and-launches/", description: "Cool techcrunch article", image_url: 'http://www.placekitten.com/' + height + '/' + width) 
 	techcrunch.pins << pin
 end
+
+
+tag_array = ['sports', 'video', 'music', 'news', 'tech', 'humor']
+
+tag_array.each do |name|
+    tag = Tag.new
+    tag.name = name
+    tag.save
+end
+

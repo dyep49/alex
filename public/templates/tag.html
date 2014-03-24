@@ -1,5 +1,16 @@
-<ul>
-    <li ng-repeat='i in array'>
-        {{ i }}
-    </li>
-</ul>
+Sort By:
+<button ng-click="mostRecent()" class='btn'>Most Recent</button>
+<button class='btn' ng-click="mostViewed()">Most Viewed</button>
+
+<div id="source-container'" infinite-scroll='loadMore()'>
+    <div id="source-div" ng-repeat="pin in array">
+        <div class="title">
+            <p>
+                <a href="/#/pin/{{pin.id}}">
+                    {{pin.title}}
+                </a>
+            </p>
+        </div>
+        <img ng-src={{pin['image_url']}}/>
+    </div>
+</div>

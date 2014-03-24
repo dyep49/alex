@@ -8,9 +8,9 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/splash.html',
                 controller: 'SplashController'
             }).
-            when('/tag/:tag_name', {
+            when('/tags/:tag_name', {
                 templateUrl: 'templates/tag.html',
-                controller: 'tag'
+                controller: 'TagController'
             }).
             when('/source/:source_name', {
                 templateUrl: 'templates/source.html',
