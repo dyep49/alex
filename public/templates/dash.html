@@ -4,7 +4,7 @@
 
 <h2>Saves</h2>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 350, slideMargin:10, infiniteLoop: false, hideControlOnEnd: true">
-  <li data-ng-repeat="i in saveArray track by $index" data-notify-when-repeat-finished>
+  <li data-ng-repeat="i in savedArray track by $index" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/pin/{{i['id']}}">
         <img data-ng-src="{{i['image_url']}}" />

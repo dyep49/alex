@@ -1,10 +1,18 @@
-
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
+<h1>
+{{pin[0].pin.title}}
+</h1>
 
+<br>
+
+
+<p>
+    {{pin[0].pin.description}}
+</p>
+<br>
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
-
-<div id='saver' saved={{pin[0].saved}}></div>
+<br>
 
 <script>
     $(document).ready(function(){
@@ -22,10 +30,9 @@
                     e.parentNode.insertBefore(d,e)
                 }
             })(document)
-        }, 200)
-    }) 
+        }, 333)
+    })
 </script>
-
 
 <p hidden>
     {{(toggle == null) && (toggle = pin[0].saved)}}
@@ -49,19 +56,22 @@
 
     <div id='share' class='foot-button'>
         <input type='text'ng-model="formData.sendTo" id='share-input'placeholder='Share with...'>
-        </input>
-        <button class='btn' ng-click='sharePin()'>
+        <button class='btn btn-primary' ng-click='sharePin()'>
             Share
         </button>
     </div>
-
 </div>
 
-<button class="btn" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "previous")'>Previous</button>
+<button class="btn btn-primary" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "previous")'>    
+    Previous
+</button>
 
 
-<button class="btn" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>Next</button>
+<button class="btn btn-primary" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>
+    Next
+</button>
 
 
 
 
+{{pin[0].pin.image_url}}
