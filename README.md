@@ -55,10 +55,6 @@ REFACTOR(IES) NG FACTORIES
 
     Carousel is acting kinda weird
 
-    Shares to be in a slider on the user dash
-
-    Make share disappear on click
-
     Click on sidebar icon to go to page of tags
 
     Redirect to prevent user from seeing pin that doesn't exist
