@@ -61,6 +61,10 @@ REFACTOR(IES) NG FACTORIES
 
     Click on sidebar icon to go to page of tags
 
+    Redirect to prevent user from seeing pin that doesn't exist
+
+    Deal with previous/next issues at beginning and end
+
     
 
 
