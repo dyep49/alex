@@ -18,10 +18,21 @@ class PinsController < ApplicationController
         pin = Pin.find(params[:id])
         pin.view_count += 1
         pin.save!
-        history = History.new
-        history.user_id = current_user.id
-        history.pin_id = pin.id
-        history.save
+
+        history = History.where([
+            "user_id = ? and pin_id = ?",
+            current_user.id,
+            pin.id
+        ])
+
+        if history 
+            history.each(&:touch)
+        else
+            history = History.new
+            history.user_id = current_user.id
+            history.pin_id = pin.id
+            history.save
+        end
 
         render json: [{
             pin: pin,
