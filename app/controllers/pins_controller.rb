@@ -90,7 +90,9 @@ class PinsController < ApplicationController
     def destroy
         pin = Pin.find(params[:id])
         pin.destroy!
-
+        History.where(pin_id: params[:id]).delete_all
+        Share.where(pin_id: params[:id]).delete_all
+        Favorite.where(pin_id: params[:id]).delete_all
         render json: {}
     end
 
