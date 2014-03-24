@@ -5,15 +5,17 @@ class SourcesController < ApplicationController
 	end
 
 	def show
-		sort = params[:sort_by]
-		case sort
+		id = params[:id]
+		page_num = params[:page_number]
+		case params[:sort_by]
 		when "most_views"
-			render json: Pin.where(source_id: params[:id]).order(view_count: :desc).page(params[:page_number]).per(10)
+			out = Pin.where(source_id: id).order(view_count: :desc).page(page_num).per(10)
 		when "most_recent"
-			render json: Pin.where(source_id: params[:id]).order(created_at: :desc).page(params[:page_number]).per(10)
+			out = Pin.where(source_id: id).order(created_at: :desc).page(page_num).per(10)
 		else
-			render json: Pin.where(source_id: params[:id]).page(params[:page_number]).per(10)
+			out = Pin.where(source_id: id).page(page_num).per(10)
 		end
+		render json: out
 	end
 
 	def create 

@@ -24,7 +24,7 @@ class PinsController < ApplicationController
         pin.save!
 
         history = History.where([
-            "user_id = ? and pin_id = ?",
+                  "user_id = ? and pin_id = ?",
             current_user.id,
             pin.id
         ])
