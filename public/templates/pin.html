@@ -1,24 +1,30 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
 
-<div id='img-and-card'>
-    <img src="{{pin[0].pin.image_url}}">
+<div id='img-and-card' style='opacity: 0;'>
     <div>
         <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
     </div>
+    <img src="{{pin[0].pin.image_url}}">
 </div>
-<h1>
-{{pin[0].pin.title}}
-</h1>
+
+<br>
+<br>
+
+<a href="{{pin[0].pin.url}}">
+    <h1>
+        {{pin[0].pin.title}}
+    </h1>
+</a>
 
 <br>
 <p>
     {{pin[0].pin.description}}
 </p>
+
 <br>
-<hr>
-<hr>
 <br>
+
 <script>
     $(document).ready(function(){
         $('#embedly-platform').remove();
@@ -79,15 +85,39 @@
 
 <style type="text/css">
     #img-and-card {
-        width: 100%;
+        margin: 0 7%;
         display: inline-block;
         float: left;
+        min-height: 300px;
+        -webkit-transition: .4s ease-in-out opacity;
+        -moz-transition: .4s ease-in-out opacity;
+        -o-transition: .4s ease-in-out opacity;
+        transition: .4s ease-in-out opacity;
     }
     #img-and-card img {
         max-width: 300px;
+        max-height: 300px;
+        float: left;
+        margin-top: 50px;
     }
-
     #img-and-card div {
-        max-width: 300px;
+        width: 600px;
+        float: left;
+    }
+    h1 {
+        margin: 0 20%;
+    }
+    a h1 {
+        color: black;
+    }
+    a:hover {
+        color: red;
+        text-decoration: none;
     }
 </style>
+
+<script type="text/javascript">
+    setTimeout(function(){
+        $('#img-and-card').css('opacity', 1);
+    }, 500)
+</script>
