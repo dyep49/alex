@@ -22,11 +22,11 @@ main.service('Dash', ['$http', function($http){
     }
 
     this.savedArray = function(){
-        return historyArray
+        return savedArray
     }
 
     this.historyArray = function(){
-        return savedArray
+        return historyArray
     }
 
 }])
