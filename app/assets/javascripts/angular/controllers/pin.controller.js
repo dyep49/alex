@@ -1,12 +1,5 @@
 main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', function($scope, $route, $http, Pin, $location){
 
-    // function init(){
-    //     $http.post('/add_view', {'id': $route.current.params.pin_id})
-    //         .success(function(){
-    //             console.log('test')
-    //         })
-    // }
-
 	$scope.pin = Pin.show($route.current.params.pin_id)
 
 
