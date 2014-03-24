@@ -50,3 +50,18 @@ MAKE SOURCE FORM WORK
 
 REFACTOR(IES) NG FACTORIES
 
+
+## To do List 
+
+    Carousel is acting kinda weird
+
+    Shares to be in a slider on the user dash
+
+    Make share disappear on click
+
+    Click on sidebar icon to go to page of tags
+
+    
+
+
+
