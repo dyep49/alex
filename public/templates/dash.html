@@ -13,12 +13,9 @@
 
 <h2>History</h2>
 <ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 360, slideMargin: 10}">
-  <li ng-repeat='i in historyArray'>
+  <li ng-repeat="i in historyArray | orderBy:'i.updated_at'">
     <a href="/#/pin/{{i['id']}}">
         <img ng-src={{i['image_url']}}/>
     </a>
   </li>
 </ul>
-
-
-{{historyArray}}
