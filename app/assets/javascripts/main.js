@@ -1,4 +1,4 @@
-var main = angular.module("main", ['ngResource', 'ngRoute', 'infinite-scroll']);
+var main = angular.module("main", ['ngResource', 'ngAnimate', 'ngRoute', 'infinite-scroll']);
 
 main.config([   "$httpProvider", function(provider) {  return provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');   } ]);
 

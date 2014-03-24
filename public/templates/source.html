@@ -3,11 +3,13 @@ Sort By:
 <button class='btn' ng-click="mostViewed()">Most Viewed</button>
 
 <div id="source-container'" infinite-scroll='loadMore()'>
-	<div id="source-div" ng-repeat="source in sources">
+	<div id="source-div" class="repeat-item" ng-repeat="source in sources">
 		<div class="title">
 			<p><a href="/#/pin/{{source.id}}">{{source.title}}</a></p>
 		</div>
 		<img ng-src={{source.image_url}}/>
 	</div>
 </div>
+
+
 
