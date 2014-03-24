@@ -1,19 +1,24 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/solo_pin.css">
 
+
+<div id='img-and-card'>
+    <img src="{{pin[0].pin.image_url}}">
+    <div>
+        <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
+    </div>
+</div>
 <h1>
 {{pin[0].pin.title}}
 </h1>
 
 <br>
-
-
 <p>
     {{pin[0].pin.description}}
 </p>
 <br>
-<a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
+<hr>
+<hr>
 <br>
-
 <script>
     $(document).ready(function(){
         console.log('running');
@@ -72,6 +77,17 @@
 </button>
 
 
+<style type="text/css">
+    #img-and-card {
+        width: 100%;
+        display: inline-block;
+        float: left;
+    }
+    #img-and-card img {
+        max-width: 300px;
+    }
 
-
-{{pin[0].pin.image_url}}
+    #img-and-card div {
+        max-width: 300px;
+    }
+</style>
