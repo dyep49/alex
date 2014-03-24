@@ -85,7 +85,7 @@ class PinsController < ApplicationController
         elsif params[:direction] == "next"
             render json: pins[current_index + 1]
         else 
-            render json: pins[current_index -1]
+            render json: pins[current_index - 1]
         end
     end
 
@@ -96,6 +96,11 @@ class PinsController < ApplicationController
         Share.where(pin_id: params[:id]).delete_all
         Favorite.where(pin_id: params[:id]).delete_all
         render json: {}
+    end
+
+    def tags
+        tag = Tag.find_by_name(params[:tag_name])
+        render json: tag.pins
     end
 
 
