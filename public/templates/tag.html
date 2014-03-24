@@ -3,7 +3,7 @@ Sort By:
 <button class='btn' ng-click="mostViewed()">Most Viewed</button>
 
 <div id="source-container'" infinite-scroll='loadMore()'>
-    <div id="source-div" ng-repeat="pins in array">
+    <div id="source-div" ng-repeat="pin in array">
         <div class="title">
             <p>
                 <a href="/#/pin/{{pin.id}}">
@@ -14,4 +14,3 @@ Sort By:
         <img ng-src={{pin['image_url']}}/>
     </div>
 </div>
-
