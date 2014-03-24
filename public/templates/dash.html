@@ -2,33 +2,36 @@
 <br>
 <br>
 
-<h2>Saved</h2>
-<ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 360, slideMargin: 5}">
-  <li ng-repeat='i in savedArray'>
-    <a href="/#/pin/{{i['id']}}">
-        <img ng-src={{i['image_url']}}/>
-    </a>
+<h2>Saves</h2>
+<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 350, slideMargin:10, infiniteLoop: false, hideControlOnEnd: true">
+  <li data-ng-repeat="i in saveArray track by $index" data-notify-when-repeat-finished>
+    <div class="item">
+      <a href="/#/pin{{i['id']}}">
+        <img data-ng-src="{{i['image_url']}}" />
+      </a>
+    </div>
   </li>
 </ul>
 
 <h2>History</h2>
-<ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 360, slideMargin: 5}">
-  <li ng-repeat="i in historyArray | orderBy:'i.updated_at'">
-    <a href="/#/pin/{{i['id']}}">
-        <img ng-src={{i['image_url']}}/>
-    </a>
+<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 350, slideMargin:10, infiniteLoop: false, hideControlOnEnd: true">
+  <li data-ng-repeat="i in historyArray track by $index" data-notify-when-repeat-finished>
+    <div class="item">
+      <a href="/#/pin{{i['id']}}">
+        <img data-ng-src="{{i['image_url']}}" />
+      </a>
+    </div>
   </li>
 </ul>
 
-
 <h2>Shares</h2>
-<ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 360, slideMargin: 5}">
-  <li ng-repeat="pin in pins">
-    <div>
-    <a href="/#/pin/{{pin.pin[0].pin.id}}">
+<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 350, slideMargin:10, infiniteLoop: false, hideControlOnEnd: true">
+  <li data-ng-repeat="pin in pins track by $index" data-notify-when-repeat-finished>
+    <div class="item">
+      <a href="/#/pin/{{pin.pin[0].pin.id}}">
         <img ng-click="deleteShare(pin.share_id)" ng-src={{pin.pin[0].pin.image_url}}/>
-    </a>
-    <p style="text-align: left">Shared By: {{pin.username}}</p>
+      </a>
+      <p style="text-align: left">Shared By: {{pin.username}}</p>
     </div>
   </li>
 </ul>
