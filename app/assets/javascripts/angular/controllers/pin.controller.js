@@ -3,11 +3,11 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
 	function init(){
         User.currentUser();
         setTimeout(function(){
-            if($scope.pin != 1){
+            if($scope.pin.length === 0){
                 alert('Pin does not exist')
                 $location.path('/')
             }
-        }, 1000)
+        }, 5000)
     }
 
     init();
