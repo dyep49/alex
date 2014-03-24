@@ -3,7 +3,7 @@ Sort By:
 <button class='btn' ng-click="mostViewed()">Most Viewed</button>
 
 <div id="source-container" infinite-scroll='more()'>
-    <div id="source-div" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
+    <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
         <div class="title">
             <p>
                 <a href="/#/pin/{{pin.id}}">
