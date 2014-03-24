@@ -10,7 +10,6 @@
 }
 
 #source-container {
-
 	text-align: center;
 }
 
@@ -25,4 +24,9 @@
 .title p{
 	margin: 0;
 	font-size: 25px;
+}
+
+.bxslider img {
+	width: 200px;
+	height: 200px;
 }
