@@ -7,7 +7,7 @@
   <br>
   <br>
 
-  <input ng-model="formData.url" type="text" placeholder="Link">
+  <input id='url' ng-model="formData.url" type="text" placeholder="Link">
   <br>
   <br>
   
@@ -30,11 +30,11 @@
   <p>Source: <select ng-options="source.name for source in sources" ng-model="formData.source_id"></select></p>
   <br>
   
-  <input ng-model="formData.tags" 
+  <div style='margin-left:34%;'>
+    <input ng-model="formData.tags" 
           type="text" 
-          placeholder="Tags"
-          data-role="tagsinput" 
-          >
+          id='tags'>
+  </div>
   <p style='color:grey'>Include: humor, tech, video, news, sports, music</p>
   <br>
   <br>
@@ -46,10 +46,38 @@
 
 <br>
 
-<input name="tags" id="tags" value="foo,bar,baz" />
 
 <script type="text/javascript">
-  $('#tags').tagsInput();
+  $('#tags').tagsInput({
+   'height':'1em',
+   'width':'300px',
+   'interactive':true,
+   'defaultText':'add tag',
+   'removeWithBackspace' : true,
+   'minChars' : 1,
+   'maxChars' : 20,
+   'placeholderColor' : '#666666'
+  })
+
+  setInterval(function(){
+    var tagger = $('#tags')
+    var url = $('#url').val()
+    
+    if (url.indexOf('vimeo') !== -1 || url.indexOf('youtube') !== -1) {
+      if (tagger.tagExist('video') === false) {
+        tagger.addTag('video');
+      }
+    }
+    if (url.indexOf('soundcloud') !== -1 && tagger.tagExist('music') === false){
+      tagger.addTag('music')
+    }
+
+    if (url.indexOf('tech') !== -1 || url.indexOf('gadget') !== -1 || url.indexOf('hack') !== -1 || url.indexOf('verge') !== -1){ 
+      if (tagger.tagExist('tech') === false){
+        tagger.addTag('tech')
+      }
+    }
+  }, 400)
 </script>
 
 
@@ -57,11 +85,14 @@
 
 <style type="text/css">
 
+  input {
+    border: none;
+  }
+
   div.tagsinput {
     border:1px solid #CCC;
     background: #FFF;
     padding:5px;
-    height:100px;
     overflow-y: auto;
   }
 
@@ -82,14 +113,14 @@ div.tagsinput span.tag {
  }
 
 div.tagsinput span.tag a {
- font-weight: bold;
+  font-weight: bold;
   color: #82ad2b;
   text-decoration:none;
   font-size: 11px;
 }
 
 div.tagsinput input {
- width:80px;
+  width:80px;
   margin:0px;
   font-family: helvetica;
   font-size: 13px;
@@ -97,15 +128,14 @@ div.tagsinput input {
   padding:5px;
   background: transparent;
   color: #000;
-  outline:0px;
+  outline:0;
   margin-right:5px;
   margin-bottom:5px;
 }
 
 div.tagsinput div {
- display:block;
+  display:block;
   float: left;
-
 }
 
 .tags_clear {
@@ -113,7 +143,8 @@ div.tagsinput div {
 }
 
 .not_valid {
-  background: #FBD8DB !important; color: #90111A !important;
+  background: #FBD8DB !important;
+  color: #90111A !important;
 }
 
 </style>
