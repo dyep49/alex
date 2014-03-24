@@ -1,31 +1,62 @@
 <h1>Search Results</h1>
 
-<h2>By Title</h2>
-
-<div class="title-results-container">
-	<div ng-repeat="title in titleResults[0]">
-			<img ng-src={{title.image_url}}>
-			<p><a href='/#/pin/{{title.id}}'>{{title.title}}</a></p>
+<div id='title-div' class='third'>
+	<div id="source-container">
+	    <div id="source-div" ng-repeat="pin in titleResults[0]">
+	        <div class="title">
+	            <p>
+	                <a href="/#/pin/{{pin.id}}">
+	                    {{pin.title}}
+	                </a>
+	            </p>
+	        </div>
+	        <div id='img-div'>
+	            <img ng-src={{pin['image_url']}}/>
+	        </div>
+	    </div>
 	</div>
 </div>
 
-<h2>By URL</h2>
+<div id='title-div' class='third'>
+	<div id="source-container">
+	    <div id="source-div" ng-repeat="pin in urlResults[0]">
+	        <div class="title">
+	            <p>
+	                <a href="/#/pin/{{pin.id}}">
+	                    {{pin.title}}
+	                </a>
+	            </p>
+	        </div>
+	        <div id='img-div'>
+	            <img ng-src={{pin['image_url']}}/>
+	        </div>
+	    </div>
+	</div>
+</div>
 
-<div class="url-results-container">
-	<div ng-repeat="url in urlResults[0]">
-			<img ng-src={{url.image_url}}>
-			<p><a href='/#/pin/{{url.id}}'>{{url.title}}</a></p>
+<div id='title-div' class='third'>
+	<div id="source-container">
+	    <div id="source-div" ng-repeat="pin in descriptionResults[0]">
+	        <div class="title">
+	            <p>
+	                <a href="/#/pin/{{pin.id}}">
+	                    {{pin.title}}
+	                </a>
+	            </p>
+	        </div>
+	        <div id='img-div'>
+	            <img ng-src={{pin['image_url']}}/>
+	        </div>
+	    </div>
 	</div>
 </div>
 
 
-
-<h2>By Description</h2>
-<div class="description-results-container">
-	<div ng-repeat="description in descriptionResults[0]">
-			<img ng-src={{description.image_url}}>
-			<p><a href='/#/pin/{{description.id}}'>{{description.title}}</a></p>
-	</div>
-</div>
-
-
+<style type="text/css">
+	.third {
+		display: inline-block;
+		float: left;
+		max-width: 32%;
+		margin-right: 1%; 
+	}
+</style>

@@ -4,4 +4,7 @@ main.controller('SearchController', ['$scope', 'searchService', function($scope,
     $scope.urlResults = searchService.getUrlResult()
     $scope.descriptionResults = searchService.getDescriptionResult()
 
+    $scope.total = []
+
+
 }])
