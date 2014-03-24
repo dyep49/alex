@@ -4,6 +4,12 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 	
 	function init(){
 		Source.show($routeParams.source_name, page, $routeParams.sort_by);
+		setTimeout(function(){
+			if($scope.sources.length ===0){
+				alert("Source does not exist")
+				window.location = "#/dash"
+			}
+		}, 1000)
 		page ++;
 	}
 
