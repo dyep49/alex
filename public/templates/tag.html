@@ -11,6 +11,27 @@ Sort By:
                 </a>
             </p>
         </div>
-        <img ng-src={{pin['image_url']}}/>
+        <div id='img-div'>
+            <img ng-src={{pin['image_url']}}/>
+        </div>
     </div>
 </div>
+
+<style type="text/css">
+
+    #img-div {
+        height: 300px;
+        width: 300px;
+    }
+
+    #source-div img {
+        max-height: 300px;
+    }
+
+    #source-div {
+        display: inline-block;
+        margin: 5px;
+        text-align: center;
+    }
+
+</style>

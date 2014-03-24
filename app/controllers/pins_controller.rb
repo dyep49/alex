@@ -99,8 +99,12 @@ class PinsController < ApplicationController
     end
 
     def tags
-        tag = Tag.find_by_name(params[:tag_name])
-        render json: tag.pins
+        if params[:tag_name] == 'all'
+            render json: Pin.all 
+        else
+            tag = Tag.find_by_name(params[:tag_name])
+            render json: tag.pins
+        end
     end
 
 
