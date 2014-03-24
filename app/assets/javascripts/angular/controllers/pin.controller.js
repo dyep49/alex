@@ -5,9 +5,9 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         setTimeout(function(){
             if($scope.pin.length === 0){
                 alert('Pin does not exist')
-                $location.path('/')
+                window.location = "#/dash"
             }
-        }, 5000)
+        }, 1000)
     }
 
     init();
