@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         output = current_user.histories.map do |hist|
             Pin.find(hist.pin_id)
         end
-        render json: output
+        render json: output.reverse
     end
 
     def faved
