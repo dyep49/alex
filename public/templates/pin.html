@@ -4,8 +4,6 @@
 
 <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
 
-<div id='saver' saved={{pin[0].saved}}></div>
-
 <script>
     $(document).ready(function(){
         console.log('running');
@@ -22,7 +20,7 @@
                     e.parentNode.insertBefore(d,e)
                 }
             })(document)
-        }, 200)
+        }, 250)
     }) 
 </script>
 
@@ -30,7 +28,8 @@
 <p hidden>
     {{(toggle == null) && (toggle = pin[0].saved)}}
 </p>
-
+{{ toggle }}
+{{ pin }}
 <div id='footer'>
 
     <div ng-click='savePin(); toggle=true' 

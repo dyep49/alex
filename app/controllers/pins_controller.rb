@@ -27,8 +27,8 @@ class PinsController < ApplicationController
             pin: pin,
             saved: Favorite.where([
                 "user_id = ? and pin_id = ?",
-                pin.id,
-                current_user.id
+                current_user.id,
+                pin.id
             ]).any?
         }]  
     end
@@ -38,9 +38,9 @@ class PinsController < ApplicationController
 
     def favorite
         pin = Pin.find(params[:id])
-        fav = Favorite.where(["user_id = ? and pin_id = ?",
-                pin.id,
-                current_user.id])
+        fav = Favorite.where(["user_id = ? AND pin_id = ?",
+                current_user.id,
+                pin.id])
         if fav.any?
             fav.each(&:delete)
         else
