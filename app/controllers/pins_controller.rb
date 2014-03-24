@@ -25,7 +25,7 @@ class PinsController < ApplicationController
             pin.id
         ])
 
-        if history 
+        if history.any?
             history.each(&:touch)
         else
             history = History.new
