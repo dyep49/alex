@@ -18,9 +18,13 @@ class SourcesController < ApplicationController
 		render json: out
 	end
 
-	def create 
-		source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name])
-		render json: {id: source.id}
+	def create
+		if current_user.admin == true
+			source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name])
+			render json: {id: source.id}
+		else
+			redirect_to '/'
+		end
 	end
 
 
