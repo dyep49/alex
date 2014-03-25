@@ -1,8 +1,23 @@
 <div class="inbox_container">
-	<div ng-repeat="pin in pins">
-			<img ng-src={{pin.pin[0].pin.image_url}}>
-			<p><a href='/#/pin/{{pin.pin[0].pin.id}}'>{{pin.pin[0].pin.title}}</a></p>
-			<p>Shared by {{pin.username}}
-	</div>
-	</div>
+    <div ng-repeat="pin in pins">
+        <div class='{{pin.seen}}'>
+            <img ng-src={{pin.pin[0].pin.image_url}}>
+            <p>
+                <a href='/#/pin/{{pin.pin[0].pin.id}}'>
+                    {{pin.pin[0].pin.title}}
+                </a>
+            </p>
+            <p>
+                Shared by {{pin.username}}
+            </p>
+        </div>
+    </div>
 </div>
+
+
+<style type="text/css">
+    .false {
+        background-color: #c0ffc0;
+    }
+</style>
+
