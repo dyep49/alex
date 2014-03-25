@@ -10,7 +10,7 @@ class CreatePins < ActiveRecord::Migration
         t.integer :save_count
 
         t.string :url
-        t.string :description
+        t.text :description
         t.string :image_url #not sure if need this if doing embedly
 
         t.timestamps
