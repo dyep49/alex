@@ -6,7 +6,7 @@ Sort By:
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
         <div class="title">
             <p>
-                <a href="/#/pin/{{pin.id}}">
+                <a href="/#/pin/{{tag}}/{{pin.id}}">
                     {{pin.title}}
                 </a>
             </p>

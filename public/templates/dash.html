@@ -14,7 +14,7 @@
   <li class="repeat-item" data-ng-repeat="i in historyArray track by $index" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/pin/source/{{i['id']}}">
-        <img data-ng-src="{{i['image_url']}}" />
+        <img data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
       </a>
     </div>
   </li>
@@ -32,4 +32,4 @@
   </li>
 </ul>
 
-
+{{historyArray[0]}}
