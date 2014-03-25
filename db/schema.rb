@@ -11,31 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322014818) do
+ActiveRecord::Schema.define(version: 20140315175357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "favorites", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "pin_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "histories", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "pin_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pin_tags", force: true do |t|
-    t.integer  "pin_id"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "pins", force: true do |t|
     t.integer  "user_id"
@@ -50,42 +29,11 @@ ActiveRecord::Schema.define(version: 20140322014818) do
     t.datetime "updated_at"
   end
 
-  create_table "shares", force: true do |t|
-    t.integer  "from_user_id"
-    t.integer  "to_user_id"
-    t.integer  "pin_id"
-    t.boolean  "seen",           default: false
-    t.string   "from_user_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sources", force: true do |t|
-    t.string   "url"
-    t.string   "img_url"
-    t.string   "name"
-    t.boolean  "feed_embedly"
-    t.boolean  "solo_embedly_full"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "trigrams", force: true do |t|
-    t.string  "trigram",     limit: 3
-    t.integer "score",       limit: 2
-    t.integer "owner_id"
-    t.string  "owner_type"
-    t.string  "fuzzy_field"
-  end
-
-  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
-  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",                               null: false
