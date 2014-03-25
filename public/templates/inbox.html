@@ -1,7 +1,7 @@
 <div class="inbox_container">
     <div ng-repeat="pin in pins">
         <div class='{{pin.seen}}'>
-            <img ng-src={{pin.pin[0].pin.image_url}}>
+            <img ng-src="{{pin.pin[0].pin.image_url}}">
             <p>
                 <a href='/#/pin/{{pin.pin[0].pin.id}}'>
                     {{pin.pin[0].pin.title}}

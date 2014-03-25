@@ -6,6 +6,8 @@ main.controller('TagController', ['$scope', '$routeParams', 'Tag', function($sco
 
     $scope.sortBy = 'created_at'
 
+    $scope.tag = $routeParams.tag_name
+
     $scope.quantity = 15
 
     $scope.more = function(){

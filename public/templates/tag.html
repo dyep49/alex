@@ -6,13 +6,13 @@ Sort By:
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
         <div class="title">
             <p>
-                <a href="/#/pin/{{pin.id}}">
+                <a href="/#/pin/{{tag}}/{{pin.id}}">
                     {{pin.title}}
                 </a>
             </p>
         </div>
         <div id='img-div'>
-            <img ng-src="{{pin['image_url']}}"/>
+            <img data-ng-src="{{pin['image_url']}}">
         </div>
     </div>
 </div>

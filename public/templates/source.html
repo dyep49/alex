@@ -5,9 +5,13 @@ Sort By:
 <div id="source-container'" infinite-scroll='loadMore()'>
 	<div id="source-div" class="repeat-item" ng-repeat="source in sources">
 		<div class="title">
-			<p><a href="/#/pin/{{source.id}}">{{source.title}}</a></p>
+			<p>
+                <a href="/#/pin/source/{{source.id}}">
+                    {{source.title}}
+                </a>
+            </p>
 		</div>
-		<img ng-src={{source.image_url}}/>
+		<img ng-src="{{source.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
 	</div>
 </div>
 

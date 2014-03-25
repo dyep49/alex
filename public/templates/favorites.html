@@ -2,9 +2,14 @@
 
 <div class="favorites_container">
 	<div ng-repeat="favorite in favorites">
-			<img ng-src={{favorite[0].pin.image_url}}>
-			<p><a href='/#/pin/{{favorite[0].pin.id}}'>{{favorite[0].pin.title}}</a></p>
-			<button ng-click='unsavePin(favorite[0].pin.id, $index)'>Unsave</button>
-	</div>
+		<img ng-src="{{favorite[0].pin.image_url}}">
+		<p>
+            <a href='/#/pin/{{favorite[0].pin.id}}'>
+                {{favorite[0].pin.title}}
+            </a>
+        </p>
+		<button ng-click='unsavePin(favorite[0].pin.id, $index)'>
+            Unsave
+        </button>
 	</div>
 </div>
