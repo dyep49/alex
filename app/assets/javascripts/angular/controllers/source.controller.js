@@ -6,7 +6,7 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 		Source.show($routeParams.source_name, page, $routeParams.sort_by);
 		setTimeout(function(){
 			if($scope.sources.length ===0){
-				alert("Source does not exist")
+				alert("No Pins here yet")
 				window.location = "#/dash"
 			}
 		}, 1000)

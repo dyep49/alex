@@ -87,3 +87,5 @@ youtube_pin.tags << Tag.find_by_name('video')
 
 
 
+
+
