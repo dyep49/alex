@@ -20,7 +20,16 @@ class UsersController < ApplicationController
     end
 
     def get_inbox
-        render json: Share.where(to_user_id: current_user.id)
+        output = Share.where(to_user_id: current_user.id)
+        render json: output.reverse
+    end
+
+    def mark_read
+        Share.where(to_user_id: current_user.id).each do |share|
+            share.seen = true
+            share.save
+        end
+        render json: {}
     end
 
     def find_user

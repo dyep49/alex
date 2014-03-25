@@ -16,10 +16,10 @@ main.controller('nav', ['$scope', '$http', '$location', 'searchService', 'Inbox'
         })
     }
 
-    $scope.inboxCount = Inbox.getCount()
-
     init();
 
+
+    $scope.inboxCount = Inbox.getCount()
 
 }])
 

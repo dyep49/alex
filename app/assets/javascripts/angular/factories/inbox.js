@@ -1,25 +1,38 @@
 main.service('Inbox', ['$http', function($http){
 
-	var unseen_shares = []
+	var shares = []
+
+	var unseen_count = []
 
 	var users = []
 
 	this.fetchCount = function(){
+		shares.splice(0, shares.length)
+		unseen_count = []
 		$http({
 			url: 'get_inbox',
 			method: 'GET', 
 		})
 		.success(function(data){
 		    for (var i = 0; i < data.length; i++){
+		        shares.push(data[i])
 		        if (data[i].seen === false){
-		            unseen_shares.push(data[i])
+		        	unseen_count.push(1)
 		        } 
 		    }
 		})
 	}
 
 	this.getCount = function(){
-		return unseen_shares
+		return unseen_count
+	}
+
+	this.kill_count = function(){
+		unseen_count = []
+	}
+
+	this.getShares = function(){
+		return shares
 	}
 
 	this.fetchUser = function(id){

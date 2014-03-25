@@ -7,6 +7,7 @@ Alex::Application.routes.draw do
   get 'my_pins'        => 'users#my_pins'
   get 'logout'         => 'users#logout' 
   get 'get_inbox'      => 'users#get_inbox'
+  get 'mark_read'      => 'users#mark_read'
   get 'find_user'      => 'users#find_user'
   get 'users/history'  => 'users#history'
   get 'users/faved'    => 'users#faved'
