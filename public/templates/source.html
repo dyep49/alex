@@ -7,7 +7,7 @@ Sort By:
 		<div class="title">
 			<p><a href="/#/pin/source/{{source.id}}">{{source.title}}</a></p>
 		</div>
-		<img ng-src={{source.image_url}}/>
+		<img ng-src={{source.image_url}} onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
 	</div>
 </div>
 

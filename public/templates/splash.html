@@ -4,7 +4,7 @@
   <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
     <div class="item">
 	    <a href="/#/source/{{i['id']}}">
-	        <img ng-src={{i['img_url']}}/>
+	        <img ng-src={{i['img_url']}} onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
 	     </a>
     </div>
   </li>
