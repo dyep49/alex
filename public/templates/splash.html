@@ -1,9 +1,11 @@
 <h1>Splash</h1>
 
-<ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 300, slideMargin: 1}">
-  <li ng-repeat='i in array'>
-    <a href="/#/source/{{i['id']}}">
-        <img ng-src={{i['img_url']}}/>
-    </a>
+<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 350, slideMargin:10, infiniteLoop: false, hideControlOnEnd: true">
+  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+    <div class="item">
+	    <a href="/#/source/{{i['id']}}">
+	        <img ng-src={{i['img_url']}}/>
+	     </a>
+    </div>
   </li>
 </ul>

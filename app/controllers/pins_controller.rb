@@ -77,8 +77,12 @@ class PinsController < ApplicationController
     end
 
     def next
-        source = Source.find(params[:source_id])
-        pins = source.pins.order(id: :asc)
+        if params[:tag_name] == "source"
+            source = Source.find(params[:source_id])
+            pins = source.pins.order(id: :asc)
+        else
+            pins = Tag.find_by_name(params[:tag_name]).pins.order(id: :asc)
+        end
         current_index = pins.index(pins.find(params[:pin_id]))
         if params[:direction] == "next" && (current_index == (pins.count - 1))
             render json: pins[0]

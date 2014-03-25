@@ -20,7 +20,7 @@ main.config(function($routeProvider) {
                 templateUrl: 'templates/source.html',
                 controller: 'SourceController'
             }).
-            when('/pin/:pin_id', {
+            when('/pin/:tag_name/:pin_id', {
                 templateUrl: 'templates/pin.html',
                 controller: 'PinController'
             }).

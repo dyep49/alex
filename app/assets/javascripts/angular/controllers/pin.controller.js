@@ -34,16 +34,16 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         $http({
             url: '/next_pin',
             method: 'GET',
-            params: {source_id: source_id, pin_id: pin_id, direction: direction}
+            params: {source_id: source_id, pin_id: pin_id, direction: direction, tag_name: $route.current.params.tag_name}
         })
             .success(function(response){
-                $location.path('/pin/' + response.id)             
+                $location.path('/pin/' + $route.current.params.tag_name + '/' + response.id)             
             })
     }
 
     $scope.deletePin = function(){
         var source_id = $scope.pin[0].pin.source_id
         Pin.delete($route.current.params.pin_id)
-        $location.path('/source/' + source_id)
+        $location.path('/source/' +  source_id)
     }    
 }])

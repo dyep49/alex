@@ -16,8 +16,10 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
     $scope.sources = Source.getSources();
 
     $scope.createPin = function(){
+      $scope.formData.tags = $('#tags').val();
       $http.post('/pins', $scope.formData)
         .success(function(response){
+          console.log($scope.formData);
           $location.path('/pin/' + response.id)
         })
     }
