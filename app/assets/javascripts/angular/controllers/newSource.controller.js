@@ -1,4 +1,4 @@
-main.controller('NewSourceController', ['$scope', '$http', function($scope, $http) {
+main.controller('NewSourceController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.formData = {
       url: '',
       image_url: '',
@@ -7,6 +7,7 @@ main.controller('NewSourceController', ['$scope', '$http', function($scope, $htt
 
     $scope.createSource = function(){
       $http.post('/sources', $scope.formData)
+      $location.url('/')
     }
 
     $scope.cats = [
