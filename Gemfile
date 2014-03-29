@@ -58,4 +58,4 @@ end
 
 gem 'kaminari'
 
-gem 'fuzzily'
+gem 'amatch'

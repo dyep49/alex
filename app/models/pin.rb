@@ -6,8 +6,6 @@ class Pin < ActiveRecord::Base
   has_many :histories
   has_many :tags, through: :pin_tags
 
-  fuzzily_searchable :title, :url, :description 
-
   def self.make_pin(params, user_id)
     pin = Pin.create(
       title: params[:title],
