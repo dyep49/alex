@@ -5,6 +5,15 @@ main.directive('bxSlider', [function () {
             scope.$on('repeatFinished', function () {
                 console.log("ngRepeat has finished");
                 element.bxSlider(scope.$eval('{' + attrs.bxSlider + '}'));
+                for(i=1; i<$('.saves').find('.bx-next').length; i++){
+                    $('.saves').find('.bx-next').last().remove()
+                }
+                for(i=1; i<$('.history').find('.bx-next').length; i++){
+                    $('.history').find('.bx-next').last().remove()
+                }
+                for(i=1; i<$('.shares').find('.bx-next').length; i++){
+                    $('.shares').find('.bx-next').last().remove()
+                }
             });
         }
     }

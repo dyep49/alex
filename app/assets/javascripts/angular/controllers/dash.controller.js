@@ -1,4 +1,4 @@
-main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', function($scope, Dash, Inbox, Pin, $http){
+main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', '$rootScope', function($scope, Dash, Inbox, Pin, $http, $rootScope){
 
     function init(){
         Dash.getSavedArray()
@@ -35,4 +35,6 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', fu
 
 
 
+
 }])
+
