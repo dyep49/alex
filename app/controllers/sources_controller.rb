@@ -19,17 +19,14 @@ class SourcesController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		if current_user.admin == true
 			if params[:cat] == nil || params[:cat][:name] == 'Other'
 				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name])
 			else
-				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], tag: Tag.find_by_name(params[:cat][:name].downcase))
+				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], cat: Tag.find_by_name(params[:cat][:name].downcase))
 			end
-			render json: {id: source.id}
-		else
-			redirect_to '/'
 		end
+		render nothing: true
 	end
 
 

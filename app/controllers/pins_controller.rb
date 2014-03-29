@@ -64,16 +64,16 @@ class PinsController < ApplicationController
 
 
     def search
-        q = params[:search]
+        q = params[:search].downcase
 
         title = []
         url = []
         desc = []
 
         Pin.all.each do |pin|
-            title << {pin: pin, score: pin.title.pair_distance_similar(q)}
-            url << {pin: pin, score: pin.url.pair_distance_similar(q)}
-            desc << {pin: pin, score: pin.description.pair_distance_similar(q)}
+            title << {pin: pin, score: pin.title.downcase.pair_distance_similar(q)}
+            url << {pin: pin, score: pin.url.downcase.pair_distance_similar(q)}
+            desc << {pin: pin, score: pin.description.downcase.pair_distance_similar(q)}
         end
 
         grab_pin = Proc.new do |hash|
