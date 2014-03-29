@@ -6,6 +6,7 @@ class PinsController < ApplicationController
     end
 
     def create
+        binding.pry
         if current_user && current_user.admin
             pin = Pin.make_pin(params, current_user.id)
             Source.find(params["source_id"]["id"]).pins << pin

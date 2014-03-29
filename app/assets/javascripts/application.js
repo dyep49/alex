@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ../../../vendor/assets/javascripts/
+//= require ../../../vendor/assets/javascripts/angular-file-upload-shim.min.js
 //= require angular
 //= require angular-resource
 //= require angular-route
 //= require angular-animate
+//= require_tree ../../../vendor/assets/javascripts/
 //= require main.js
 //= require_tree ./angular
 //= require_tree .

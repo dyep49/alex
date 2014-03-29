@@ -59,3 +59,6 @@ end
 gem 'kaminari'
 
 gem 'fuzzily'
+
+gem 'paperclip'
+gem 'aws-sdk'
