@@ -26,23 +26,23 @@
             <li>
                 <a href="/#/dash">Dash</a>
             </li>
-            <li id="inbox">
-              <a id='inboxA' href="/#/inbox">
-                Inbox ({{inboxCount.length}})
-              </a>
-            </li>
-            <% if current_user && current_user.admin %>
-              <li>  
-                  <a href="/#/sources/new">New Source</a>
-              </li>
-              <li>  
-                  <a href="/#/pins/new">New Pin</a>
-              </li>
-            <% end %>
             <% if current_user %>
-              <li>
-                  <a href="/logout">Logout</a>
+              <li id="inbox">
+                <a id='inboxA' href="/#/inbox">
+                  Inbox ({{inboxCount.length}})
+                </a>
               </li>
+              <% if current_user.admin %>
+                <li>  
+                    <a href="/#/sources/new">New Source</a>
+                </li>
+                <li>  
+                    <a href="/#/pins/new">New Pin</a>
+                </li>
+              <% end %>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
             <% end %>
           </ul>
           <form class="navbar-form navbar-right" role="search">
