@@ -1,4 +1,4 @@
-main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', 'User', function($scope, $route, $http, Pin, $location, User){
+main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', 'User', '$upload', function($scope, $route, $http, Pin, $location, User, $upload){
 
 	function init(){
         User.currentUser();
@@ -46,4 +46,5 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         Pin.delete($route.current.params.pin_id)
         $location.path('/source/' +  source_id)
     }    
+
 }])

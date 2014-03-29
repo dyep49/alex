@@ -1,4 +1,4 @@
-main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', function($scope, Source, $http, $location) {
+main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '$upload', function($scope, Source, $http, $location, $upload) {
 
     function init(){
       Source.all();
@@ -6,6 +6,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
 
     $scope.formData = {
       image_url: '',
+      image: '',
       title: '',
       description: '',
       url: '',
@@ -22,6 +23,18 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', f
           console.log($scope.formData);
           $location.path('/pin/' + response.id)
         })
+    }
+
+    $scope.onFileSelect = function($files){
+      console.log($files);
+      for (var i=0; i < $files.length; i++){
+        var file = $files[i];
+        $scope.upload = $upload.upload({
+          url: '/pins',
+          method: 'POST',
+          file: file
+        })
+      }
     }
 
     init();
