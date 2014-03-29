@@ -1,6 +1,11 @@
-Sort By:
-<button class='btn' ng-click="mostRecent()">Most Recent</button>
-<button class='btn' ng-click="mostViewed()">Most Viewed</button>
+<button class='btn' ng-click="mostRecent()">Latest</button>
+<button class='btn' ng-click="mostViewed()">Hot</button>
+<button class='btn' ng-click="mostMonth()">Hot this Month</button>
+<button class='btn' ng-click="mostWeek()">Hot this Week</button>
+
+<br/>
+<br/>
+<br/>
 
 <div id="source-container" infinite-scroll='more()'>
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
