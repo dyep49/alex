@@ -8,4 +8,14 @@ main.controller('NewSourceController', ['$scope', '$http', function($scope, $htt
     $scope.createSource = function(){
       $http.post('/sources', $scope.formData)
     }
-}]);
+
+    $scope.cats = [
+        {name: 'Sports'},
+        {name: 'Humor'},
+        {name: 'Tech'},
+        {name: 'News'},
+        {name: 'Music'},
+        {name: 'Video'},
+        {name: 'Other'}
+    ]
+}])

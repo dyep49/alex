@@ -1,10 +1,5 @@
 class PinsController < ApplicationController
 
-    def fetch
-        #output = Pin.find(params stuff)
-        # return that as json
-    end
-
     def create
         binding.pry
         if current_user && current_user.admin
@@ -70,9 +65,25 @@ class PinsController < ApplicationController
 
 
     def search
-        title = Pin.find_by_fuzzy_title(params[:search], :limit => 20)
-        url = Pin.find_by_fuzzy_url(params[:search], :limit => 20)
-        desc = Pin.find_by_fuzzy_description(params[:search], :limit => 20)
+        q = params[:search]
+
+        title = []
+        url = []
+        desc = []
+
+        Pin.all.each do |pin|
+            title << {pin: pin, score: pin.title.pair_distance_similar(q)}
+            url << {pin: pin, score: pin.url.pair_distance_similar(q)}
+            desc << {pin: pin, score: pin.description.pair_distance_similar(q)}
+        end
+
+        grab_pin = Proc.new do |hash|
+            hash[:pin] if hash[:score] > 0
+        end
+
+        title = title.sort_by! {|k| k[:score]}.pop(10).reverse.map(&grab_pin)
+        url   =   url.sort_by! {|k| k[:score]}.pop(10).reverse.map(&grab_pin)
+        desc  =  desc.sort_by! {|k| k[:score]}.pop(10).reverse.map(&grab_pin)
 
         render json: {title: title, url: url, description: desc}
     end

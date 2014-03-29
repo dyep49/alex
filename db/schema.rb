@@ -64,8 +64,7 @@ ActiveRecord::Schema.define(version: 20140322014818) do
     t.string   "url"
     t.string   "img_url"
     t.string   "name"
-    t.boolean  "feed_embedly"
-    t.boolean  "solo_embedly_full"
+    t.string   "cat"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,17 +74,6 @@ ActiveRecord::Schema.define(version: 20140322014818) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "trigrams", force: true do |t|
-    t.string  "trigram",     limit: 3
-    t.integer "score",       limit: 2
-    t.integer "owner_id"
-    t.string  "owner_type"
-    t.string  "fuzzy_field"
-  end
-
-  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
-  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",                               null: false
