@@ -127,6 +127,18 @@ class PinsController < ApplicationController
         end
     end
 
-
+    def edit
+        stuff =  params[:pin][0][:pin]
+        pin = Pin.find(stuff[:id])
+        pin.title = stuff[:title]
+        pin.description = stuff[:description]
+        pin.source_id = stuff[:source_id]
+        pin.url = stuff[:url]
+        pin.image_url = stuff[:image_url]
+        pin.save
+        pin.tags.delete_all
+        pin.make_tags(pin, params[:tags])
+        render json: {}
+    end
 
 end

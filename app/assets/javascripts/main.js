@@ -47,6 +47,10 @@ main.config(function($routeProvider) {
             when('/dash', {
                 templateUrl: 'templates/dash.html',
                 controller: 'DashController'
+            }).
+            when('/edit/:pin_id', {
+                templateUrl: 'templates/edit_pin.html',
+                controller: 'EditPinController'
             }).           
             otherwise({
                 redirectTo: '/'

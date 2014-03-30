@@ -1,0 +1,152 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+<h1>Edit Pin</h1>
+
+<form>
+  <input ng-model="pin[0].pin.title" type="text">
+  <br>
+  <br>
+
+  <input id='url' ng-model="pin[0].pin.url" type="text" placeholder="Link">
+  <br>
+  <br>
+  
+  <input ng-model="pin[0].pin.image_url" type="text" placeholder="Image Url">
+  <br>
+  <br>
+
+  <input type="file" ng-file-select="onFileSelect($files)" >
+  <button ng-click="upload.abort()">Cancel Upload</button>
+
+
+  <br>
+  <br>
+  
+  <input ng-model="pin[0].pin.description" type="text" placeholder="Description">
+  <br>
+  <br>
+  
+
+  <p>Source: <select ng-options="source.name for source in sources" ng-model="pin[0].pin.source_id"></select></p>
+  <br>
+  
+  <div style='margin-left:33%;'>
+    <input ng-model="formData.tags" type="text" id="tags">
+  </div>
+  <p style='color:grey'>Include: humor, tech, video, news, sports, music</p>
+
+  <br>
+  <br>
+
+  
+  <button class='btn btn-primary' ng-click="updatePin()">Update</button>
+</form>
+
+
+<br>
+
+
+
+
+
+<script type="text/javascript">
+// this continues after page goes away. should maybe fix ///////////
+  $('#tags').tagsInput({
+   'height':'1em',
+   'width':'300px',
+   'interactive':true,
+   'defaultText':'add tag',
+   'removeWithBackspace' : true,
+   'minChars' : 1,
+   'maxChars' : 20,
+   'placeholderColor' : '#666666'
+  })
+  setInterval(function(){
+    var tagger = $('#tags')
+    var url = $('#url').val()
+    
+    if (url.indexOf('vimeo') !== -1 || url.indexOf('youtube') !== -1) {
+      if (tagger.tagExist('video') === false) {
+        tagger.addTag('video');
+      }
+    }
+    if (url.indexOf('soundcloud') !== -1 && tagger.tagExist('music') === false){
+      tagger.addTag('music')
+    }
+
+    if (url.indexOf('tech') !== -1 || url.indexOf('gadget') !== -1 || url.indexOf('hack') !== -1 || url.indexOf('verge') !== -1){ 
+      if (tagger.tagExist('tech') === false){
+        tagger.addTag('tech')
+      }
+    }
+  }, 400)
+</script>
+
+
+
+
+<style type="text/css">
+
+  div.tagsinput {
+    border:1px solid #CCC;
+    background: #FFF;
+    padding:5px;
+    overflow-y: auto;
+  }
+
+div.tagsinput span.tag {
+  border: 1px solid #a5d24a;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  display: block;
+  float: left;
+  padding: 5px;
+  text-decoration:none;
+  background: #cde69c;
+  color: #638421;
+  margin-right: 5px;
+  margin-bottom:5px;
+  font-family: helvetica;
+  font-size:13px;
+ }
+
+div.tagsinput span.tag a {
+  font-weight: bold;
+  color: #82ad2b;
+  text-decoration:none;
+  font-size: 11px;
+}
+
+div.tagsinput input {
+  width:80px;
+  margin:0px;
+  font-family: helvetica;
+  font-size: 13px;
+  border:1px solid transparent;
+  padding:5px;
+  background: transparent;
+  color: #000;
+  outline:0;
+  margin-right:5px;
+  margin-bottom:5px;
+}
+
+div.tagsinput div {
+  display:block;
+  float: left;
+}
+
+.tags_clear {
+ clear: both; width: 100%; height: 0px; 
+}
+
+.not_valid {
+  background: #FBD8DB !important;
+  color: #90111A !important;
+}
+
+</style>
+
+
+
+
