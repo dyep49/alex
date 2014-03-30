@@ -20,10 +20,12 @@ class Pin < ActiveRecord::Base
   end
 
   def make_tags(pin, tags)
-    tags.gsub!(' ','')
-    tags.split(',').each do |word|
-      tag = Tag.find_by_name(word.downcase)
-      pin.tags << (tag || Tag.create(name: word.downcase))
+    if tags
+      tags.gsub!(' ','')
+      tags.split(',').each do |word|
+        tag = Tag.find_by_name(word.downcase)
+        pin.tags << (tag || Tag.create(name: word.downcase))
+      end
     end
   end
 

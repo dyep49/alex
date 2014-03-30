@@ -21,7 +21,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
       $http.post('/pins', $scope.formData)
         .success(function(response){
           console.log($scope.formData);
-          $location.path('/pin/' + response.id) // should maybe be slash source
+          $location.path('/pin/source/' + response.id)
         })
     }
 
