@@ -1,12 +1,13 @@
 main.controller('EditPinController', ['$scope', '$route', 'Source', '$http', '$location', '$upload', 'Pin', function($scope, $route, Source, $http, $location, $upload, Pin) {
 
     function init(){
+      Source.clearArray();
       Source.all();
+      $scope.sources = Source.getSources();
     }
 
     $scope.pin = Pin.show($route.current.params.pin_id)
 
-    $scope.sources = Source.getSources();
 
     $scope.updatePin = function(){
         $http.post('/edit_pin', {pin: $scope.pin, tags: $('#tags').val()})
