@@ -1,21 +1,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 
+<h1>Edit Pin</h1>
 
 <form>
-  <!-- <input ng-model="formData.image_url" type="file"> -->
-  <input ng-model="formData.title" type="text" placeholder="Title">
+  <input ng-model="pin[0].pin.title" type="text">
   <br>
   <br>
 
-  <input id='url' ng-model="formData.url" type="text" placeholder="Link">
+  <input id='url' ng-model="pin[0].pin.url" type="text" placeholder="Link">
   <br>
   <br>
   
-  <input ng-model="formData.image_url" type="text" placeholder="Image Url">
+  <input ng-model="pin[0].pin.image_url" type="text" placeholder="Image Url">
   <br>
   <br>
 
-  <!-- <input type="text" ng-model="myModelObj"> -->
   <input type="file" ng-file-select="onFileSelect($files)" >
   <button ng-click="upload.abort()">Cancel Upload</button>
 
@@ -23,36 +22,35 @@
   <br>
   <br>
   
-  <input ng-model="formData.description" type="text" placeholder="Description">
+  <input ng-model="pin[0].pin.description" type="text" placeholder="Description">
   <br>
   <br>
   
-  
-<!--   <select>
-  <option disabled>Select Source</option>
-    <option ng-model="formData.source_id" ng-repeat='source in sources' value={{source.id}}>
-      {{source.name}}
-    </option>
-  </select> -->
 
-  <p>Source: <select ng-options="source.name for source in sources" ng-model="formData.source_id"></select></p>
+  <p>Source: <select ng-options="source.name for source in sources" ng-model="pin[0].pin.source_id"></select></p>
   <br>
   
-  <div style='margin-left:34%;'>
+  <div style='margin-left:33%;'>
     <input ng-model="formData.tags" type="text" id="tags">
   </div>
   <p style='color:grey'>Include: humor, tech, video, news, sports, music</p>
+
   <br>
   <br>
 
   
-  <button class='btn btn-primary' ng-click="createPin()">Create</button>
+  <button class='btn btn-primary' ng-click="updatePin()">Update</button>
 </form>
 
 
 <br>
 
+
+
+
+
 <script type="text/javascript">
+// this continues after page goes away. should maybe fix ///////////
   $('#tags').tagsInput({
    'height':'1em',
    'width':'300px',
@@ -63,9 +61,8 @@
    'maxChars' : 20,
    'placeholderColor' : '#666666'
   })
-
-  var interval = setInterval(function(){
-    if (window.location.hash == "#/pins/new"){
+  setInterval(function(){
+    if (window.location.hash.indexOf('#/edit') != -1){
       var tagger = $('#tags')
       var url = $('#url').val()
       
@@ -85,8 +82,6 @@
       }
     }
   }, 400)
-
-
 </script>
 
 

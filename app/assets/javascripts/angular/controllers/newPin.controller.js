@@ -1,7 +1,9 @@
-main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '$upload', function($scope, Source, $http, $location, $upload) {
+main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '$upload', '$interval', function($scope, Source, $http, $location, $upload, $interval) {
 
     function init(){
+      Source.clearArray()
       Source.all();
+      $scope.sources = Source.getSources();
     }
 
     $scope.formData = {
@@ -11,17 +13,16 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
       description: '',
       url: '',
       tags: '',
-      source_id: '',
+      source_id: ''
     };
 
-    $scope.sources = Source.getSources();
 
     $scope.createPin = function(){
       $scope.formData.tags = $('#tags').val();
       $http.post('/pins', $scope.formData)
         .success(function(response){
           console.log($scope.formData);
-          $location.path('/pin/' + response.id)
+          $location.path('/pin/source/' + response.id)
         })
     }
 

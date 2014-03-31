@@ -15,6 +15,7 @@
 </a>
 
 <br>
+
 <p>
     {{pin[0].pin.description}}
 </p>
@@ -80,10 +81,14 @@
     Previous
 </button>
 
+<button class="btn" ng-click='goEdit()' ng-hide="not_admin">
+    Edit
+</button>
 
 <button class="btn btn-primary" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>
     Next
 </button>
+
 
 
 <style type="text/css">

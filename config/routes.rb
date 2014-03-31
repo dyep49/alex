@@ -15,13 +15,14 @@ Alex::Application.routes.draw do
   get 'users/current_user' => 'users#current'
   post 'users/delete_share' => 'users#delete_share'
 
-
   resources :pins
-  post 'pins/fetch'   => 'pins#fetch'
-  post 'pin_fav'      => 'pins#favorite'
-  post 'pin_search'   => 'pins#search'
-  get  'next_pin'     => 'pins#next'
+  post 'pins/fetch'    => 'pins#fetch'
+  post 'pin_fav'       => 'pins#favorite'
+  post 'pin_search'    => 'pins#search'
+  post 'edit_pin'      => 'pins#edit'
+  get  'next_pin'      => 'pins#next'
   get  'tags/:tag_name'=>'pins#tags'
+
 
   resources :sources
 

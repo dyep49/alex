@@ -14,7 +14,6 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
 
     $scope.pin = Pin.show($route.current.params.pin_id)
 
-
     $scope.savePin = function(){
         $http.post('/pin_fav', {'id': $route.current.params.pin_id})
     }
@@ -46,5 +45,11 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         Pin.delete($route.current.params.pin_id)
         $location.path('/source/' +  source_id)
     }    
+
+    $scope.not_admin = !($http.get('users/current_user'))
+
+    $scope.goEdit = function(){
+        $location.path('/edit/' + $route.current.params.pin_id)
+    }
 
 }])
