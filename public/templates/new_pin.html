@@ -65,21 +65,23 @@
   })
 
   var interval = setInterval(function(){
-    var tagger = $('#tags')
-    var url = $('#url').val()
-    
-    if (url.indexOf('vimeo') !== -1 || url.indexOf('youtube') !== -1) {
-      if (tagger.tagExist('video') === false) {
-        tagger.addTag('video');
+    if (window.location.hash == "#/pins/new"){
+      var tagger = $('#tags')
+      var url = $('#url').val()
+      
+      if (url.indexOf('vimeo') !== -1 || url.indexOf('youtube') !== -1) {
+        if (tagger.tagExist('video') === false) {
+          tagger.addTag('video');
+        }
       }
-    }
-    if (url.indexOf('soundcloud') !== -1 && tagger.tagExist('music') === false){
-      tagger.addTag('music')
-    }
+      if (url.indexOf('soundcloud') !== -1 && tagger.tagExist('music') === false){
+        tagger.addTag('music')
+      }
 
-    if (url.indexOf('tech') !== -1 || url.indexOf('gadget') !== -1 || url.indexOf('hack') !== -1 || url.indexOf('verge') !== -1){ 
-      if (tagger.tagExist('tech') === false){
-        tagger.addTag('tech')
+      if (url.indexOf('tech') !== -1 || url.indexOf('gadget') !== -1 || url.indexOf('hack') !== -1 || url.indexOf('verge') !== -1){ 
+        if (tagger.tagExist('tech') === false){
+          tagger.addTag('tech')
+        }
       }
     }
   }, 400)
