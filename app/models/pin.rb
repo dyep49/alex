@@ -6,14 +6,20 @@ class Pin < ActiveRecord::Base
   has_many :histories
   has_many :tags, through: :pin_tags
 
+  has_attached_file :upload
+
+  # Validate the attached image is image/jpg, image/png, etc
+  validates_attachment_content_type :upload, :content_type => /\Aimage\/.*\Z/
+
+
   def self.make_pin(params, user_id)
     pin = Pin.create(
-      title: params[:title],
-      description: params[:description],
-      image_url: params[:image_url],
-      url: params[:url],
-      user_id: user_id,
-      source_id: params[:source_id]
+      user_id:      user_id,
+      url:          params[:url],
+      title:        params[:title],
+      image_url:    params[:image_url],
+      source_id:    params[:source_id],
+      description:  params[:description]
     )
     pin.make_tags(pin, params[:tags])
     return pin
