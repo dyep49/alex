@@ -1,5 +1,5 @@
 Alex::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+ # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -20,7 +20,7 @@ Alex::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -71,6 +71,8 @@ Alex::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  config.assets.js_compressor = Uglifier.new(mangle: false)
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
