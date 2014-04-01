@@ -5,6 +5,11 @@ class SourcesController < ApplicationController
 	end
 
 	def show
+		source = Source.where(cat: params[:id].to_s)
+		render json: source
+	end
+
+	def source_pins
 		id = params[:id]
 		page_num = params[:page_number]
 		case params[:sort_by]

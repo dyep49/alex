@@ -1,7 +1,7 @@
 main.controller('NewSourceController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.formData = {
       url: '',
-      image_url: '',
+      img_url: '',
       name: ''
     };
 

@@ -1,15 +1,7 @@
 <h1>Splash</h1>
 
-<!-- <ul class="bxslider" slider="{minSlides: 1, maxSlides: 4, slideWidth: 300, slideMargin: 1}">
-  <li ng-repeat='i in array'>
-    <a href="/#/source/{{i['id']}}">
-        <img ng-src="{{i['img_url']}}"/>
-    </a> 
-  </li>
-</ul> -->
-
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in sports" data-notify-when-repeat-finished>
     <div class="item">
 	    <a href="/#/source/{{i['id']}}">
 	        <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -19,7 +11,7 @@
 </ul>
 
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in humor" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -28,7 +20,7 @@
   </li>
 </ul>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in tech" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -37,7 +29,7 @@
   </li>
 </ul>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in news" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -46,7 +38,7 @@
   </li>
 </ul>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in music" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -55,7 +47,7 @@
   </li>
 </ul>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in video" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
@@ -64,7 +56,7 @@
   </li>
 </ul>
 <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in array" data-notify-when-repeat-finished>
+  <li class="repeat-item" data-ng-repeat="i in other" data-notify-when-repeat-finished>
     <div class="item">
       <a href="/#/source/{{i['id']}}">
           <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
