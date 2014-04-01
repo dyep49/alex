@@ -34,3 +34,7 @@
 .bx-pager-item {
 	display: none !important;
 }
+
+.slide-wrapper{
+	margin: 10px;
+}

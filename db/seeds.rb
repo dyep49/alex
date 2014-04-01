@@ -6,32 +6,56 @@ tag_array.each do |name|
     tag.save
 end
 
-techcrunch = Source.create(
-    url: 'www.techcrunch.com',
-    img_url: 'https://s3.amazonaws.com/crunchbase_prod_assets/assets/images/resized/0001/0576/10576v3-max-250x250.jpg',
-    name: 'Techcrunch'
-)
-soundcloud = Source.create(
-    url: 'www.soundcloud.com',
-    img_url: 'http://cdn.embed.ly/providers/logos/soundcloud.png',
-    name: 'Soundcloud'
-)
-youtube = Source.create(
-    url: 'www.youtube.com',
-    img_url: 'https://lh6.ggpht.com/NrQdFAdPSI9-hreB4C7HNhj3yXRiW1jqOOi7eFyakIx_IA-Im0huIeYCs5jTidMT2qA=w300',
-    name: 'YouTube'
-)
-Source.create(
-    url: 'www.vimeo.com',
-    img_url: 'http://www.cmha.bc.ca/files/vimeo-icon.png',
-    name: 'Vimeo'
-)
-Source.create(
-    url: 'www.espn.com',
-    img_url: 'https://yt3.ggpht.com/-yOoKXdob9y8/AAAAAAAAAAI/AAAAAAAAAAA/O9ATiv9wGJ0/s900-c-k-no/photo.jpg',
-    name: 'ESPN'
-)
-
+    techcrunch = Source.create(
+        url: 'www.techcrunch.com',
+        img_url: 'https://s3.amazonaws.com/crunchbase_prod_assets/assets/images/resized/0001/0576/10576v3-max-250x250.jpg',
+        name: 'Techcrunch',
+        cat: 'tech'
+    )
+    soundcloud = Source.create(
+        url: 'www.soundcloud.com',
+        img_url: 'http://cdn.embed.ly/providers/logos/soundcloud.png',
+        name: 'Soundcloud',
+        cat: 'music'
+    )
+    youtube = Source.create(
+        url: 'www.youtube.com',
+        img_url: 'https://lh6.ggpht.com/NrQdFAdPSI9-hreB4C7HNhj3yXRiW1jqOOi7eFyakIx_IA-Im0huIeYCs5jTidMT2qA=w300',
+        name: 'YouTube',
+        cat: 'video'
+    )
+10.times do 
+    Source.create(
+        url: 'www.vimeo.com',
+        img_url: 'http://www.cmha.bc.ca/files/vimeo-icon.png',
+        name: 'Vimeo',
+        cat: 'video'
+    )
+    Source.create(
+        url: 'www.espn.com',
+        img_url: 'https://yt3.ggpht.com/-yOoKXdob9y8/AAAAAAAAAAI/AAAAAAAAAAA/O9ATiv9wGJ0/s900-c-k-no/photo.jpg',
+        name: 'ESPN',
+        cat: 'sports'
+    )
+    Source.create(
+        url: 'www.collegehumor.com',
+        img_url: 'http://1.bp.blogspot.com/-4ZY9hIEfxlY/TmhUOOq_ATI/AAAAAAAAAIo/KPUby3hfqqI/s1600/logo_collegehumor.jpg',
+        name: 'College Humor',
+        cat: 'humor'
+    )
+    Source.create(
+        url: 'www.lifehacker.com',
+        img_url: 'http://kinja.com/assets/images/logos/touchicons/lifehacker-touch-icon-200x200.png',
+        name: 'Lifehacker',
+        cat: 'other'
+    )
+    Source.create(
+        url: 'www.cnn.com',
+        img_url: 'http://i1.ytimg.com/i/upvZG-5ko_eiXAupbDfxWw/mq1.jpg?v=51df0b06',
+        name: 'CNN',
+        cat: 'news'
+    )
+end
 
 
 33.times do 

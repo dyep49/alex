@@ -1,66 +1,85 @@
 <h1>Splash</h1>
 
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in sports" data-notify-when-repeat-finished>
-    <div class="item">
-	    <a href="/#/source/{{i['id']}}">
-	        <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-	     </a>
-    </div>
-  </li>
-</ul>
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in sports" data-notify-when-repeat-finished>
+      <div class="item">
+  	    <a href="/#/source/{{i['id']}}">
+  	        <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+  	     </a>
+      </div>
+    </li>
+  </ul>
+</div>
 
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in humor" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in tech" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in news" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in music" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in video" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in other" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/source/{{i['id']}}">
-          <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-       </a>
-    </div>
-  </li>
-</ul>
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in humor" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in tech" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in news" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in music" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in video" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="slide-wrapper">
+  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
+    <li class="repeat-item" data-ng-repeat="i in other" data-notify-when-repeat-finished>
+      <div class="item">
+        <a href="/#/source/{{i['id']}}">
+            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+      </div>
+    </li>
+  </ul>
+</div>
