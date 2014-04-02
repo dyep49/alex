@@ -17,6 +17,7 @@ class Pin < ActiveRecord::Base
       user_id:      user_id,
       url:          params[:url],
       title:        params[:title],
+      upload:       params[:upload],
       image_url:    params[:image_url],
       source_id:    params[:source_id],
       description:  params[:description]

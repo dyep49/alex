@@ -21,7 +21,9 @@ Alex::Application.routes.draw do
   post 'pin_search'    => 'pins#search'
   post 'edit_pin'      => 'pins#edit'
   get  'next_pin'      => 'pins#next'
-  get  'tags/:tag_name'=>'pins#tags'
+  get  'tags/:tag_name'=> 'pins#tags'
+
+  post '/image_upload' => 'main#image'
 
 
   resources :sources

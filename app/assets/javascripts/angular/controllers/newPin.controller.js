@@ -7,23 +7,34 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
     }
 
     $scope.formData = {
-      image_url: '',
-      image: '',
-      title: '',
+      image_url:   '',
+      title:       '',
       description: '',
-      url: '',
-      tags: '',
-      source_id: ''
+      url:         '',
+      tags:        '',
+      source_id:   ''
     };
 
+    var upload;
+
+    $scope.upload = function($file){
+      $upload.upload({
+        url: '/image_upload',
+        data: {myObj: $file},
+        file: $file
+      })
+      .success(function(data){
+        console.log(data)
+      })
+    }
 
     $scope.createPin = function(){
       $scope.formData.tags = $('#tags').val();
       $http.post('/pins', $scope.formData)
-        .success(function(response){
-          console.log($scope.formData);
-          $location.path('/pin/source/' + response.id)
-        })
+      .success(function(response){
+        console.log($scope.formData);
+        $location.path('/pin/source/' + response.id)
+      })
     }
 
     $scope.onFileSelect = function($files){

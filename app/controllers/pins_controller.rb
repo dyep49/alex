@@ -3,6 +3,7 @@ class PinsController < ApplicationController
     def create
         if current_user && current_user.admin
             pin = Pin.make_pin(params, current_user.id)
+            binding.pry
             Source.find(params["source_id"]["id"]).pins << pin
             render json: {id: pin.id}
         else
