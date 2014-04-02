@@ -10,6 +10,8 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
       $location.url('/')
     }
 
+    $scope.show = true
+
     $scope.cats = [
         {name: 'Sports'},
         {name: 'Humor'},
@@ -21,7 +23,7 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
     ]
 
     $scope.onFileSelect = function($files){
-
+      $scope.show = false
       console.log($files);
       for (var i=0; i < $files.length; i++){
         var file = $files[i];

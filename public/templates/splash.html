@@ -2,8 +2,32 @@
 
 <div class="splash-wrapper">
 <h2 class="title-left">News</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in news" data-notify-repeat-finish>
+   <div data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div class="slider-repeat" data-ng-repeat="i in news |unique:id" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -13,8 +37,32 @@
 
 <div class="splash-wrapper">
 <h2 class="title-left">Music</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in music" data-notify-repeat-finish>
+   <div data- data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in music|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -24,8 +72,32 @@
 
 <div class="splash-wrapper">
 <h2 class="title-left">Tech</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in tech" data-notify-repeat-finish>
+   <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in tech|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -36,8 +108,32 @@
 
   <div class="splash-wrapper">
   <h2 class="title-left">Sports</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in sports" data-notify-repeat-finish>
+   <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in sports|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -47,8 +143,32 @@
 
   <div class="splash-wrapper">
   <h2 class="title-left">Video</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in video" data-notify-repeat-finish>
+   <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in video|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -59,8 +179,32 @@
 
 <div class="splash-wrapper">
 <h2 class="title-left">Humor</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in humor" data-notify-repeat-finish>
+   <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in humor|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
@@ -70,8 +214,32 @@
 
 <div class="splash-wrapper">
 <h2 class="title-left">Other</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in other" data-notify-repeat-finish>
+   <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]">
+    <div data-ng-repeat="i in other|unique:id" data-notify-repeat-finish class="slider-repeat">
         <a href="/#/source/{{i['id']}}">
             <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
          </a>
