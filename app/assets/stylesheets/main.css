@@ -48,6 +48,10 @@
 	margin: 10px;
 }
 
+.slider-repeat{
+	width: 200px !important;
+}
+
 .small {
 	height: 200px;
 	width: 200px;
