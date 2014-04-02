@@ -1,11 +1,23 @@
 <form action="">
   <input ng-model="formData.url" type="text" placeholder="url">
+  <br>
+  <br>
 
-  <input ng-model="formData.img_url" type="text" placeholder="image url">
 
-  <input type="file" ng-file-select="onFileSelect($files)">
+  <input ng-model="formData.img_url" type="text" placeholder="image url" ng-show="show">
+  <br>
+  <br>
+
+
+  <input class="choose-file" type="file" ng-file-select="onFileSelect($files)">
+  <br>
+
   <!--  onFileSelect($files) -->
   <button ng-click="upload.abort()">Cancel Upload</button>
+
+    <br>
+  <br>
+
 
   <input ng-model="formData.name" type="text" placeholder="website name">
 

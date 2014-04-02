@@ -15,6 +15,8 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
       source_id:   ''
     };
 
+    $scope.show = false
+
     $scope.createPin = function(){
       $scope.formData.tags = $('#tags').val();
       $http.post('/pins', $scope.formData)
@@ -25,7 +27,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
     }
 
     $scope.onFileSelect = function($files){
-
+      $scope.show = true
       console.log($files);
       for (var i=0; i < $files.length; i++){
         var file = $files[i];

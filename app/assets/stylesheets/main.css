@@ -29,6 +29,12 @@
 	text-align: left;
 }
 
+.choose-file{
+	display: block;
+	margin: 0 auto;
+	padding-left: 92px;
+}
+
 .bxslider img {
 	width: 200px;
 	height: 200px;
