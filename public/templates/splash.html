@@ -1,4 +1,38 @@
-<h1>Splash</h1>
+<h1>Welcome to Trolly!</h1>
+
+<div class="splash-wrapper">
+<h2 class="title-left">News</h2>
+   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="i in news" data-notify-repeat-finish>
+        <a href="/#/source/{{i['id']}}">
+            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+    </div>
+  </div>
+</div>
+
+<div class="splash-wrapper">
+<h2 class="title-left">Music</h2>
+   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="i in music" data-notify-repeat-finish>
+        <a href="/#/source/{{i['id']}}">
+            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+    </div>
+  </div>
+</div>
+
+<div class="splash-wrapper">
+<h2 class="title-left">Tech</h2>
+   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="i in tech" data-notify-repeat-finish>
+        <a href="/#/source/{{i['id']}}">
+            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+         </a>
+    </div>
+  </div>
+</div>
+
 
   <div class="splash-wrapper">
   <h2 class="title-left">Sports</h2>
@@ -22,39 +56,6 @@
   </div>
 </div>
 
-<div class="splash-wrapper">
-<h2 class="title-left">Music</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in music" data-notify-repeat-finish>
-        <a href="/#/source/{{i['id']}}">
-            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-    </div>
-  </div>
-</div>
-
-
-<div class="splash-wrapper">
-<h2 class="title-left">News</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in news" data-notify-repeat-finish>
-        <a href="/#/source/{{i['id']}}">
-            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-    </div>
-  </div>
-</div>
-
-<div class="splash-wrapper">
-<h2 class="title-left">Tech</h2>
-   <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
-    <div data-ng-repeat="i in tech" data-notify-repeat-finish>
-        <a href="/#/source/{{i['id']}}">
-            <img class="small" ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-    </div>
-  </div>
-</div>
 
 <div class="splash-wrapper">
 <h2 class="title-left">Humor</h2>

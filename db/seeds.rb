@@ -25,33 +25,40 @@ end
         cat: 'video'
     )
 10.times do 
+    height = rand(200..600).to_s
+    width = rand(200..600).to_s
     Source.create(
         url: 'www.vimeo.com',
-        img_url: 'http://www.cmha.bc.ca/files/vimeo-icon.png',
+        # img_url: 'http://www.cmha.bc.ca/files/vimeo-icon.png',
+        img_url: 'http://placekitten.com/' + height + '/' + width,
         name: 'Vimeo',
         cat: 'video'
     )
     Source.create(
         url: 'www.espn.com',
-        img_url: 'https://yt3.ggpht.com/-yOoKXdob9y8/AAAAAAAAAAI/AAAAAAAAAAA/O9ATiv9wGJ0/s900-c-k-no/photo.jpg',
+        # img_url: 'https://yt3.ggpht.com/-yOoKXdob9y8/AAAAAAAAAAI/AAAAAAAAAAA/O9ATiv9wGJ0/s900-c-k-no/photo.jpg',
+        img_url: 'http://placekitten.com/' + height + '/' + width,
         name: 'ESPN',
         cat: 'sports'
     )
     Source.create(
         url: 'www.collegehumor.com',
-        img_url: 'http://1.bp.blogspot.com/-4ZY9hIEfxlY/TmhUOOq_ATI/AAAAAAAAAIo/KPUby3hfqqI/s1600/logo_collegehumor.jpg',
+        # img_url: 'http://1.bp.blogspot.com/-4ZY9hIEfxlY/TmhUOOq_ATI/AAAAAAAAAIo/KPUby3hfqqI/s1600/logo_collegehumor.jpg',
+        img_url: 'http://placekitten.com/' + height + '/' + width,
         name: 'College Humor',
         cat: 'humor'
     )
     Source.create(
         url: 'www.lifehacker.com',
-        img_url: 'http://kinja.com/assets/images/logos/touchicons/lifehacker-touch-icon-200x200.png',
+        # img_url: 'http://kinja.com/assets/images/logos/touchicons/lifehacker-touch-icon-200x200.png',
+        img_url: 'http://placekitten.com/' + height + '/' + width,
         name: 'Lifehacker',
         cat: 'other'
     )
     Source.create(
         url: 'www.cnn.com',
-        img_url: 'http://i1.ytimg.com/i/upvZG-5ko_eiXAupbDfxWw/mq1.jpg?v=51df0b06',
+        # img_url: 'http://i1.ytimg.com/i/upvZG-5ko_eiXAupbDfxWw/mq1.jpg?v=51df0b06',
+        img_url: 'http://placekitten.com/' + height + '/' + width,
         name: 'CNN',
         cat: 'news'
     )
