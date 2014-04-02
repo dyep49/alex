@@ -15,7 +15,7 @@
   <br>
   <br>
 
-  <input type="file" ng-file-select="upload($file)" ng-model='formData.upload'>
+  <input type="file" ng-file-select="onFileSelect($files)" ng-model='formData.upload'>
   <!--  onFileSelect($files) -->
   <button ng-click="upload.abort()">Cancel Upload</button>
 
