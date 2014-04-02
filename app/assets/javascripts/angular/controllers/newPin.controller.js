@@ -25,6 +25,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
     }
 
     $scope.onFileSelect = function($files){
+
       console.log($files);
       for (var i=0; i < $files.length; i++){
         var file = $files[i];
@@ -32,6 +33,10 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
           url: '/image_upload',
           method: 'POST',
           file: file
+        })
+        .success(function(data){
+          console.log(data)
+          $scope.formData.image_url = data.url
         })
       }
     }

@@ -21,9 +21,12 @@ main.controller('EditPinController', ['$scope', '$route', 'Source', '$http', '$l
       for (var i=0; i < $files.length; i++){
         var file = $files[i];
         $scope.upload = $upload.upload({
-          url: '/pins',
+          url: '/image_upload',
           method: 'POST',
           file: file
+        })
+        .success(function(data){
+          $scope.pin[0].pin.image_url = data.url
         })
       }
     }

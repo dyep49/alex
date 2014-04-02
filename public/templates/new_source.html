@@ -3,6 +3,10 @@
 
   <input ng-model="formData.image_url" type="text" placeholder="image url">
 
+  <input type="file" ng-file-select="onFileSelect($files)">
+  <!--  onFileSelect($files) -->
+  <button ng-click="upload.abort()">Cancel Upload</button>
+
   <input ng-model="formData.name" type="text" placeholder="website name">
 
   <br>
