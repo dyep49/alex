@@ -26,7 +26,7 @@ class SourcesController < ApplicationController
 	def create
 		if current_user.admin == true
 			if params[:cat] == nil || params[:cat][:name] == 'Other'
-				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name])
+				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], cat: 'other')
 			else
 				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], cat: params[:cat][:name].downcase)
 			end

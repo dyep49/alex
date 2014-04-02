@@ -1,8 +1,10 @@
-main.controller('NewSourceController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+main.controller('NewSourceController', ['$scope', '$http', '$location', '$upload', function($scope, $http, $location, $upload) {
     $scope.formData = {
       url: '',
       img_url: '',
-      name: ''
+      name: '',
+      cat: '' 
+
     };
 
     $scope.createSource = function(){
@@ -33,7 +35,8 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
           file: file
         })
         .success(function(data){
-          $scope.formData.image_url = data.url
+          console.log(data)
+          $scope.formData.img_url = data.url
         })
       }
     }
