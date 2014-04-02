@@ -5,6 +5,11 @@ class SourcesController < ApplicationController
 	end
 
 	def show
+		source = Source.where(cat: params[:id].downcase)
+		render json: source
+	end
+
+	def source_pins
 		id = params[:id]
 		page_num = params[:page_number]
 		case params[:sort_by]
@@ -19,11 +24,12 @@ class SourcesController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		if current_user.admin == true
 			if params[:cat] == nil || params[:cat][:name] == 'Other'
 				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name])
 			else
-				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], cat: Tag.find_by_name(params[:cat][:name].downcase))
+				source = Source.create(img_url: params[:img_url], url: params[:url], name: params[:name], cat: params[:cat][:name].downcase)
 			end
 		end
 		render nothing: true

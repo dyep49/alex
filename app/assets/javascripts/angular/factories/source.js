@@ -9,7 +9,7 @@ main.service('Source', ['$http', function($http){
 	
 		this.show = function(id, page, sort){
 			$http({
-				url: '/sources/' + id, 
+				url: '/source_pins/' + id, 
 				method: 'GET',
 				params: {page_number: page, sort_by: sort}
 			})

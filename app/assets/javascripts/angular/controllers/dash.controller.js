@@ -28,6 +28,8 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', '$
 	$scope.shares = Inbox.getCount();
 	$scope.share_users = Inbox.getUsers();
 	$scope.pins = []
+	$scope.currentSlider = 0
+	$scope.total = 3
 
 	$scope.deleteShare = function(id){
 		$http.post('/users/delete_share', {id: id})

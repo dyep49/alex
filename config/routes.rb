@@ -26,7 +26,9 @@ Alex::Application.routes.draw do
   post '/image_upload' => 'main#image'
 
 
+
   resources :sources
+  get 'source_pins/:id'=> 'source#source_pins'
 
 
 

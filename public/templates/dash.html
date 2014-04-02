@@ -1,41 +1,38 @@
+
+<div class="splash-wrapper">
 <h2>Saves</h2>
-<div class="saves">
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in savedArray track by $index" data-notify-when-repeat-finished>
-    <div class="item">
+  <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="i in savedArray" data-notify-repeat-finish>
       <a href="/#/pin/source/{{i['id']}}">
-        <img data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+        <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
       </a>
     </div>
-  </li>
-</ul>
+  </div>
 </div>
 
+<div class="splash-wrapper">
 <h2>History</h2>
-<div class="history">
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="i in historyArray track by $index" data-notify-when-repeat-finished>
-    <div class="item">
+  <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="i in historyArray" data-notify-repeat-finish>
       <a href="/#/pin/source/{{i['id']}}">
-        <img data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+        <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
       </a>
     </div>
-  </li>
-</ul>
+  </div>
 </div>
 
+<div class="splash-wrapper">
 <h2>Shares</h2>
-<div class="shares">
-<ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-  <li class="repeat-item" data-ng-repeat="pin in pins track by $index" data-notify-when-repeat-finished>
-    <div class="item">
-      <a href="/#/pin/source/{{pin.pin[0].pin.id}}">
-        <img ng-src="{{pin.pin[0].pin.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-      </a>
-      <p style="text-align: left">
-        Shared By: {{pin.username}}
-      </p>
+  <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
+    <div data-ng-repeat="pin in pins" data-notify-repeat-finish>
+      <div class="item">
+        <a href="/#/pin/source/{{pin.pin[0].pin.id}}">
+          <img ng-src="{{pin.pin[0].pin.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+        </a>
+        <p style="text-align: left">
+          Shared By: {{pin.username}}
+        </p>
+      </div>
     </div>
-  </li>
-</ul>
-</div> 
+  </div>
+  </div>
