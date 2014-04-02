@@ -1,8 +1,10 @@
 <h1>Search Results</h1>
 
+
 <div id='title-div' class='third'>
+<h2>Title</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in titleResults[0]">
+	    <div id="source-div" ng-repeat="pin in titleResults[0]|unique:id">
 	        <div class="title">
 	            <p>
 	                <a href="/#/pin/{{pin.id}}">
@@ -18,8 +20,9 @@
 </div>
 
 <div id='title-div' class='third'>
+<h2>By URL</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in urlResults[0]">
+	    <div id="source-div" ng-repeat="pin in urlResults[0]|unique:id">
 	        <div class="title">
 	            <p>
 	                <a href="/#/pin/{{pin.id}}">
@@ -35,8 +38,9 @@
 </div>
 
 <div id='title-div' class='third'>
+<h2>By Description</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in descriptionResults[0]">
+	    <div id="source-div" ng-repeat="pin in descriptionResults[0]|unique:id">
 	        <div class="title">
 	            <p>
 	                <a href="/#/pin/{{pin.id}}">
@@ -49,6 +53,7 @@
 	        </div>
 	    </div>
 	</div>
+</div>
 </div>
 
 

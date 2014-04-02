@@ -58,6 +58,34 @@
 	margin-right: 0px !important;
 }
 
+#search-title{
+	/*float: left;*/
+	display: inline-block;
+	/*text-align: left;*/
+}
+
+.search-head{
+	margin: 110px;
+}
+
+#search-url{
+	/*float: center;*/
+	display: inline-block;
+
+}
+
+#search-des{
+	/*float: right;*/
+	display: inline-block;
+
+}
+
+#search-div{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
 .splash-wrapper {
 	visibility: hidden;
 }
