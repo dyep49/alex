@@ -25,6 +25,9 @@
 	margin: 0;
 	font-size: 25px;
 }
+.title-left{
+	text-align: left;
+}
 
 .bxslider img {
 	width: 200px;
@@ -47,6 +50,7 @@
 .splash-wrapper {
 	visibility: hidden;
 }
+
 
 .splash-animation{
     -webkit-animation: fadein 2s; /* Safari and Chrome */

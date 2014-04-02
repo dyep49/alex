@@ -1,6 +1,7 @@
 <h1>Splash</h1>
 
   <div class="splash-wrapper">
+  <h2 class="title-left">Sports</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in sports" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -11,6 +12,7 @@
 </div>
 
   <div class="splash-wrapper">
+  <h2 class="title-left">Video</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in video" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -21,6 +23,7 @@
 </div>
 
 <div class="splash-wrapper">
+<h2 class="title-left">Music</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in music" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -30,7 +33,9 @@
   </div>
 </div>
 
+
 <div class="splash-wrapper">
+<h2 class="title-left">News</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in news" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -41,6 +46,7 @@
 </div>
 
 <div class="splash-wrapper">
+<h2 class="title-left">Tech</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in tech" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -51,6 +57,7 @@
 </div>
 
 <div class="splash-wrapper">
+<h2 class="title-left">Humor</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in humor" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -61,6 +68,7 @@
 </div>
 
 <div class="splash-wrapper">
+<h2 class="title-left">Other</h2>
    <div data-slick="slidesToShow: 4, slidesToScroll: 4, infinite: false">
     <div data-ng-repeat="i in other" data-notify-repeat-finish>
         <a href="/#/source/{{i['id']}}">
@@ -70,91 +78,3 @@
   </div>
 </div>
 
-
-
-<!-- 
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <div data-ng-repeat="i in sports" data-notify-when-repeat-finished>
-      <div class="item">
-  	    <a href="/#/source/{{i['id']}}">
-  	        <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-  	     </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in humor" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in tech" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in news" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in music" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in video" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="slide-wrapper">
-  <ul class="bxslider" data-bx-slider="mode: 'horizontal', pager: false, controls: true, minSlides: 1, maxSlides:4, slideWidth: 200, slideMargin:0, infiniteLoop: false, hideControlOnEnd: true">
-    <li class="repeat-item" data-ng-repeat="i in other" data-notify-when-repeat-finished>
-      <div class="item">
-        <a href="/#/source/{{i['id']}}">
-            <img ng-src="{{i['img_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-         </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-{{video}} -->
