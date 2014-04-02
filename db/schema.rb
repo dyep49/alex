@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401215408) do
+ActiveRecord::Schema.define(version: 20140322014818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,17 +41,13 @@ ActiveRecord::Schema.define(version: 20140401215408) do
     t.integer  "user_id"
     t.integer  "source_id"
     t.string   "title"
-    t.integer  "view_count",          default: 0
+    t.integer  "view_count",  default: 0
     t.integer  "save_count"
     t.string   "url"
     t.text     "description"
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
   end
 
   create_table "shares", force: true do |t|
@@ -71,10 +67,6 @@ ActiveRecord::Schema.define(version: 20140401215408) do
     t.string   "cat"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
   end
 
   create_table "tags", force: true do |t|
