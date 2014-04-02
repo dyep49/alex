@@ -57,6 +57,5 @@ group :development do
 end
 
 gem 'kaminari'
-gem 'paperclip'
 gem 'aws-sdk'
 gem 'amatch'
