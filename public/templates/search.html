@@ -5,16 +5,16 @@
 <h2>Title</h2>
 	<div id="source-container">
 	    <div id="source-div" ng-repeat="pin in titleResults[0]|unique:id">
-	        <div class="title">
-	            <p>
-	                <a href="/#/pin/{{pin.id}}">
-	                    {{pin.title}}
-	                </a>
-	            </p>
-	        </div>
-	        <div id='img-div'>
-	            <img ng-src="{{pin['image_url']}}"/>
-	        </div>
+	        <a href="/#/pin/{{pin.id}}">
+		        <div class="title">
+		            <p>
+						{{pin.title}}
+		            </p>
+		        </div>
+		        <div id='img-div'>
+		            <img ng-src="{{pin['image_url']}}"/>
+		        </div>
+	        </a>
 	    </div>
 	</div>
 </div>
@@ -64,4 +64,18 @@
 		max-width: 32%;
 		margin-right: 1%; 
 	}
+
+    .title p {
+        max-width: 300px;
+    }
+
+    #img-div {
+        height: 300px;
+        width: 300px;
+    }
+
+    #source-div img {
+        height: 275px;
+        width: 275px;
+    }
 </style>
