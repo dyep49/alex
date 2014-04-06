@@ -14,11 +14,11 @@ class SourcesController < ApplicationController
 		page_num = params[:page_number]
 		case params[:sort_by]
 		when "most_views"
-			out = Pin.where(source_id: id).order(view_count: :desc).page(page_num).per(10)
+out = Source.find(id).pins.page(page_num).per(10)
 		when "most_recent"
-			out = Pin.where(source_id: id).order(created_at: :desc).page(page_num).per(10)
+out = Source.find(id).pins.page(page_num).per(10)
 		else
-			out = Pin.where(source_id: id).page(page_num).per(10)
+out = Source.find(id).pins.page(page_num).per(10)
 		end
 		render json: out
 	end

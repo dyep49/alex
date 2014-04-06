@@ -28,7 +28,7 @@ Alex::Application.routes.draw do
 
 
   resources :sources
-  get 'source_pins/:id'=> 'source#source_pins'
+  get 'source_pins/:id'=> 'sources#source_pins'
 
 
 
