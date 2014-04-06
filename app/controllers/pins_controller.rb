@@ -44,6 +44,7 @@ class PinsController < ApplicationController
     end
 
     def destroy
+        binding.pry
     end
 
     def favorite

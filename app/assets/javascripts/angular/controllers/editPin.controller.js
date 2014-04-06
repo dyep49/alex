@@ -16,6 +16,13 @@ main.controller('EditPinController', ['$scope', '$route', 'Source', '$http', '$l
         })
     }
 
+    $scope.deletePin = function(){
+      $http.delete('/pins/' + $route.current.params.pin_id)
+      .success(function(response){
+          $location.path('/')
+      })
+    }
+
     $scope.onFileSelect = function($files){
       console.log($files);
       for (var i=0; i < $files.length; i++){
