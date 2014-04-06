@@ -9,16 +9,16 @@
 
 <div id="source-container" infinite-scroll='more()'>
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
-        <div class="title">
-            <p>
-                <a href="/#/pin/{{tag}}/{{pin.id}}">
+        <a href="/#/pin/{{tag}}/{{pin.id}}">
+            <div class="title">
+                <p>
                     {{pin.title}}
-                </a>
-            </p>
-        </div>
-        <div id='img-div'>
-            <img data-ng-src="{{pin['image_url']}}">
-        </div>
+                </p>
+            </div>
+            <div id='img-div' class='infinity-pic'>
+                <img data-ng-src="{{pin['image_url']}}">
+            </div>
+        </a>
     </div>
 </div>
 
@@ -30,7 +30,8 @@
     }
 
     #source-div img {
-        max-height: 300px;
+        height: 275px;
+        width: 275px;
     }
 
     #source-div {
