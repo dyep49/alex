@@ -15,8 +15,8 @@
   <br>
   <br>
 
-  <input type="file" ng-file-select="onFileSelect($files)" >
-  <button ng-click="upload.abort()">Cancel Upload</button>
+  <input class="choose-file" type="file" ng-file-select="onFileSelect($files)" >
+  <!-- <button ng-click="upload.abort()">Cancel Upload</button> -->
 
 
   <br>
@@ -30,11 +30,10 @@
   <p>Source: <select ng-options="source.name for source in sources" ng-model="pin[0].pin.source_id"></select></p>
   <br>
   
-  <div style='margin-left:33%;'>
+  <div style='margin-left: 38%;'>
     <input ng-model="formData.tags" type="text" id="tags">
   </div>
   <p style='color:grey'>Include: humor, tech, video, news, sports, music</p>
-
   <br>
   <br>
 
