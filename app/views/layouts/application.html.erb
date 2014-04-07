@@ -45,13 +45,19 @@
             <% end %>
           </ul>
           <a class="navbar-brand" id='main-logo' href="#">trolly</a>
-          <form class="navbar-form navbar-right" role="search">
+          <form class="navbar-form" id='nav-search' role="search">
             <div class="form-group">
               <input ng-model='formData.search' type="text" class="form-control" placeholder="Search" />
             </div>
-            <button ng-click='searchPins()' type="submit" class="btn btn-default">
-                Submit
-            </button>
+            &nbsp
+            &nbsp
+            <div id='social' class="form-group a2a_kit a2a_kit_size_32 a2a_default_style">
+              <a class="a2a_button_facebook"></a>
+              <a class="a2a_button_twitter"></a>
+              <a class="a2a_button_google_plus"></a>
+              <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+            </div>
+            <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
           </form>
         </div>
       </div>
@@ -134,12 +140,14 @@
 
   nav a {
     color: white;
+    font-size: 1.1em;
+    font-family: sans;
   }
 
   #main-logo {
     font-family: 'Nova Square', cursive;
     font-size: 2.2em;
-    margin-left: 11%;
+    margin-left: 7%;
   }
 
   #col li {
@@ -154,10 +162,8 @@
     left: 0px;
     top: 70px;
     margin-right: 10px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-
   }
+
   #col img {
     width: 25px;
     height: 25px;
@@ -165,8 +171,20 @@
     margin-top: 2px;
   }
 
+
   #yield {
     padding-top: 1em;
-    /*margin-left: 35px;*/
+    margin-top: 1em;
   }
+
+  #social {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  #nav-search {
+    margin-left: 100px;
+    padding-right: 0;
+  }
+
 </style>

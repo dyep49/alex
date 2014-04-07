@@ -1,18 +1,20 @@
-<div id='img-and-card' style='opacity: 0;'>
-    <div>
-        <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
-    </div>
-    <img src="{{pin[0].pin.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'">
-</div>
-
-<br>
-<br>
-
+<br />
 <a href="{{pin[0].pin.url}}">
     <h1>
         {{pin[0].pin.title}}
     </h1>
 </a>
+
+
+<div id='img-and-card' style='opacity: 0;'>
+    <div>
+        <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
+    </div>
+</div>
+
+<br>
+<br>
+
 
 <br>
 
@@ -71,22 +73,8 @@
     </div>
     <br/>
     <br/>
-    <!-- AddToAny BEGIN -->
-    <div id='social' class="a2a_kit a2a_kit_size_32 a2a_default_style">
-        <a class="a2a_button_facebook"></a>
-        <a class="a2a_button_twitter"></a>
-        <a class="a2a_button_google_plus"></a>
-        <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
-    </div>
-    <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-    <!-- AddToAny END -->
+
 </div>
-
-<br>
-<br>
-
-
-
 
 <script type="text/javascript">
     $('#share-button').on('click', function(){
@@ -111,6 +99,11 @@
 <br/>
 
 <style type="text/css">
+
+    p {
+        font-size: 1.4em;
+        padding: 0 5em;
+    }
 
     .foot-button {
         display: inline-block;
@@ -139,31 +132,20 @@
         height: 100%;
     }
     #img-and-card {
-        margin: 0 7%;
-        display: inline-block;
-        float: left;
+        width: 100%;
         min-height: 300px;
         -webkit-transition: .4s ease-in-out opacity;
         -moz-transition: .4s ease-in-out opacity;
         -o-transition: .4s ease-in-out opacity;
         transition: .4s ease-in-out opacity;
     }
-    #img-and-card img {
-        max-width: 300px;
-        max-height: 300px;
-        float: left;
-        margin-top: 50px;
-    }
-    #img-and-card div {
-        width: 600px;
-        float: left;
-    }
+
     h1 {
         margin: 0 20%;
+        font-size: 4em;
+        color: #444;
     }
-    a h1 {
-        color: black;
-    }
+
     a:hover {
         color: red;
         text-decoration: none;
