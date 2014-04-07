@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='main'>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
   <title>Trolly</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
@@ -8,7 +9,7 @@
 </head>
 <body class='container' style='padding:0;background-color:#fdfdfd;'>
 
-    <nav ng-controller='nav' class="navbar navbar-default" role="navigation">
+    <nav ng-controller='nav' role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -17,7 +18,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Trolly</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,6 +44,7 @@
                 </li>
             <% end %>
           </ul>
+          <a class="navbar-brand" id='main-logo' href="#">trolly</a>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input ng-model='formData.search' type="text" class="form-control" placeholder="Search" />
@@ -120,6 +121,27 @@
     padding: 0;
     margin: 0;
   }
+
+  nav {
+    background-color: #F00018;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-left: -98px;
+    position: absolute;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav a {
+    color: white;
+  }
+
+  #main-logo {
+    font-family: 'Nova Square', cursive;
+    font-size: 2.2em;
+    margin-left: 11%;
+  }
+
   #col li {
     margin: 4px 0;
   }
@@ -130,6 +152,7 @@
     margin: 0;
     position: absolute;
     left: 0px;
+    top: 70px;
     margin-right: 10px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -143,6 +166,7 @@
   }
 
   #yield {
+    padding-top: 1em;
     /*margin-left: 35px;*/
   }
 </style>
