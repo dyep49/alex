@@ -57,7 +57,7 @@
             <strong>Share</strong>
         </button>
     </div>
-    &nbsp
+    &nbsp;
     <div ng-click='savePin(); toggle=true' 
          id='save' 
          ng-hide="toggle"
@@ -78,16 +78,16 @@
 </div>
 
 
-<button class="btn btn-primary" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "previous")'>    
-    Previous
+<button id='prev-btn' class='direction-btn' ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "previous")'>    
+    <strong>&#10094;</strong>
 </button>
 
 <button class="btn" ng-click='goEdit()' ng-hide="not_admin">
     <strong>Edit</strong>
 </button>
 
-<button class="btn btn-primary" ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>
-    Next
+<button id='next-btn' class='direction-btn' ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>
+    <strong>&#10095;</strong>
 </button>
 
 
@@ -95,6 +95,28 @@
 <br/>
 
 <style type="text/css">
+
+    .direction-btn {
+        border: none;
+        background-color: rgba(200,200,200,0);
+        font-family: monaco, mono;
+        font-size: 10em;
+        color: #333;
+        position: absolute;
+        top: 1.5em;
+    }
+
+    .direction-btn:hover {
+        color: #F00018;
+    }
+
+    #prev-btn {
+        left: 100px;
+    }
+
+    #next-btn {
+        right: 100px;
+    }
 
     p {
         font-size: 1.4em;
