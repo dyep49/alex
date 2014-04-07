@@ -71,6 +71,10 @@
          style='background-color: #3f6;'>
         <strong>Unsave</strong>
     </div>
+    &nbsp;
+    <button id='edit-btn' class="btn" ng-click='goEdit()' ng-hide="not_admin">
+        <strong>Edit</strong>
+    </button>
 
     <br/>
     <br/>
@@ -82,10 +86,6 @@
     <strong>&#10094;</strong>
 </button>
 
-<button class="btn" ng-click='goEdit()' ng-hide="not_admin">
-    <strong>Edit</strong>
-</button>
-
 <button id='next-btn' class='direction-btn' ng-click='nextPin(pin[0].pin.source_id, pin[0].pin.id, "next")'>
     <strong>&#10095;</strong>
 </button>
@@ -95,6 +95,11 @@
 <br/>
 
 <style type="text/css">
+
+
+    #edit-btn {
+        border: 1px solid #ccc;
+    }
 
     .direction-btn {
         border: none;
