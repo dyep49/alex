@@ -2,6 +2,7 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', '$
 
     function init(){
         Dash.getSavedArray()
+        $scope.savedArray = []
         Dash.getHistoryArray()
         setTimeout(function(){
 	        if ($scope.shares.length > 0){

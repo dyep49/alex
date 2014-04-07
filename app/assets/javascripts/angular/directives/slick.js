@@ -8,7 +8,7 @@ main.directive('slick', ['$timeout', function($timeout){
 					$('.splash-wrapper').css('visibility', 'visible')
 					$('.splash-wrapper').addClass('splash-animation')
 					$(element).slick(scope.$eval('{' + attrs.slick + '}'))					
-			}, 500)
+			}, 1000)
 			// })
 		}
 	}

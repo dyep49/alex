@@ -1,7 +1,7 @@
 
 <div class="splash-wrapper">
 <h2>Saves</h2>
-  <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+  <div  data-slick="dots: false, infinite: false, placeholders:false,   responsive: [
     {
       breakpoint: 1024,
       settings: {
@@ -26,7 +26,7 @@
       }
     }
   ]">
-    <div data-ng-repeat="i in savedArray | unique:id" data-notify-repeat-finish class="slider-repeat">
+    <div data-ng-repeat="i in savedArray | unique:'id'" data-notify-repeat-finish class="slider-repeat">
       <a href="/#/pin/source/{{i['id']}}">
         <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
       </a>
@@ -36,7 +36,7 @@
 
 <div class="splash-wrapper">
 <h2>History</h2>
-  <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false,   responsive: [
+  <div  data-slick="dots: false, slidesToShow: 4, slidesToScroll: 4, infinite: false, responsive: [
     {
       breakpoint: 1024,
       settings: {
@@ -61,7 +61,7 @@
       }
     }
   ]">
-    <div data-ng-repeat="i in historyArray | unique:id" data-notify-repeat-finish class="slider-repeat">
+    <div data-ng-repeat="i in historyArray | unique:'id'" data-notify-repeat-finish class="slider-repeat">
       <a href="/#/pin/source/{{i['id']}}">
         <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
       </a>
@@ -96,7 +96,7 @@
       }
     }
   ]">
-    <div data-ng-repeat="pin in pins|unique:id" data-notify-repeat-finish class="slider-repeat">
+    <div data-ng-repeat="pin in pins|unique:'id'" data-notify-repeat-finish class="slider-repeat">
       <div class="item">
         <a href="/#/pin/source/{{pin.pin[0].pin.id}}">
           <img ng-src="{{pin.pin[0].pin.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
