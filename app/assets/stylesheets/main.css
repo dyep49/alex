@@ -82,6 +82,13 @@
 	visibility: hidden;
 }
 
+.white {
+	background: white;
+	line-height: 5em;
+	width: 275px;
+}
+
+
 
 .splash-animation{
     -webkit-animation: fadein 2s; /* Safari and Chrome */
