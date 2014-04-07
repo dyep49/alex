@@ -27,9 +27,14 @@
     }
   ]">
     <div data-ng-repeat="i in savedArray | unique:'id'" data-notify-repeat-finish class="slider-repeat">
-      <a href="/#/pin/source/{{i['id']}}">
-        <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
-      </a>
+      <!-- <div> -->
+        <a href="/#/pin/source/{{i['id']}}">
+          <img class="small" data-ng-src="{{i['image_url']}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
+        </a>
+<!--         <div>
+          <p>Testtest</p>
+        </div> -->
+      <!-- </div> -->
     </div>
   </div>
 </div>
