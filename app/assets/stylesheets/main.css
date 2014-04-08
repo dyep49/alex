@@ -46,8 +46,12 @@
 }*/
 
 .small {
-	height: 250px;
-	width: 275px;
+	height: 230px;
+	width: 250px;
+}
+
+.slick-track {
+	margin-left: .75em;
 }
 
 #search-title{
@@ -91,7 +95,7 @@
 	background: white;
 	/*line-height: 5em;*/
 	padding: .4em 0em .4em 0em;
-	width: 275px;
+	width: 250px;
 	font-family: sans;
 	font-size: 1.5em;
 }

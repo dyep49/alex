@@ -41,7 +41,7 @@
 
 /* Arrows */
 
-.slick-prev { position: absolute; display: block; height: 100px; width: 100px; line-height: 0; font-size: 0; color: transparent;  top: 50%; margin-top: -10px; left: -85px; text-decoration: none !important; padding: 0px; }
+.slick-prev { position: absolute; display: block; height: 100px; width: 100px; line-height: 0; font-size: 0; color: transparent;  top: 50%; margin-top: -10px; left: -70px; text-decoration: none !important; padding: 0px; }
 .slick-next { position: absolute; display: block; height: 100px; width: 100px; line-height: 0; font-size: 0; color: transparent; top: 50%; margin-top: -10px; right: -65px; text-decoration: none !important; padding: 0px; }
 .slick-prev:before { content: '❮'; font-size: 60px; color: black; opacity: 0.85; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .slick-next:before { content: '❯'; font-size: 60px; color: black; opacity: 0.85; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
