@@ -4,16 +4,10 @@
 <div id='title-div' class='third'>
 <h2>Title</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in titleResults[0]|unique:id">
+	    <div id="source-div" ng-repeat="pin in titleResults[0]|unique:'id'">
 	        <a href="/#/pin/{{pin.id}}">
-		        <div class="title">
-		            <p>
-						{{pin.title}}
-		            </p>
-		        </div>
-		        <div id='img-div'>
 		            <img ng-src="{{pin['image_url']}}"/>
-		        </div>
+		            <p class="title-fill">{{pin.title}}</p>
 	        </a>
 	    </div>
 	</div>
@@ -22,16 +16,11 @@
 <div id='title-div' class='third'>
 <h2>By URL</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in urlResults[0]|unique:id">
-	        <div class="title">
-	            <p>
-	                <a href="/#/pin/{{pin.id}}">
-	                    {{pin.title}}
-	                </a>
-	            </p>
-	        </div>
-	        <div id='img-div'>
-	            <img ng-src="{{pin['image_url']}}"/>
+	    <div id="source-div" ng-repeat="pin in urlResults[0]|unique:'id'">
+	        <a href="/#/pin/{{pin.id}}">
+		            <img ng-src="{{pin['image_url']}}"/>
+		            <p class="title-fill">{{pin.title}}</p>
+	        </a>
 	        </div>
 	    </div>
 	</div>
@@ -40,17 +29,11 @@
 <div id='title-div' class='third'>
 <h2>By Description</h2>
 	<div id="source-container">
-	    <div id="source-div" ng-repeat="pin in descriptionResults[0]|unique:id">
-	        <div class="title">
-	            <p>
-	                <a href="/#/pin/{{pin.id}}">
-	                    {{pin.title}}
-	                </a>
-	            </p>
-	        </div>
-	        <div id='img-div'>
-	            <img ng-src="{{pin['image_url']}}"/>
-	        </div>
+	    <div id="source-div" ng-repeat="pin in descriptionResults[0]|unique:'id'">
+	        <a href="/#/pin/{{pin.id}}">
+		            <img ng-src="{{pin['image_url']}}"/>
+		            <p class="title-fill">{{pin.title}}</p>
+	        </a>
 	    </div>
 	</div>
 </div>
@@ -78,5 +61,9 @@
     #source-div img {
         height: 275px;
         width: 275px;
+    }
+
+    #yield {
+    	height: 260em;
     }
 </style>
