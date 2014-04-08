@@ -1,7 +1,24 @@
-<button class='btn' ng-click="mostRecent()">Latest</button>
-<button class='btn' ng-click="mostViewed()">Hot</button>
-<button class='btn' ng-click="mostMonth()">Hot this Month</button>
-<button class='btn' ng-click="mostWeek()">Hot this Week</button>
+
+
+ <div class="btn-group" id='sort-by'>
+  <button type="button" id='sort-dropdown-btn' class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Sort &#x25BE;
+  </button>
+  <ul class="dropdown-menu">
+        <li>
+            <a class='sort-btn' ng-click="mostRecent()">Latest</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostViewed()">Hot</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostMonth()">Hot this Month</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostWeek()">Hot this Week</a>
+        </li>
+  </ul>
+</div>
 
 <br/>
 <br/>
@@ -43,6 +60,15 @@
         display: inline-block;
         margin: 5px;
         text-align: center;
+    }
+
+    #sort-dropdown-btn {
+        background-color: green;
+        color: white;
+    }
+
+    #sort-by a:hover {
+        background-color: green;
     }
 
 </style>
