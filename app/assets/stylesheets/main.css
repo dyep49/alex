@@ -89,8 +89,11 @@
 
 .white {
 	background: white;
-	line-height: 5em;
+	/*line-height: 5em;*/
+	padding: .4em 0em .4em 0em;
 	width: 275px;
+	font-family: sans;
+	font-size: 1.5em;
 }
 
 
