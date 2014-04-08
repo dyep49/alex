@@ -10,42 +10,39 @@
 <body class='container' style='padding:0;background-color:#fdfdfd;'>
 
     <nav ng-controller='nav' role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav" style='padding-left: 1.3em;'>
-            <li>
-                <a href="/#/dash">Dash</a>
-            </li>
-            <% if current_user %>
-              <li id="inbox">
-                <a id='inboxA' href="/#/inbox">
-                  Inbox ({{inboxCount.length}})
-                </a>
+        <div class="btn-group" id='dropdown'>
+          <button type="button" id='dropdown-btn' class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              &#9776;
+          </button>
+          <ul class="dropdown-menu">
+              <li>
+                  <a href="/#/dash">Dash</a>
               </li>
-              <% if current_user.admin %>
-                <li>  
-                    <a href="/#/sources/new">New Source</a>
-                </li>
-                <li>  
-                    <a href="/#/pins/new">New Pin</a>
-                </li>
+              <% if current_user %>
+                  <li id="inbox">
+                      <a id='inboxA' href="/#/inbox">
+                          Inbox ({{inboxCount.length}})
+                      </a>
+                  </li>
+                  <% if current_user.admin %>
+                      <li>  
+                          <a href="/#/sources/new">New Source</a>
+                      </li>
+                      <li>  
+                          <a href="/#/pins/new">New Pin</a>
+                      </li>
+                  <% end %>
+                  <li>
+                      <a href="/logout">Logout</a>
+                  </li>
               <% end %>
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
-            <% end %>
           </ul>
-          <a class="navbar-brand" id='main-logo' href="#">trolly</a>
-          <form class="navbar-form" id='nav-search' role="search">
+        </div>
+        <a class="navbar-brand" id='main-logo' href="#">
+          trolly
+        </a>
+        <form class="navbar-form" id='nav-search' role="search">
             <div class="form-group">
               <input ng-model='formData.search' type="text" class="form-control" placeholder="Search" />
             </div>
@@ -59,9 +56,7 @@
               <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
             </div>
             <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-          </form>
-        </div>
-      </div>
+        </form>
     </nav>
 
   <div style='height: 2.2em;'>    
@@ -123,6 +118,7 @@
 </script>
 
 <style >
+
   #col ul {
     list-style-type: none;
     padding: 0;
@@ -148,14 +144,15 @@
   #main-logo {
     font-family: 'Nova Square', cursive;
     font-size: 2.2em;
-    margin-left: 9%;
+    margin-left: 42%;
   }
 
   #col li {
     margin: 4px 0;
   }
+
   #col {
-    background-color: #eee;
+    background-color: #eaeaea;
     width: 35px;
     padding: 0;
     margin: 0;
@@ -163,6 +160,8 @@
     left: 0px;
     top: 70px;
     margin-right: 10px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
   }
 
   #col img {
@@ -186,6 +185,27 @@
   #nav-search {
     right: 2em;
     position: absolute;
+  }
+
+  #dropdown-btn {
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 0;
+    left: 4em;
+  }
+
+  #dropdown a:hover {
+    background-color: #F00018;
+  }
+
+  #dropdown-btn {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: white;
+    font-size: 2em;
+    border-radius: 0;
   }
 
 </style>
