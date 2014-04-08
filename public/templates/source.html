@@ -1,6 +1,26 @@
-Sort By:
-<button ng-click="mostRecent()" class='btn'>Most Recent</button>
-<button class='btn' ng-click="mostViewed()">Most Viewed</button>
+<div class="btn-group" id='sort-by'>
+  <button type="button" id='sort-dropdown-btn' class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Sort &#x25BE;
+  </button>
+  <ul class="dropdown-menu">
+        <li>
+            <a class='sort-btn' ng-click="mostRecent()">Latest</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostViewed()">Hot</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostMonth()">Hot this Month</a>
+        </li>
+        <li>
+            <a class='sort-btn' ng-click="mostWeek()">Hot this Week</a>
+        </li>
+  </ul>
+</div>
+
+<br />
+<br />
+
 
 <div id="source-container'" infinite-scroll='loadMore()'>
 	<div id="source-div" class="repeat-item" ng-repeat="source in sources">
@@ -20,6 +40,14 @@ Sort By:
     #source-div img {
         height: 275px;
         width: 275px;
+    }
+    #sort-dropdown-btn {
+        background-color: green;
+        color: white;
+    }
+
+    #sort-by a:hover {
+        background-color: green;
     }
 </style>
 
