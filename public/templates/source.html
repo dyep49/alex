@@ -1,6 +1,10 @@
-<div class="btn-group" id='sort-by'>
+<button style='float:left;margin-left: 9em;' onClick='window.history.go(-1)' class='btn btn-primary'>
+    &#10094; <strong>Back</strong>
+</button>
+
+<div class="btn-group" id='sort-by' style="float:right; margin-right: 9em;">
   <button type="button" id='sort-dropdown-btn' class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      Sort &#x25BE;
+      <strong>Sort</strong> &#x25BE;
   </button>
   <ul class="dropdown-menu">
         <li>
@@ -20,19 +24,20 @@
 
 <br />
 <br />
+<br />
 
 
 <div id="source-container'" infinite-scroll='loadMore()'>
-	<div id="source-div" class="repeat-item" ng-repeat="source in sources">
+    <div id="source-div" class="repeat-item" ng-repeat="source in sources">
         <a href="/#/pin/source/{{source.id}}">
             <div class="title">
-    			<p>
+                <p>
                     {{source.title}}
                 </p>
             </div>
             <img ng-src="{{source.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
         </a>
-	</div>
+    </div>
 </div>
 
 
