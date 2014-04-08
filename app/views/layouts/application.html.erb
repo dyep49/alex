@@ -10,52 +10,39 @@
 <body class='container' style='padding:0;background-color:#fdfdfd;'>
 
     <nav ng-controller='nav' role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">Hello</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
 
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            &#9776;
+        <div class="btn-group" id='dropdown'>
+          <button type="button" id='dropdown-btn' class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              &#9776;
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Dropdown link</a></li>
-            <li><a href="#">Dropdown link</a></li>
+              <li>
+                  <a href="/#/dash">Dash</a>
+              </li>
+              <% if current_user %>
+                  <li id="inbox">
+                      <a id='inboxA' href="/#/inbox">
+                          Inbox ({{inboxCount.length}})
+                      </a>
+                  </li>
+                  <% if current_user.admin %>
+                      <li>  
+                          <a href="/#/sources/new">New Source</a>
+                      </li>
+                      <li>  
+                          <a href="/#/pins/new">New Pin</a>
+                      </li>
+                  <% end %>
+                  <li>
+                      <a href="/logout">Logout</a>
+                  </li>
+              <% end %>
           </ul>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav" style='padding-left: 1.3em;'>
-            <li>
-                <a href="/#/dash">Dash</a>
-            </li>
-            <% if current_user %>
-              <li id="inbox">
-                <a id='inboxA' href="/#/inbox">
-                  Inbox ({{inboxCount.length}})
-                </a>
-              </li>
-              <% if current_user.admin %>
-                <li>  
-                    <a href="/#/sources/new">New Source</a>
-                </li>
-                <li>  
-                    <a href="/#/pins/new">New Pin</a>
-                </li>
-              <% end %>
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
-            <% end %>
-          </ul>
-          <a class="navbar-brand" id='main-logo' href="#">trolly</a>
-          <form class="navbar-form" id='nav-search' role="search">
+        <a class="navbar-brand" id='main-logo' href="#">
+          trolly
+        </a>
+        <form class="navbar-form" id='nav-search' role="search">
             <div class="form-group">
               <input ng-model='formData.search' type="text" class="form-control" placeholder="Search" />
             </div>
@@ -69,9 +56,7 @@
               <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
             </div>
             <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-          </form>
-        </div>
-      </div>
+        </form>
     </nav>
 
   <div style='height: 2.2em;'>    
@@ -158,7 +143,7 @@
   #main-logo {
     font-family: 'Nova Square', cursive;
     font-size: 2.2em;
-    margin-left: 9%;
+    margin-left: 42%;
   }
 
   #col li {
@@ -197,5 +182,15 @@
     right: 2em;
     position: absolute;
   }
+
+  #dropdown-btn {
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 8px;
+    left: 4em;
+  }
+
 
 </style>
