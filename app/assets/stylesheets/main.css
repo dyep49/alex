@@ -82,6 +82,11 @@
 	visibility: hidden;
 }
 
+.splash-wrapper h2 {
+	text-align: left;
+	font-family: sans;
+}
+
 .white {
 	background: white;
 	line-height: 5em;
