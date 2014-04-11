@@ -6,7 +6,7 @@ class SourcesController < ApplicationController
 
 	def show
 		source = Source.where(cat: params[:id].downcase)
-		render json: source
+		render json: source.reverse
 	end
 
 	def source_pins
