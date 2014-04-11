@@ -35415,6 +35415,7 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', '$
 
     function init(){
         Dash.getSavedArray()
+        $scope.savedArray = []
         Dash.getHistoryArray()
         setTimeout(function(){
 	        if ($scope.shares.length > 0){
@@ -35470,6 +35471,13 @@ main.controller('EditPinController', ['$scope', '$route', 'Source', '$http', '$l
         .success(function(response){
             $location.path('/pin/source/' + $route.current.params.pin_id)
         })
+    }
+
+    $scope.deletePin = function(){
+      $http.delete('/pins/' + $route.current.params.pin_id)
+      .success(function(response){
+          $location.path('/')
+      })
     }
 
     $scope.onFileSelect = function($files){
@@ -35586,6 +35594,8 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
       source_id:   ''
     };
 
+    $scope.show = false
+
     $scope.createPin = function(){
       $scope.formData.tags = $('#tags').val();
       $http.post('/pins', $scope.formData)
@@ -35596,7 +35606,7 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
     }
 
     $scope.onFileSelect = function($files){
-
+      $scope.show = true
       console.log($files);
       for (var i=0; i < $files.length; i++){
         var file = $files[i];
@@ -35614,17 +35624,21 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
 
     init();
 }]);
-main.controller('NewSourceController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+main.controller('NewSourceController', ['$scope', '$http', '$location', '$upload', function($scope, $http, $location, $upload) {
     $scope.formData = {
       url: '',
       img_url: '',
-      name: ''
+      name: '',
+      cat: '' 
+
     };
 
     $scope.createSource = function(){
       $http.post('/sources', $scope.formData)
       $location.url('/')
     }
+
+    $scope.show = true
 
     $scope.cats = [
         {name: 'Sports'},
@@ -35637,7 +35651,7 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
     ]
 
     $scope.onFileSelect = function($files){
-
+      $scope.show = false
       console.log($files);
       for (var i=0; i < $files.length; i++){
         var file = $files[i];
@@ -35647,7 +35661,8 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
           file: file
         })
         .success(function(data){
-          $scope.formData.image_url = data.url
+          console.log(data)
+          $scope.formData.img_url = data.url
         })
       }
     }
@@ -35961,7 +35976,7 @@ main.directive('slick', ['$timeout', function($timeout){
 					$('.splash-wrapper').css('visibility', 'visible')
 					$('.splash-wrapper').addClass('splash-animation')
 					$(element).slick(scope.$eval('{' + attrs.slick + '}'))					
-			}, 500)
+			}, 1000)
 			// })
 		}
 	}

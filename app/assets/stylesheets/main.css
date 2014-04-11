@@ -18,8 +18,10 @@
 }
 
 .title {
-	background: white
+	background: white;
 }
+
+
 
 .title p{
 	margin: 0;
@@ -82,6 +84,15 @@
 	text-align: center;
 }
 
+.title-fill {
+	width: 100%;
+	background: white;
+	font-family: sans;
+	font-size: 1.5em;
+	padding: .4em 0em .4em 0em;
+
+}
+
 .splash-wrapper {
 	visibility: hidden;
 }
@@ -90,6 +101,8 @@
 	text-align: left;
 	font-family: sans;
 }
+
+
 
 .white {
 	background: white;

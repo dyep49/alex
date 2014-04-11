@@ -42,7 +42,7 @@
         <a class="navbar-brand" id='main-logo' href="#">
           trolly
         </a>
-        <form class="navbar-form" id='nav-search' role="search">
+        <form class="navbar-form" id='nav-search' role="search" ng-submit="searchPins()">
             <div class="form-group">
               <input ng-model='formData.search' type="text" class="form-control" placeholder="Search" />
             </div>
