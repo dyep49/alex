@@ -7160,13 +7160,14 @@ td.visible-print {
 
 .wrapper {
   background-color: rgba(110,110,110,0.1);
-  margin-top: 3em;
+  margin-top: 5em;
   margin-right: 80px;
   padding-left: 3em;
   padding-right: 3em;
   padding-top: 2em;
   padding-bottom: 2em;
   border: 2px solid #ccc;
+  min-height: 500px;
 }
 
 #dash-wrapper {
@@ -7177,6 +7178,7 @@ td.visible-print {
   padding-top: 2em;
   padding-bottom: 2em;
   border: 2px solid #ccc;
+  min-height: 500px;
 }
 
 #dash-header {
