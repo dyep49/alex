@@ -52,8 +52,8 @@
 #dash-wrapper {
   background-color: rgba(110,110,110,0.1);
   margin-top: 1em;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-left: 4em;
+  padding-right: 4em;
   padding-top: 2em;
   padding-bottom: 2em;
   border: 2px solid #ccc;
@@ -90,6 +90,15 @@
 .small {
 	height: 230px;
 	width: 250px;
+}
+
+.slick-track {
+	margin-left: 0px !important;
+}
+
+.splash-small {
+	height: 210px;
+	width: 230px;
 }
 
 .slick-track {
