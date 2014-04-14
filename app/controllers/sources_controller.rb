@@ -5,8 +5,14 @@ class SourcesController < ApplicationController
 	end
 
 	def show
-		source = Source.where(cat: params[:id].downcase)
-		render json: source.reverse
+		if params[:id].scan(/[0-9]+/)
+			params[:id] = params[:id].to_i 
+			source = Source.find(params[:id])
+			render json: [source]
+		else
+			source = Source.where(cat: params[:id].downcase)
+			render json: source.reverse
+		end
 	end
 
 	def source_pins
@@ -14,11 +20,11 @@ class SourcesController < ApplicationController
 		page_num = params[:page_number]
 		case params[:sort_by]
 		when "most_views"
-out = Source.find(id).pins.page(page_num).per(10)
+			out = Source.find(id).pins.page(page_num).per(10)
 		when "most_recent"
-out = Source.find(id).pins.page(page_num).per(10)
+			out = Source.find(id).pins.page(page_num).per(10)
 		else
-out = Source.find(id).pins.page(page_num).per(10)
+			out = Source.find(id).pins.page(page_num).per(10)
 		end
 		render json: out
 	end

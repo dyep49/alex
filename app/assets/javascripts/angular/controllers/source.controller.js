@@ -1,4 +1,4 @@
-main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$location', function($scope, $routeParams, Source, $location){
+main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash', '$location', function($scope, $routeParams, Source, Splash, $location){
 
 	var page = 1
 	
@@ -24,12 +24,6 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 	default: 
 		$scope.sources = Source.getSources();
 	}
-	// if($routeParams.sort_by == "most_views"){
-	// 	$scope.sources = Source.getSourcesByViews()
-	// } else {
-	// 	$scope.sources = Source.getSources();
-	// }
-
 
 	init();
 
@@ -45,5 +39,7 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 	$scope.mostViewed = function(){
 		$location.path('/source/' + $routeParams.source_name + '/most_views')
 	}
+
+	$scope.sourceImage = Splash.all($routeParams.source_name)
 
 }])
