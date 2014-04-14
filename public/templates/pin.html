@@ -11,7 +11,7 @@
 
 
 <div id='img-and-card' style='opacity: 0;'>
-    <div>
+    <div id='embedly-card-div'>
         <a class="embedly-card" id='test' href="{{pin[0].pin.url}}"></a>
     </div>
 </div>
@@ -149,8 +149,7 @@
     }
 
     #img-and-card {
-        width: 100%;
-        min-height: 300px;
+        margin-left: 31%;
 
         -webkit-transition: .4s ease-in-out opacity;
         -moz-transition: .4s ease-in-out opacity;
@@ -168,6 +167,11 @@
         color: red;
         text-decoration: none;
     }
+    #embedly-card-div {
+        width: 400px;
+    }
+
+
 </style>
 
 <script type="text/javascript">
