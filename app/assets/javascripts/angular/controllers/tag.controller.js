@@ -1,8 +1,10 @@
-main.controller('TagController', ['$scope', '$routeParams', 'Tag', function($scope, $routeParams, Tag) {
+main.controller('TagController', ['$scope', '$routeParams', 'Tag', '$interval', function($scope, $routeParams, Tag, $interval) {
 
     function init(){
         Tag.getInitialStuff($routeParams.tag_name)
     }
+
+
 
     $scope.sortBy = 'created_at'
 
