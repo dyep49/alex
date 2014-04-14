@@ -35415,6 +35415,7 @@ main.controller('DashController', ['$scope', 'Dash', 'Inbox', 'Pin', '$http', '$
 
     function init(){
         Dash.getSavedArray()
+        $scope.savedArray = []
         Dash.getHistoryArray()
         setTimeout(function(){
 	        if ($scope.shares.length > 0){
@@ -35470,6 +35471,13 @@ main.controller('EditPinController', ['$scope', '$route', 'Source', '$http', '$l
         .success(function(response){
             $location.path('/pin/source/' + $route.current.params.pin_id)
         })
+    }
+
+    $scope.deletePin = function(){
+      $http.delete('/pins/' + $route.current.params.pin_id)
+      .success(function(response){
+          $location.path('/')
+      })
     }
 
     $scope.onFileSelect = function($files){
@@ -35616,11 +35624,13 @@ main.controller('NewPinController', ['$scope', 'Source', '$http', '$location', '
 
     init();
 }]);
-main.controller('NewSourceController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+main.controller('NewSourceController', ['$scope', '$http', '$location', '$upload', function($scope, $http, $location, $upload) {
     $scope.formData = {
       url: '',
       img_url: '',
-      name: ''
+      name: '',
+      cat: '' 
+
     };
 
     $scope.createSource = function(){
@@ -35651,7 +35661,8 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', function
           file: file
         })
         .success(function(data){
-          $scope.formData.image_url = data.url
+          console.log(data)
+          $scope.formData.img_url = data.url
         })
       }
     }
@@ -35721,7 +35732,7 @@ main.controller('SearchController', ['$scope', 'searchService', function($scope,
 
 }])
 ;
-main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$location', function($scope, $routeParams, Source, $location){
+main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash', '$location', function($scope, $routeParams, Source, Splash, $location){
 
 	var page = 1
 	
@@ -35747,12 +35758,6 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 	default: 
 		$scope.sources = Source.getSources();
 	}
-	// if($routeParams.sort_by == "most_views"){
-	// 	$scope.sources = Source.getSourcesByViews()
-	// } else {
-	// 	$scope.sources = Source.getSources();
-	// }
-
 
 	init();
 
@@ -35768,6 +35773,8 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', '$locat
 	$scope.mostViewed = function(){
 		$location.path('/source/' + $routeParams.source_name + '/most_views')
 	}
+
+	$scope.sourceImage = Splash.all($routeParams.source_name)
 
 }])
 ;
@@ -35965,7 +35972,7 @@ main.directive('slick', ['$timeout', function($timeout){
 					$('.splash-wrapper').css('visibility', 'visible')
 					$('.splash-wrapper').addClass('splash-animation')
 					$(element).slick(scope.$eval('{' + attrs.slick + '}'))					
-			}, 500)
+			}, 1500)
 			// })
 		}
 	}

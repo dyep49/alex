@@ -1,3 +1,6 @@
+<div class="wrapper">
+<img class="source-img" src={{sourceImage[0].img_url}} />
+
 <button style='float:left;margin-left: 9em;' onClick='window.history.go(-1)' class='btn btn-primary'>
     &#10094; <strong>Back</strong>
 </button>
@@ -30,18 +33,21 @@
 <div id="source-container'" infinite-scroll='loadMore()'>
     <div id="source-div" class="repeat-item" ng-repeat="source in sources">
         <a href="/#/pin/source/{{source.id}}">
+            <img ng-src="{{source.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
             <div class="title">
                 <p>
                     {{source.title}}
                 </p>
             </div>
-            <img ng-src="{{source.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>
         </a>
     </div>
 </div>
 
+</div>
 
 <style>
+
+
     #source-div img {
         height: 275px;
         width: 275px;

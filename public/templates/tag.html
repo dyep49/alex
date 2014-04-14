@@ -1,3 +1,5 @@
+<div class="wrapper">
+
 <button style='float:left;margin-left: 7em;' onClick='window.history.go(-1)' class='btn btn-primary'>
     &#10094; <strong>Back</strong>
 </button>
@@ -29,28 +31,30 @@
 <div id="source-container" infinite-scroll='more()'>
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
         <a href="/#/pin/{{tag}}/{{pin.id}}">
+            <div id='img-div' class='infinity-pic'>
+                <img data-ng-src="{{pin['image_url']}}">
+            </div>
             <div class="title">
                 <p>
                     {{pin.title}}
                 </p>
             </div>
-            <div id='img-div' class='infinity-pic'>
-                <img data-ng-src="{{pin['image_url']}}">
-            </div>
         </a>
     </div>
+</div>
 </div>
 
 <style type="text/css">
 
     .title p {
         max-width: 300px;
-        background-color: #eee;
+        background-color: white;
+        padding-bottom: 20px;
     }
 
     #img-div {
-        height: 300px;
-        width: 300px;
+        height: 275px;
+        width: 275px;
     }
 
     #source-div img {
