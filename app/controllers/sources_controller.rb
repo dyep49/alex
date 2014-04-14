@@ -5,7 +5,7 @@ class SourcesController < ApplicationController
 	end
 
 	def show
-		if params[:id].scan(/[0-9]+/)
+		if params[:id].scan(/[0-9]+/).any?
 			params[:id] = params[:id].to_i 
 			source = Source.find(params[:id])
 			render json: [source]
