@@ -59,7 +59,9 @@
         </form>
     </nav>
 
-  <div style='height: 2.2em;'>    
+  <div><p> </p></div>
+
+  <div id='devise-alerts' style='height: 2.2em;'>    
     <p class="notice devise"><%= notice %></p>
     <p class="alert devise"><%= alert %></p>
   </div>
@@ -106,7 +108,9 @@
     </div>
   <% end %>
 
+  <div id='yield'>
     <%= yield %>
+  </div>
   <br/>
 </body>
 </html>
@@ -170,7 +174,16 @@
   }
 
 
-
+  #yield {
+    background-color: rgba(110,110,110,0.1);
+    margin-top: 5em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border: 2px solid #ccc;
+    min-height: 500px;
+  }
 
   #social {
     margin-right: 0;
@@ -201,6 +214,13 @@
     color: white;
     font-size: 2em;
     border-radius: 0;
+  }
+
+  #devise-alerts {
+    position: absolute;
+    top: 80px;
+    left: 43%;
+    color: #F00018;
   }
 
 </style>
