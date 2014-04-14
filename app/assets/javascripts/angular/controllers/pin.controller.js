@@ -1,4 +1,25 @@
-main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', 'User', '$upload', function($scope, $route, $http, Pin, $location, User, $upload){
+main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', 'User', '$upload', '$rootScope', '$interval', function($scope, $route, $http, Pin, $location, User, $upload, $rootScope, $interval){
+
+    $.fn.resizeText = function(){
+      var size = parseInt($(this).css("fontSize"));  
+      var html = $(this).html();
+      var textLength = html.length;
+      var span = '<span>' + html + '</span>';
+      $(this).html(span);
+      var width = $(this).find('span:first').width();
+      $(this).html(html);
+      var newSize = $(this).width()/width*size; 
+      $(this).css("fontSize", (newSize/1.2) + 2);
+      return width;
+    };
+
+
+    var resize = $interval(function(){
+        if ($('h1').length === 1){
+          $("h1").resizeText();
+          $interval.cancel(resize)          
+        }
+    }, 500)
 
 	function init(){
         User.currentUser();
@@ -51,5 +72,12 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
     $scope.goEdit = function(){
         $location.path('/edit/' + $route.current.params.pin_id)
     }
+
+    $rootScope.$on('$routeChangeStart', function(event, next, current){
+        console.log('leaving')
+        $interval.cancel(resize)
+    })
+
+
 
 }])
