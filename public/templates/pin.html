@@ -1,3 +1,5 @@
+
+
 <div class="wrapper">
 <br />
 <button style='position: absolute; left: 12em;' onClick='window.history.go(-1)' class='btn btn-primary'>
@@ -13,11 +15,13 @@
 <script type="text/javascript" src="//static.addtoany.com/menu/page.js">
 </script>
 
+<div id="test-title">
 <a href="{{pin[0].pin.url}}">
     <h1>
         {{pin[0].pin.title}}
     </h1>
 </a>
+</div>
 
 
 <div id='img-and-card' style='opacity: 0;'>
@@ -109,6 +113,25 @@
 <br/>
 
 </div>
+
+<script>
+$.fn.resizeText = function(){
+  var size = parseInt($(this).css("fontSize"));  
+  var html = $(this).html();
+  var textLength = html.length;
+  var span = '<span>' + html + '</span>';
+  $(this).html(span);
+  var width = $(this).find('span:first').width();
+  $(this).html(html);
+  var newSize = $(this).width()/width*size; 
+  $(this).css("fontSize", (newSize/1.7) + 2);
+  return width;
+};
+
+$("#test-title").resizeText();
+</script>
+
+
 <style type="text/css">
 
 
