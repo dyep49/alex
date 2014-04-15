@@ -23,6 +23,10 @@ class SourcesController < ApplicationController
 			out = Source.find(id).pins.order(view_count: :desc).page(page_num).per(10)
 		when "most_recent"
 			out = Source.find(id).pins.order(created_at: :desc).page(page_num).per(10)
+		when "week"
+			out = Source.find(id).pins.where('created_at >= ?', 1.week.ago).order(view_count: :desc).page(page_num).per(10)
+		when "month"
+			out = Source.find(id).pins.where('created_at >= ?', 1.month.ago).order(view_count: :desc).page(page_num).per(10)
 		else
 			out = Source.find(id).pins.page(page_num).per(10)
 		end
