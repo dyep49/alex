@@ -28,7 +28,7 @@
   <br>
   
   
-  <p>Source: <select ng-options="source.name for source in sources" ng-model="formData.source_id"></select></p>
+  <p>Source: <select ng-options="source.name for source in sources | unique:'name'" ng-model="formData.source_id"></select></p>
   <br>
   
   <div style='margin-left: 38%;'>
