@@ -45,6 +45,10 @@
 	margin: 0 auto;
 }
 
+.fill-div h1 {
+	margin: 0px !important;
+}
+
 .choose-file{
 	display: block;
 	margin: 0 auto;
