@@ -30,7 +30,7 @@
 <br />
 
 
-<div id="source-container'" infinite-scroll='loadMore()'>
+<div id="source-container" style="opacity:0" infinite-scroll='loadMore()'>
     <div id="source-div" class="repeat-item" ng-repeat="source in sources">
         <a href="/#/pin/source/{{source.id}}">
             <img ng-src="{{source.image_url}}" onError="this.onerror=null;this.src='http://www.cian-erc.org/images/noimage.gif'"/>

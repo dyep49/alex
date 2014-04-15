@@ -2,6 +2,9 @@ main.controller('TagController', ['$scope', '$routeParams', 'Tag', '$interval', 
 
     function init(){
         Tag.getInitialStuff($routeParams.tag_name)
+        setTimeout(function(){
+            $('#source-container').css('opacity', 1)
+        }, 1500)
     }
 
 
