@@ -23,7 +23,7 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
         $scope.sources = Source.getSourcesByMonth();
         break;
     case 'week':
-        $scope.sources = Source.getSourceByWeek();
+        $scope.sources = Source.getSourcesByWeek();
         break;
 	case "most_recent":
 		$scope.sources = Source.getSourcesByRecent();
