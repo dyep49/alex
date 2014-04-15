@@ -21,7 +21,9 @@
 	    <div id="source-div" ng-repeat="pin in urlResults[0]|unique:'id'">
 	        <a href="/#/pin/all/{{pin.id}}">
 		            <img ng-src="{{pin['image_url']}}"/>
-		            <p class="title-fill">{{pin.title}}</p>
+		            <div class="title" data-fill>
+		            	{{pin.title}}
+		            </div>
 	        </a>
 	    </div>
 	</div>

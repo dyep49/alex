@@ -18,7 +18,7 @@
 
 <div class="fill-div" data-fill>
 <a href="{{pin[0].pin.url}}">
-    <h1>{{pin[0].pin.title}}</h1>
+    <h1 style="opacity:0;">{{pin[0].pin.title}}</h1>
 </a>
 </div>
 
@@ -192,6 +192,10 @@
     setTimeout(function(){
         $('#img-and-card').css('opacity', 1);
     }, 500)
+
+    setTimeout(function(){
+        $('.fill-div h1').css('opacity', 1)
+    }, 1100)
 
     $('#share-button').on('click', function(){
         $('#share-input').val('')

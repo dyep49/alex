@@ -5,7 +5,8 @@ main.directive('fill', [function(){
 			// $(element).textfill(scope.$eval('{' + attrs.fill + '}'))
 				setTimeout(function(){
 					console.log('running')
-					textFit($(element))				
+					textFit($(element))	
+					$(element).css('opacity', 1)			
 				}, 1000)
 
 		}
