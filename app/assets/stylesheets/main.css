@@ -19,13 +19,13 @@
 
 .title {
 	background: white;
+	width: 275px;
+	height: 40px;
 }
 
 
 
 .title p{
-	margin: 0;
-	font-size: 25px;
 }
 .title-left{
 	text-align: left;
