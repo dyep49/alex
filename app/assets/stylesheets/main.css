@@ -23,6 +23,12 @@
 	height: 40px;
 }
 
+.inbox-title {
+	background: white;
+	width: 250px;
+	height: 40px;
+}
+
 
 
 .title p{
@@ -34,9 +40,9 @@
 .fill-div {
 	min-height: 10em;
 	max-height: 14em;
-	max-width: 30em;
+	max-width: 70em;
 	min-width: 20em;
-	/*margin: 0 auto;*/
+	margin: 0 auto;
 }
 
 .choose-file{
@@ -98,6 +104,11 @@
 .small {
 	height: 230px;
 	width: 250px;
+}
+
+.card-wrapper {
+	width: 250px;
+	margin: 0 auto;
 }
 
 .slick-track {

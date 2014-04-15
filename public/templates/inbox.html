@@ -1,13 +1,13 @@
 <div class="wrapper">
 <div class="inbox_container">
     <div ng-repeat="pin in pins">
-        <div class='{{pin.seen}}'>
-            <img ng-src="{{pin.pin[0].pin.image_url}}">
-            <p>
+        <div class='{{pin.seen}} card-wrapper'>
+            <img class="small"  ng-src="{{pin.pin[0].pin.image_url}}">
+            <div class="inbox-title" data-fill>
                 <a href='/#/pin/all/{{pin.pin[0].pin.id}}'>
                     {{pin.pin[0].pin.title}}
                 </a>
-            </p>
+            </div>
             <p>
                 Shared by {{pin.username}}
             </p>
