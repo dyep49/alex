@@ -69,7 +69,14 @@
 <div id='footer'>
 
     <div id='share' class='foot-button'>
-        <input type='text'ng-model="formData.sendTo" id='share-input' placeholder='share with...'>
+        <angucomplete id="share-input"
+              placeholder="share with..."
+              selectedobject="formData.sendTo"
+              localdata="all_users[0]"
+              searchfields="email, username"
+              titlefield="email"
+              minlength='1'
+              inputclass="form-control form-control-small"/>
         <button id='share-button'class='btn btn-primary' ng-click='sharePin()'>
             <strong>Share</strong>
         </button>
@@ -118,6 +125,7 @@
 
     #edit-btn {
         border: 1px solid #ccc;
+        float: left;
     }
 
     .direction-btn {
@@ -149,17 +157,29 @@
 
     .foot-button {
         display: inline-block;
+        float: left;
+        margin-right: 1em;
     }
 
     #share input {
         height: 2.3em;
         border: 2px solid #666;
-        padding-left: 5px;
+    }
+
+    #share {
+        margin-left: 25%;
+    }
+
+    #share-input {
+        display: inline;
+        float: left;
+        margin-right: 5px;
     }
 
     #footer {
         display: inline;
         width: 100px;
+        margin-left: 300px;
     }
 
     #img-and-card {

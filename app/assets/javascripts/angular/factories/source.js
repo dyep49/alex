@@ -2,6 +2,8 @@ main.service('Source', ['$http', function($http){
 		var sources = []
 		var most_view_sources = []
 		var most_recent_sources = []
+		var by_week = []
+		var by_month = []
 
 		this.clearArray = function(){
 			sources = []
@@ -24,6 +26,16 @@ main.service('Source', ['$http', function($http){
 				case "most_recent":
 					data.forEach(function(source){
 						most_recent_sources.push(source);
+					})
+					break;
+				case "week":
+					data.forEach(function(source){
+						by_week.push(source)	
+					})
+					break;
+				case "month":
+					data.forEach(function(source){
+						by_month.push(source)	
 					})
 					break;					
 				default:
@@ -56,6 +68,14 @@ main.service('Source', ['$http', function($http){
 
 		this.getSourcesByRecent = function(){
 			return most_recent_sources
+		}
+
+		this.getSourcesByWeek = function(){
+			return by_week
+		}
+
+		this.getSourcesByMonth = function(){
+			return by_month
 		}
 }])
 

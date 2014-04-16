@@ -25,6 +25,7 @@ Alex::Application.routes.draw do
 
   post '/image_upload' => 'main#image'
 
+  get '/all_users' => 'users#show_all'
 
 
   resources :sources

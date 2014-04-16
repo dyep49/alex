@@ -23,6 +23,12 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
 	case "most_views":
 		$scope.sources = Source.getSourcesByViews();
 		break;
+    case 'month':
+        $scope.sources = Source.getSourcesByMonth();
+        break;
+    case 'week':
+        $scope.sources = Source.getSourcesByWeek();
+        break;
 	case "most_recent":
 		$scope.sources = Source.getSourcesByRecent();
 		break;
@@ -37,6 +43,7 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
 		page ++
 	}
 
+
 	$scope.mostRecent= function(){
 		$location.path('/source/' + $routeParams.source_name + '/most_recent')
 	}
@@ -44,6 +51,14 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
 	$scope.mostViewed = function(){
 		$location.path('/source/' + $routeParams.source_name + '/most_views')
 	}
+
+    $scope.mostMonth = function(){
+        $location.path('/source/' + $routeParams.source_name + '/month')
+    }
+
+    $scope.mostWeek = function(){
+        $location.path('/source/' + $routeParams.source_name + '/week')
+    }
 
 	$scope.sourceImage = Splash.all($routeParams.source_name)
 
