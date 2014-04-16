@@ -13,6 +13,10 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
 		page ++;
 	}
 
+	setTimeout(function(){
+		$('#source-container').css('opacity', 1)
+	}, 1500)
+
 
 	switch($routeParams.sort_by)
 	{

@@ -28,7 +28,7 @@
 <br/>
 <br/>
 
-<div id="source-container" infinite-scroll='more()'>
+<div id="source-container" style="opacity:0" infinite-scroll='more()'>
     <div id="source-div" class="repeat-item" ng-repeat="pin in array | orderBy:sortBy:true | limitTo:quantity">
         <a href="/#/pin/{{tag}}/{{pin.id}}">
             <div id='img-div' class='infinity-pic'>
