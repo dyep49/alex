@@ -2,6 +2,7 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
 
 	function init(){
         User.currentUser();
+        User.allUsers();
         setTimeout(function(){
             if($scope.pin.length === 0){
                 alert('Pin does not exist')
@@ -52,7 +53,6 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         $location.path('/edit/' + $route.current.params.pin_id)
     }
 
-
-
+    $scope.all_users = User.getAllUsers();
 
 }])

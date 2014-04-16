@@ -59,4 +59,8 @@ class UsersController < ApplicationController
         render json: {}
     end
 
+    def show_all
+        render json: User.all
+    end
+
 end
