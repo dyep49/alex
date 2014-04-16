@@ -71,10 +71,11 @@
     <div id='share' class='foot-button'>
         <angucomplete id="share-input"
               placeholder="share with..."
-              pause="100"
               selectedobject="formData.sendTo"
               localdata="all_users"
+              searchfields="email"
               titlefield="email"
+              minlength='1'
               inputclass="form-control form-control-small"/>
         <button id='share-button'class='btn btn-primary' ng-click='sharePin()'>
             <strong>Share</strong>
