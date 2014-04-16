@@ -39,8 +39,8 @@
 
 .fill-div {
 	min-height: 10em;
-	max-height: 14em;
-	max-width: 70em;
+	max-height: 10em;
+	max-width: 55em;
 	min-width: 20em;
 	margin: 0 auto;
 }
