@@ -20,7 +20,8 @@
 .title {
 	background: white;
 	width: 275px;
-	height: 40px;
+	height: 60px;
+	font-family: helvetica;
 }
 
 .inbox-title {
@@ -31,15 +32,13 @@
 
 
 
-.title p{
-}
 .title-left{
 	text-align: left;
 }
 
 .fill-div {
-	min-height: 10em;
-	max-height: 10em;
+	min-height: 7em;
+	max-height: 7em;
 	max-width: 55em;
 	min-width: 20em;
 	margin: 0 auto;
