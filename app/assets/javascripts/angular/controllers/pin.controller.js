@@ -22,11 +22,11 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
     $scope.adminStatus = User.getUserStatus();
 
     $scope.formData = {
-    	sendTo: '',
     	pin_id: $route.current.params.pin_id
     }
 
     $scope.sharePin = function(){
+        $scope.formData.sendTo = $('#share-input_value').val()
         $http.post('/pin_share', $scope.formData)
     }
 

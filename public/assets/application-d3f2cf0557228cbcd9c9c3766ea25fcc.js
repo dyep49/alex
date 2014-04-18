@@ -35398,7 +35398,7 @@ jQuery wookmark plugin
       alignHoriz: true, // if true, textFit will set text-align: center
       multiLine: false, // if true, textFit will not set white-space: no-wrap
       detectMultiLine: true, // disable to turn off automatic multi-line sensing
-      minFontSize: 6,
+      minFontSize: 1,
       maxFontSize: 80,
       reProcess: true, // if true, textFit will re-process already-fit nodes. Set to 'false' for better performance
       widthOnly: false, // if true, textFit will fit text to element width, regardless of text height
@@ -35902,27 +35902,6 @@ main.controller('NewSourceController', ['$scope', '$http', '$location', '$upload
 ;
 main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location', 'User', '$upload', '$rootScope', '$interval', function($scope, $route, $http, Pin, $location, User, $upload, $rootScope, $interval){
 
-    // $.fn.resizeText = function(){
-    //   var size = parseInt($(this).css("fontSize"));  
-    //   var html = $(this).html();
-    //   var textLength = html.length;
-    //   var span = '<span>' + html + '</span>';
-    //   $(this).html(span);
-    //   var width = $(this).find('span:first').width();
-    //   $(this).html(html);
-    //   var newSize = $(this).width()/width*size; 
-    //   $(this).css("fontSize", (newSize/1.2) + 2);
-    //   return width;
-    // };
-
-
-    // var resize = $interval(function(){
-    //     if ($('h1').length === 1){
-    //       $("h1").resizeText();
-    //       $interval.cancel(resize)          
-    //     }
-    // }, 500)
-
 	function init(){
         User.currentUser();
         setTimeout(function(){
@@ -35975,10 +35954,6 @@ main.controller('PinController', ['$scope', '$route', '$http', 'Pin', '$location
         $location.path('/edit/' + $route.current.params.pin_id)
     }
 
-    // $rootScope.$on('$routeChangeStart', function(event, next, current){
-    //     console.log('leaving')
-    //     $interval.cancel(resize)
-    // })
 
 
 
@@ -36006,6 +35981,10 @@ main.controller('SourceController', ['$scope', '$routeParams', 'Source', 'Splash
 		}, 1000)
 		page ++;
 	}
+
+	setTimeout(function(){
+		$('#source-container').css('opacity', 1)
+	}, 1500)
 
 
 	switch($routeParams.sort_by)
@@ -36055,6 +36034,9 @@ main.controller('TagController', ['$scope', '$routeParams', 'Tag', '$interval', 
 
     function init(){
         Tag.getInitialStuff($routeParams.tag_name)
+        setTimeout(function(){
+            $('#source-container').css('opacity', 1)
+        }, 1500)
     }
 
 
@@ -36170,7 +36152,8 @@ main.directive('fill', [function(){
 			// $(element).textfill(scope.$eval('{' + attrs.fill + '}'))
 				setTimeout(function(){
 					console.log('running')
-					textFit($(element))				
+					textFit($(element))	
+					$(element).css('opacity', 1)			
 				}, 1000)
 
 		}
