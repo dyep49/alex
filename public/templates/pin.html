@@ -1,12 +1,10 @@
-
-
 <div class="wrapper">
 <br />
-<button style='position: absolute; left: 12em;' onClick='window.history.go(-1)' class='btn btn-primary'>
+<button style='position: absolute; left: 12%; top: 6em;' onClick='window.history.go(-1)' class='btn btn-primary'>
     &#10094; <strong>Back</strong>
 </button>
 
-<div style='position: absolute; right: 15em;' id='social' class="form-group a2a_kit a2a_kit_size_32 a2a_default_style">
+<div style='position: absolute; right: 20%; top: 6em;' id='social' class="form-group a2a_kit a2a_kit_size_32 a2a_default_style">
     <a class="a2a_button_facebook"></a>
     <a class="a2a_button_twitter"></a>
     <a class="a2a_button_google_plus"></a>
@@ -17,9 +15,11 @@
 
 
 <div class="fill-div" data-fill>
-<a href="{{pin[0].pin.url}}">
-    <h1 style="opacity:0;">{{pin[0].pin.title}}</h1>
-</a>
+    <a href="{{pin[0].pin.url}}">
+        <h1 style="opacity:0;">
+            {{pin[0].pin.title}}
+        </h1>
+    </a>
 </div>
 
 
@@ -143,11 +143,11 @@
     }
 
     #prev-btn {
-        left: 150px;
+        left: 12%;
     }
 
     #next-btn {
-        right: 150px;
+        right: 15%;
     }
 
     p {
