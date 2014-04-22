@@ -299,6 +299,86 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 /* Draggable */
 
 .slick-list.dragging { cursor: pointer; cursor: hand; }
+.form-control {
+    outline: 0;
+    border-color: #ECECEC;
+    border-style: solid;
+    border-width: 1px;
+    width: 95%;
+    background-color: #ffffff;
+    padding: 6px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.angucomplete-holder {
+    position: relative;
+}
+
+.angucomplete-dropdown {
+    border-color: #ececec;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    width: 250px;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 9999;
+    position: absolute;
+    /*top: 32px;
+    left: 0px;
+    */
+    margin-top: -6px;
+    background-color: #ffffff;
+}
+
+.angucomplete-searching {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.angucomplete-description {
+    font-size: 14px;
+}
+
+.angucomplete-row {
+    padding: 5px;
+    color: #000000;
+    margin-bottom: 4px;
+
+}
+
+.angucomplete-selected-row, .angucomplete-row:hover {
+    background-color: lightblue;
+    color: #ffffff;
+}
+
+.angucomplete-image-holder {
+    padding-top: 2px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.angucomplete-image {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border-color: #ececec;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.angucomplete-image-default {
+    /* Add your own default image here
+     background-image: url('/assets/default.png');
+    */
+    background-position: center;
+    background-size: contain;
+    height: 34px;
+    width: 34px;
+}
 .repeat-item.ng-enter,
 .repeat-item.ng-leave {
   -webkit-transition:0.5s linear all;
@@ -7141,7 +7221,8 @@ td.visible-print {
 .title {
 	background: white;
 	width: 275px;
-	height: 40px;
+	height: 60px;
+	font-family: helvetica;
 }
 
 .inbox-title {
@@ -7152,16 +7233,14 @@ td.visible-print {
 
 
 
-.title p{
-}
 .title-left{
 	text-align: left;
 }
 
 .fill-div {
-	min-height: 10em;
-	max-height: 14em;
-	max-width: 70em;
+	min-height: 7em;
+	max-height: 7em;
+	max-width: 55em;
 	min-width: 20em;
 	margin: 0 auto;
 }
@@ -7307,6 +7386,7 @@ td.visible-print {
 	/*line-height: 5em;*/
 	padding: .4em 0em .4em 0em;
 	width: 250px;
+	height: 40px;
 	font-family: sans;
 	font-size: 1.5em;
 }
