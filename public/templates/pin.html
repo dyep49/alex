@@ -1,10 +1,11 @@
-<div class="wrapper">
+<div class="wrapper" style='margin-left: 5em;'>
 <br />
-<button style='position: absolute; left: 12%; top: 6em;' onClick='window.history.go(-1)' class='btn btn-primary'>
+<button style='position: absolute; left: 15%; top: 6em;' onClick='window.history.go(-1)' class='btn btn-primary'>
     &#10094; <strong>Back</strong>
 </button>
 
-<div style='position: absolute; right: 20%; top: 6em;' id='social' class="form-group a2a_kit a2a_kit_size_32 a2a_default_style">
+
+<div style='position: absolute; right: 15%; top: 9em;' id='social' class="form-group a2a_kit a2a_kit_size_32 a2a_default_style">
     <a class="a2a_button_facebook"></a>
     <a class="a2a_button_twitter"></a>
     <a class="a2a_button_google_plus"></a>
@@ -13,8 +14,24 @@
 <script type="text/javascript" src="//static.addtoany.com/menu/page.js">
 </script>
 
+<div id='top-share'>
+    <angucomplete id="share-input"
+          placeholder="share with..."
+          selectedobject="formData.sendTo"
+          localdata="all_users[0]"
+          searchfields="email, username"
+          titlefield="username"
+          minlength='1'
+          inputclass="form-control form-control-small"/>
+    <button class='btn btn-primary' ng-click='sharePin()'>
+        <strong>Share</strong>
+    </button>
+</div>
 
-<div class="fill-div" data-fill style='max-width: 55%;'>
+<br />
+
+
+<div class="fill-div" data-fill style='max-width: 55%; margin-top: 1em;'>
     <h1>
         <a href="{{pin[0].pin.url}}" style='color:#454545;'>
             {{pin[0].pin.title}}
@@ -22,6 +39,8 @@
     </h1>
 </div>
 
+<br />
+<br />
 
 <div id='img-and-card' style='opacity: 0;'>
     <div id='embedly-card-div'>
@@ -68,7 +87,7 @@
 
 <div id='footer'>
 
-    <div id='share' class='foot-button'>
+<!--     <div id='share' class='foot-button'>
         <angucomplete id="share-input"
               placeholder="share with..."
               selectedobject="formData.sendTo"
@@ -80,25 +99,27 @@
         <button id='share-button'class='btn btn-primary' ng-click='sharePin()'>
             <strong>Share</strong>
         </button>
+    </div> -->
+    <!-- &nbsp; -->
+    <div style='margin-left: 42%;'>
+        <div ng-click='savePin(); toggle=true' 
+             id='save' 
+             ng-hide="toggle"
+             class='foot-button btn-danger btn'>
+            <strong>Save</strong>
+        </div>
+        <div ng-click='savePin(); toggle=false' 
+             id='unsave' 
+             ng-show="toggle"
+             class='foot-button unsave btn'
+             style='background-color: #3f6;'>
+            <strong>Unsave</strong>
+        </div>
+        &nbsp;
+        <button id='edit-btn' class="btn" ng-click='goEdit()' ng-hide="not_admin">
+            <strong>Edit</strong>
+        </button>
     </div>
-    &nbsp;
-    <div ng-click='savePin(); toggle=true' 
-         id='save' 
-         ng-hide="toggle"
-         class='foot-button btn-danger btn'>
-        <strong>Save</strong>
-    </div>
-    <div ng-click='savePin(); toggle=false' 
-         id='unsave' 
-         ng-show="toggle"
-         class='foot-button unsave btn'
-         style='background-color: #3f6;'>
-        <strong>Unsave</strong>
-    </div>
-    &nbsp;
-    <button id='edit-btn' class="btn" ng-click='goEdit()' ng-hide="not_admin">
-        <strong>Edit</strong>
-    </button>
 
     <br/>
     <br/>
@@ -135,7 +156,7 @@
         font-size: 10em;
         color: #333;
         position: absolute;
-        top: 1.5em;
+        top: 2em;
     }
 
     .direction-btn:hover {
@@ -203,6 +224,13 @@
     }
     #embedly-card-div {
         width: 400px;
+    }
+
+    #top-share {
+        width: 250px;
+        position: absolute;
+        top: 6em;
+        right: 15%;
     }
 
 
